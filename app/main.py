@@ -1,16 +1,19 @@
 from fastapi import FastAPI
 
+from app.config import settings
+
 app = FastAPI(
-    title="CloudOps ServiceDesk API",
-    description="Enterprise-style IT Service Management Platform",
-    version="1.0.0"
+    title=settings.APP_NAME,
+    description=settings.APP_DESCRIPTION,
+    version=settings.APP_VERSION,
 )
 
 
 @app.get("/")
 def home():
     return {
-        "message": "Welcome to CloudOps ServiceDesk API",
+        "message": f"Welcome to {settings.APP_NAME}",
         "status": "Running",
-        "version": "1.0.0"
+        "environment": settings.ENVIRONMENT,
+        "version": settings.APP_VERSION,
     }
