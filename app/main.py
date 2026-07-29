@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 
 from app.config import settings
+from app.db.database import engine
+from app.db.session import SessionLocal
+from app.db.base import Base
 
 app = FastAPI(
     title=settings.APP_NAME,
