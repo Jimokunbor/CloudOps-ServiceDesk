@@ -1,15 +1,19 @@
 from fastapi import FastAPI
 
+from app.api import auth_router
 from app.config import settings
-from app.db.database import engine
-from app.db.session import SessionLocal
 from app.db.base import Base
+from app.db.database import engine
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title=settings.APP_NAME,
     description=settings.APP_DESCRIPTION,
     version=settings.APP_VERSION,
 )
+
+app.include_router(auth_router)
 
 
 @app.get("/")
