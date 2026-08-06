@@ -5,6 +5,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
 from app.api.dependencies import get_current_user
+from app.core.rbac import require_roles
 from app.config import settings
 from app.core.security import create_access_token
 from app.db.session import get_db
@@ -78,4 +79,13 @@ def get_me(
         "email": current_user.email,
         "role": current_user.role,
         "is_active": current_user.is_active,
+    }
+
+@router.get("/admin")
+def admin_only(
+    current_user=Depends(require_roles("admin")),
+):
+    return {
+        "message": "Welcome Admin",
+        "user": current_user.email,
     }
