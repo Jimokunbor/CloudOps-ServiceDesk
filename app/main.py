@@ -1,11 +1,8 @@
 from fastapi import FastAPI
 
-from app.api import auth_router
+from app.api.ticket import router as ticket_router
+from app.api.auth import router as auth_router
 from app.config import settings
-from app.db.base import Base
-from app.db.database import engine
-
-Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -14,6 +11,7 @@ app = FastAPI(
 )
 
 app.include_router(auth_router)
+app.include_router(ticket_router)
 
 
 @app.get("/")
