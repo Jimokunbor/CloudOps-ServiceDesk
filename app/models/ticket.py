@@ -53,6 +53,12 @@ class Ticket(Base):
         nullable=False,
     )
 
+    assigned_to: Mapped[uuid.UUID | None] = mapped_column(
+    UUID(as_uuid=True),
+    ForeignKey("users.id"),
+    nullable=True,
+)
+
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         default=lambda: datetime.now(UTC),
@@ -64,4 +70,12 @@ class Ticket(Base):
         onupdate=lambda: datetime.now(UTC),
     )
 
-    creator = relationship("User")
+    creator = relationship(
+    "User",
+    foreign_keys="Ticket.created_by",
+)
+
+assignee = relationship(
+    "User",
+    foreign_keys="Ticket.assigned_to",
+)

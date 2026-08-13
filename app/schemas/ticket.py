@@ -11,10 +11,19 @@ class TicketCreate(BaseModel):
     description: str
     priority: str = "Medium"
 
+
 class TicketUpdate(BaseModel):
     title: str
     description: str
     priority: str
+    status: TicketStatus
+
+
+class TicketAssign(BaseModel):
+    technician_id: UUID
+
+
+class TicketStatusUpdate(BaseModel):
     status: TicketStatus
 
 
@@ -25,6 +34,7 @@ class TicketResponse(BaseModel):
     status: TicketStatus
     priority: str
     created_by: UUID
+    assigned_to: UUID | None
     created_at: datetime
     updated_at: datetime
 

@@ -1,11 +1,18 @@
 from uuid import UUID
 
+from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
+from app.core.roles import UserRole
 from app.core.status import TicketStatus
 from app.models.ticket import Ticket
-from app.schemas.ticket import TicketCreate
-from app.schemas.ticket import TicketUpdate
+from app.models.user import User
+from app.schemas.ticket import (
+    TicketAssign,
+    TicketCreate,
+    TicketStatusUpdate,
+    TicketUpdate,
+)
 
 
 def create_ticket(
@@ -28,7 +35,9 @@ def create_ticket(
     return db_ticket
 
 
-def get_all_tickets(db: Session):
+def get_all_tickets(
+    db: Session,
+):
     return db.query(Ticket).all()
 
 
@@ -47,7 +56,10 @@ def delete_ticket(
     db: Session,
     ticket_id: UUID,
 ):
-    ticket = get_ticket_by_id(db, ticket_id)
+    ticket = get_ticket_by_id(
+        db,
+        ticket_id,
+    )
 
     if not ticket:
         return None
@@ -63,7 +75,10 @@ def update_ticket(
     ticket_id: UUID,
     ticket_data: TicketUpdate,
 ):
-    ticket = get_ticket_by_id(db, ticket_id)
+    ticket = get_ticket_by_id(
+        db,
+        ticket_id,
+    )
 
     if not ticket:
         return None
@@ -72,6 +87,114 @@ def update_ticket(
     ticket.description = ticket_data.description
     ticket.priority = ticket_data.priority
     ticket.status = ticket_data.status
+
+    db.commit()
+    db.refresh(ticket)
+
+    return ticket
+
+
+def assign_ticket(
+    db: Session,
+    ticket_id: UUID,
+    assignment: TicketAssign,
+):
+    ticket = get_ticket_by_id(
+        db,
+        ticket_id,
+    )
+
+    if not ticket:
+        raise HTTPException(
+            status_code=404,
+            detail="Ticket not found",
+        )
+
+    technician = (
+        db.query(User)
+        .filter(User.id == assignment.technician_id)
+        .first()
+    )
+
+    if not technician:
+        raise HTTPException(
+            status_code=404,
+            detail="Technician not found",
+        )
+
+    if technician.role != UserRole.TECHNICIAN:
+        raise HTTPException(
+            status_code=400,
+            detail="User is not a technician",
+        )
+
+    ticket.assigned_to = technician.id
+
+    if ticket.status == TicketStatus.NEW:
+        ticket.status = TicketStatus.ASSIGNED
+
+    db.commit()
+    db.refresh(ticket)
+
+    return ticket
+
+
+def update_ticket_status(
+    db: Session,
+    ticket_id: UUID,
+    status_update: TicketStatusUpdate,
+    current_user: User,
+):
+    ticket = get_ticket_by_id(
+        db,
+        ticket_id,
+    )
+
+    if not ticket:
+        raise HTTPException(
+            status_code=404,
+            detail="Ticket not found",
+        )
+
+    if (
+        current_user.role != UserRole.ADMIN
+        and ticket.assigned_to != current_user.id
+    ):
+        raise HTTPException(
+            status_code=403,
+            detail="You are not assigned to this ticket.",
+        )
+
+    allowed_transitions = {
+        TicketStatus.NEW: [
+            TicketStatus.ASSIGNED,
+        ],
+        TicketStatus.ASSIGNED: [
+            TicketStatus.IN_PROGRESS,
+        ],
+        TicketStatus.IN_PROGRESS: [
+            TicketStatus.RESOLVED,
+        ],
+        TicketStatus.RESOLVED: [
+            TicketStatus.CLOSED,
+        ],
+        TicketStatus.CLOSED: [],
+    }
+
+    current_status = ticket.status
+    new_status = status_update.status
+
+    if new_status not in allowed_transitions[current_status]:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                f"Cannot change ticket "
+                f"from '{current_status.value}' "
+                f"to '{new_status.value}'."
+            ),
+        )
+
+    ticket.status = new_status
 
     db.commit()
     db.refresh(ticket)

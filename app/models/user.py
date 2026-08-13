@@ -4,11 +4,13 @@ from datetime import datetime
 
 from sqlalchemy import Boolean
 from sqlalchemy import DateTime
+from sqlalchemy import Enum
 from sqlalchemy import String
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 
+from app.core.roles import UserRole
 from app.db.base import Base
 
 
@@ -38,9 +40,10 @@ class User(Base):
         nullable=False,
     )
 
-    role: Mapped[str] = mapped_column(
-        String(20),
-        default="user",
+    role: Mapped[UserRole] = mapped_column(
+        Enum(UserRole),
+        default=UserRole.USER,
+        nullable=False,
     )
 
     is_active: Mapped[bool] = mapped_column(
