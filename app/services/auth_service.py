@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 
-from app.core.security import hash_password, verify_password
+from app.core.security import hash_password
+from app.core.security import verify_password
 from app.models.user import User
 
 
@@ -34,13 +35,27 @@ def authenticate_user(
         .first()
     )
 
+    print("\n========== LOGIN DEBUG ==========")
+    print(f"Email received: {repr(email)}")
+    print(f"Password received: {repr(password)}")
+
     if not user:
+        print("User not found.")
+        print("=================================\n")
         return None
 
-    if not verify_password(
+    print(f"Database email: {user.email}")
+    print(f"Stored hash: {user.password_hash}")
+
+    result = verify_password(
         password,
         user.password_hash,
-    ):
+    )
+
+    print(f"Password verified: {result}")
+    print("=================================\n")
+
+    if not result:
         return None
 
     return user

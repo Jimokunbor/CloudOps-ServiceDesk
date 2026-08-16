@@ -10,6 +10,7 @@ from app.models.user import User
 from app.schemas.ticket import (
     TicketAssign,
     TicketCreate,
+    TicketDashboard,
     TicketStatusUpdate,
     TicketUpdate,
 )
@@ -39,6 +40,19 @@ def get_all_tickets(
     db: Session,
 ):
     return db.query(Ticket).all()
+
+
+def get_my_tickets(
+    db: Session,
+    current_user: User,
+):
+    return (
+        db.query(Ticket)
+        .filter(
+            Ticket.assigned_to == current_user.id
+        )
+        .all()
+    )
 
 
 def get_ticket_by_id(
@@ -200,3 +214,35 @@ def update_ticket_status(
     db.refresh(ticket)
 
     return ticket
+
+
+def get_dashboard_summary(
+    db: Session,
+    current_user: User,
+) -> TicketDashboard:
+    tickets = (
+        db.query(Ticket)
+        .filter(
+            Ticket.assigned_to == current_user.id
+        )
+        .all()
+    )
+
+    return TicketDashboard(
+        assigned=sum(
+            ticket.status == TicketStatus.ASSIGNED
+            for ticket in tickets
+        ),
+        in_progress=sum(
+            ticket.status == TicketStatus.IN_PROGRESS
+            for ticket in tickets
+        ),
+        resolved=sum(
+            ticket.status == TicketStatus.RESOLVED
+            for ticket in tickets
+        ),
+        closed=sum(
+            ticket.status == TicketStatus.CLOSED
+            for ticket in tickets
+        ),
+    )

@@ -11,6 +11,7 @@ from app.models.user import User
 from app.schemas.ticket import (
     TicketAssign,
     TicketCreate,
+    TicketDashboard,
     TicketResponse,
     TicketStatusUpdate,
     TicketUpdate,
@@ -20,6 +21,8 @@ from app.services.ticket_service import (
     create_ticket,
     delete_ticket,
     get_all_tickets,
+    get_dashboard_summary,
+    get_my_tickets,
     get_ticket_by_id,
     update_ticket,
     update_ticket_status,
@@ -50,6 +53,31 @@ def read_all_tickets(
     db: Session = Depends(get_db),
 ):
     return get_all_tickets(db)
+
+
+@router.get("/my")
+def read_my_tickets(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    return get_my_tickets(
+        db=db,
+        current_user=current_user,
+    )
+
+
+@router.get(
+    "/my/dashboard",
+    response_model=TicketDashboard,
+)
+def read_dashboard_summary(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    return get_dashboard_summary(
+        db=db,
+        current_user=current_user,
+    )
 
 
 @router.get("/{ticket_id}")

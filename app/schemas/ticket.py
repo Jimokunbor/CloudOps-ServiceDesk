@@ -27,6 +27,13 @@ class TicketStatusUpdate(BaseModel):
     status: TicketStatus
 
 
+class TicketDashboard(BaseModel):
+    assigned: int
+    in_progress: int
+    resolved: int
+    closed: int
+
+
 class TicketResponse(BaseModel):
     id: UUID
     title: str
