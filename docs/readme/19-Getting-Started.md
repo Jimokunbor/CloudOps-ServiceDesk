@@ -6,7 +6,7 @@ This guide explains how to set up and run CloudOps ServiceDesk in a local develo
 
 It is intended for developers, technical reviewers, recruiters, and interviewers who want to explore the project, understand its architecture, or contribute to its development.
 
-The guide will continue to evolve as additional technologies and deployment environments are introduced throughout the project lifecycle.
+The guide will continue to evolve as additional enterprise technologies and cloud deployment environments are introduced throughout the project lifecycle.
 
 ---
 
@@ -17,11 +17,12 @@ Before running the project, ensure the following software is installed on your m
 | Software | Purpose |
 |----------|---------|
 | Git | Clone the repository |
-| Python 3.12 or later | Run the backend application |
-| PostgreSQL 17 | Database server |
+| Python 3.12 or later | Backend development |
+| Docker Desktop | Containerized application |
+| Docker Compose | Multi-container orchestration |
 | Visual Studio Code | Development environment |
-| pgAdmin 4 | Database management |
 | GitHub Desktop | Version control (optional) |
+| pgAdmin 4 | Database administration (optional) |
 | Postman | API testing (optional) |
 
 ---
@@ -80,12 +81,12 @@ pip install -r requirements.txt
 
 Create a `.env` file in the project root.
 
-Configure the database connection and JWT settings.
+Configure the application settings, database connection and authentication values.
 
 Example:
 
 ```env
-DATABASE_URL=postgresql+psycopg://postgres:password@localhost:5432/cloudops_db
+DATABASE_URL=postgresql+psycopg://postgres:password@postgres:5432/cloudops_db
 
 SECRET_KEY=your_secret_key
 
@@ -96,25 +97,60 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 
 ---
 
-# 7. Configure PostgreSQL
+# 7. Run the Application
 
-Create a PostgreSQL database named:
+CloudOps ServiceDesk supports two execution methods.
 
-```text
-cloudops_db
+## Option 1 — Docker Compose (Recommended)
+
+Build the application.
+
+```bash
+docker compose build
 ```
 
-Run the Alembic migrations.
+Start all services.
+
+```bash
+docker compose up
+```
+
+This starts:
+
+- FastAPI
+- PostgreSQL
+- Redis
+- Nginx
+
+The application will be available at:
+
+```text
+http://localhost
+```
+
+Swagger Documentation
+
+```text
+http://localhost/docs
+```
+
+Health Endpoint
+
+```text
+http://localhost/health/
+```
+
+---
+
+## Option 2 — Local Development
+
+Run database migrations.
 
 ```bash
 alembic upgrade head
 ```
 
----
-
-# 8. Start the Application
-
-Launch the FastAPI application.
+Start the FastAPI application.
 
 ```bash
 uvicorn app.main:app --reload
@@ -126,108 +162,129 @@ The application will be available at:
 http://127.0.0.1:8000
 ```
 
----
-
-# 9. Open the API Documentation
-
-Swagger UI
+Swagger Documentation
 
 ```text
 http://127.0.0.1:8000/docs
 ```
 
-ReDoc
+Health Endpoint
 
 ```text
-http://127.0.0.1:8000/redoc
+http://127.0.0.1:8000/health/
 ```
 
 ---
 
-# 10. Verify the Installation
+# 8. Verify the Installation
 
 Confirm the following:
 
-- FastAPI starts successfully.
-- PostgreSQL connects successfully.
-- Alembic migrations complete successfully.
-- Swagger UI loads correctly.
+- Docker containers start successfully.
+- FastAPI application starts successfully.
+- PostgreSQL container is running.
+- Redis container is running.
+- Nginx reverse proxy is running.
+- Swagger UI loads successfully.
+- Health endpoint returns a successful response.
 - User registration works.
 - User login returns a JWT access token.
 - Protected endpoints require authentication.
 
 ---
 
-# 11. Project Structure
+# 9. Project Structure
 
-The project follows a modular enterprise architecture.
+CloudOps ServiceDesk follows a modular enterprise architecture.
 
 Key directories include:
 
 - app/
 - alembic/
-- docs/
-- screenshots/
-- terraform/
 - docker/
+- docs/
 - kubernetes/
 - monitoring/
 - scripts/
+- terraform/
 - tests/
+- screenshots/
 
 ---
 
-# 12. Planned Enterprise Enhancements
+# 10. Current Enterprise Stack
+
+The project currently includes:
+
+- FastAPI
+- PostgreSQL
+- SQLAlchemy
+- Alembic
+- JWT Authentication
+- Role-Based Access Control (RBAC)
+- Docker
+- Docker Compose
+- Redis
+- Nginx Reverse Proxy
+- Enterprise Health API
+- OpenAPI (Swagger)
+
+---
+
+# 11. Planned Enterprise Enhancements
 
 The following capabilities will be introduced during future development milestones.
 
-- Docker containerization
-- Docker Compose
-- Redis
-- Celery background processing
-- Terraform infrastructure provisioning
-- Ansible configuration management
-- Amazon Web Services (AWS) deployment
+- Artificial Intelligence Integration
+- Celery Background Processing
+- Terraform Infrastructure Provisioning
+- Ansible Configuration Management
+- Amazon Web Services (AWS)
 - GitHub Actions CI/CD
-- Kubernetes orchestration
-- Prometheus monitoring
-- Grafana dashboards
-- Loki centralized logging
-- Production deployment
+- Kubernetes Orchestration
+- Prometheus Monitoring
+- Grafana Dashboards
+- Loki Centralized Logging
+- Production Deployment
 
 ---
 
-# 13. Troubleshooting
+# 12. Troubleshooting
 
 Common issues include:
 
-- Python virtual environment not activated.
-- PostgreSQL service not running.
-- Database connection errors.
+- Docker Desktop not running.
+- Docker containers fail to start.
+- PostgreSQL connection errors.
 - Missing environment variables.
 - Alembic migration conflicts.
 - Missing Python dependencies.
+- Redis connection errors.
+- Port conflicts.
 
 ---
 
-# 14. Related Documentation
+# 13. Related Documentation
 
 - PROJECT_OVERVIEW.md
 - REQUIREMENTS.md
-- 16-Project-Status.md
-- 17-Roadmap.md
-- 18-Screenshots.md
+- 16-AI-Integration.md
+- 17-Project-Status.md
+- 18-Roadmap.md
+- 21-Screenshots.md
 
 ---
 
-# 15. Revision History
+# 14. Revision History
 
 | Version | Description |
 |----------|-------------|
 | 1.0 | Initial Getting Started guide created. |
+| 1.1 | Added Docker Compose deployment instructions. |
+| 1.2 | Added Enterprise Health API and Docker execution workflow. |
 
 ---
 
-# 16. Document Status
+# 15. Document Status
 
-Completed
+Actively Maintained

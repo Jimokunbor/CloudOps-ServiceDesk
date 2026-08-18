@@ -212,7 +212,43 @@ Demonstrates successful routing of client requests through the Nginx reverse pro
 
 ---
 
-## 6.5 Redis
+## 6.5 Health API Documentation
+
+**Purpose**
+
+Demonstrates the Health API endpoint exposed through the automatically generated OpenAPI (Swagger) documentation. The endpoint provides a standardized mechanism for verifying the operational status of the CloudOps ServiceDesk application.
+
+**Screenshot**
+
+![Health Swagger](../../screenshots/01-backend/09-health-swagger.png)
+
+---
+
+## 6.6 FastAPI Health Endpoint
+
+**Purpose**
+
+Demonstrates successful application health verification through the FastAPI service. The endpoint returns the application's operational status, application name, version, deployment environment and current timestamp, providing a lightweight mechanism for service monitoring.
+
+**Screenshot**
+
+![Health Endpoint](../../screenshots/01-backend/10-health-endpoint.png)
+
+---
+
+## 6.7 Nginx Health Endpoint
+
+**Purpose**
+
+Demonstrates successful application health verification through the Nginx reverse proxy. This confirms that external requests are correctly forwarded from Nginx to the FastAPI application while preserving the expected response.
+
+**Screenshot**
+
+_To be added after implementation._
+
+---
+
+## 6.8 Redis
 
 **Purpose**
 
@@ -224,7 +260,7 @@ _To be added after Redis integration._
 
 ---
 
-## 6.6 Celery
+## 6.9 Celery
 
 **Purpose**
 
@@ -236,7 +272,7 @@ _To be added after implementation._
 
 ---
 
-## 6.7 Terraform
+## 6.10 Terraform
 
 **Purpose**
 
@@ -248,7 +284,7 @@ _To be added after implementation._
 
 ---
 
-## 6.8 Ansible
+## 6.11 Ansible
 
 **Purpose**
 
@@ -260,7 +296,7 @@ _To be added after implementation._
 
 ---
 
-## 6.9 Amazon Web Services (AWS)
+## 6.12 Amazon Web Services (AWS)
 
 **Purpose**
 
@@ -272,7 +308,7 @@ _To be added after implementation._
 
 ---
 
-## 6.10 GitHub Actions
+## 6.13 GitHub Actions
 
 **Purpose**
 
@@ -284,7 +320,7 @@ _To be added after implementation._
 
 ---
 
-## 6.11 Kubernetes
+## 6.14 Kubernetes
 
 **Purpose**
 
@@ -296,7 +332,7 @@ _To be added after implementation._
 
 ---
 
-## 6.12 Prometheus
+## 6.15 Prometheus
 
 **Purpose**
 
@@ -308,7 +344,7 @@ _To be added after implementation._
 
 ---
 
-## 6.13 Grafana
+## 6.16 Grafana
 
 **Purpose**
 
@@ -320,7 +356,7 @@ _To be added after implementation._
 
 ---
 
-## 6.14 Loki
+## 6.17 Loki
 
 **Purpose**
 
@@ -332,7 +368,7 @@ _To be added after implementation._
 
 ---
 
-## 6.15 Production Deployment
+## 6.18 Production Deployment
 
 **Purpose**
 
@@ -360,9 +396,9 @@ Every screenshot included in this document should:
 
 # 8. Related Documentation
 
-- 16-Project-Status.md
-- 17-Roadmap.md
-- 19-Getting-Started.md
+- 17-Project-Status.md
+- 18-Roadmap.md
+- 20-Getting-Started.md
 
 ---
 
@@ -373,6 +409,7 @@ Every screenshot included in this document should:
 | 1.0 | Initial screenshots documentation created. |
 | 1.1 | Backend Foundation screenshots added. |
 | 1.2 | Added Docker Compose, Docker Desktop, PostgreSQL database, Swagger through Nginx and Nginx reverse proxy screenshots. |
+| 1.3 | Added Health API documentation and FastAPI Health Endpoint screenshots. |
 
 ---
 
