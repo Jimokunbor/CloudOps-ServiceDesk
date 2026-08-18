@@ -16,7 +16,7 @@ As development progresses, this document will continue to expand, providing a co
 
 **Purpose**
 
-Demonstrates the successful startup of the FastAPI application using the Uvicorn ASGI server. The application has completed initialization and is ready to accept incoming HTTP requests.
+Demonstrates the successful startup of the FastAPI application using the Uvicorn ASGI server. The application completed initialization successfully and is ready to receive HTTP requests.
 
 **Screenshot**
 
@@ -28,7 +28,7 @@ Demonstrates the successful startup of the FastAPI application using the Uvicorn
 
 **Purpose**
 
-Demonstrates that the application is running correctly by successfully responding through the root endpoint. The response confirms the application status, environment, and current version.
+Demonstrates that the CloudOps ServiceDesk API is running correctly by successfully responding through the root endpoint. The response confirms the application status, execution environment, and current API version.
 
 **Screenshot**
 
@@ -40,7 +40,7 @@ Demonstrates that the application is running correctly by successfully respondin
 
 **Purpose**
 
-Displays the automatically generated OpenAPI (Swagger UI) documentation, including authentication endpoints, ticket management endpoints, request schemas, response models, and interactive API testing capabilities.
+Displays the automatically generated OpenAPI (Swagger UI) documentation, including Authentication endpoints, Ticket Management endpoints, request schemas, response models and interactive API testing capabilities.
 
 **Screenshot**
 
@@ -104,7 +104,7 @@ _To be added after implementation._
 
 **Purpose**
 
-Demonstrates retrieval of ticket records from the database.
+Demonstrates retrieval of ticket records from the PostgreSQL database.
 
 **Screenshot**
 
@@ -142,11 +142,11 @@ _To be added after implementation._
 
 **Purpose**
 
-Demonstrates the PostgreSQL database containing the project tables and stored records.
+Demonstrates the successful deployment of the PostgreSQL database inside a Docker container. The screenshot shows the cloudops_db database connected through pgAdmin with the project schema available for application use.
 
 **Screenshot**
 
-_To be added after implementation._
+![PostgreSQL Database](../../screenshots/01-backend/06-postgresql-database.png)
 
 ---
 
@@ -162,85 +162,185 @@ _To be added after implementation._
 
 ---
 
-# 6. Future Milestones
+# 6. Containerization and Infrastructure
 
-The following screenshots will be added as the project progresses through future implementation milestones.
+## 6.1 Docker Compose
 
-## 6.1 Docker
+**Purpose**
 
-_To be added._
+Demonstrates the successful deployment of the complete CloudOps ServiceDesk multi-container application using Docker Compose. The stack consists of FastAPI, PostgreSQL, Redis and Nginx running together.
 
----
+**Screenshot**
 
-## 6.2 Docker Compose
-
-_To be added._
+![Docker Compose Running](../../screenshots/01-backend/04-docker-compose-running.png)
 
 ---
 
-## 6.3 Redis
+## 6.2 Docker Desktop
 
-_To be added._
+**Purpose**
 
----
+Displays Docker Desktop managing the CloudOps ServiceDesk application, confirming that all application containers are running successfully.
 
-## 6.4 Celery
+**Screenshot**
 
-_To be added._
-
----
-
-## 6.5 Terraform
-
-_To be added._
+![Docker Desktop Running](../../screenshots/01-backend/05-docker-desktop-running.png)
 
 ---
 
-## 6.6 Ansible
+## 6.3 Swagger Through Nginx
 
-_To be added._
+**Purpose**
 
----
+Demonstrates that Nginx is successfully acting as a reverse proxy by exposing the FastAPI Swagger documentation through the standard HTTP port.
 
-## 6.7 Amazon Web Services (AWS)
+**Screenshot**
 
-_To be added._
-
----
-
-## 6.8 GitHub Actions
-
-_To be added._
+![Swagger Through Docker](../../screenshots/01-backend/07-swagger-docker.png)
 
 ---
 
-## 6.9 Kubernetes
+## 6.4 Nginx Reverse Proxy
 
-_To be added._
+**Purpose**
 
----
+Demonstrates successful routing of client requests through the Nginx reverse proxy to the FastAPI application, confirming the production-style network architecture.
 
-## 6.10 Prometheus
+**Screenshot**
 
-_To be added._
-
----
-
-## 6.11 Grafana
-
-_To be added._
+![Nginx Reverse Proxy](../../screenshots/01-backend/08-nginx-running.png)
 
 ---
 
-## 6.12 Loki
+## 6.5 Redis
 
-_To be added._
+**Purpose**
+
+Demonstrates Redis operating as the in-memory caching and message broker service for the CloudOps ServiceDesk platform.
+
+**Screenshot**
+
+_To be added after Redis integration._
 
 ---
 
-## 6.13 Production Deployment
+## 6.6 Celery
 
-_To be added._
+**Purpose**
+
+Demonstrates asynchronous background task processing using Celery and Redis.
+
+**Screenshot**
+
+_To be added after implementation._
+
+---
+
+## 6.7 Terraform
+
+**Purpose**
+
+Demonstrates infrastructure provisioning using Terraform.
+
+**Screenshot**
+
+_To be added after implementation._
+
+---
+
+## 6.8 Ansible
+
+**Purpose**
+
+Demonstrates automated configuration management using Ansible.
+
+**Screenshot**
+
+_To be added after implementation._
+
+---
+
+## 6.9 Amazon Web Services (AWS)
+
+**Purpose**
+
+Demonstrates deployment of CloudOps ServiceDesk resources within the AWS cloud environment.
+
+**Screenshot**
+
+_To be added after implementation._
+
+---
+
+## 6.10 GitHub Actions
+
+**Purpose**
+
+Demonstrates Continuous Integration (CI) workflow execution using GitHub Actions.
+
+**Screenshot**
+
+_To be added after implementation._
+
+---
+
+## 6.11 Kubernetes
+
+**Purpose**
+
+Demonstrates deployment and orchestration of CloudOps ServiceDesk using Kubernetes.
+
+**Screenshot**
+
+_To be added after implementation._
+
+---
+
+## 6.12 Prometheus
+
+**Purpose**
+
+Demonstrates infrastructure and application monitoring using Prometheus.
+
+**Screenshot**
+
+_To be added after implementation._
+
+---
+
+## 6.13 Grafana
+
+**Purpose**
+
+Demonstrates dashboard visualization for infrastructure and application monitoring using Grafana.
+
+**Screenshot**
+
+_To be added after implementation._
+
+---
+
+## 6.14 Loki
+
+**Purpose**
+
+Demonstrates centralized log aggregation and visualization using Loki.
+
+**Screenshot**
+
+_To be added after implementation._
+
+---
+
+## 6.15 Production Deployment
+
+**Purpose**
+
+Demonstrates the final production deployment of CloudOps ServiceDesk.
+
+**Screenshot**
+
+_To be added after implementation._
 
 ---
 
@@ -248,11 +348,13 @@ _To be added._
 
 Every screenshot included in this document should:
 
-- Be clear, readable, and high resolution.
-- Display only the relevant feature or implementation.
+- Be clear, readable and high resolution.
+- Display only the relevant implementation or completed feature.
 - Follow the project's screenshot naming convention.
 - Reflect the latest implementation.
 - Include a short purpose describing what the screenshot demonstrates.
+- Be captured after successful execution or deployment.
+- Exclude sensitive information such as passwords, tokens and secret keys.
 
 ---
 
@@ -270,9 +372,10 @@ Every screenshot included in this document should:
 |----------|-------------|
 | 1.0 | Initial screenshots documentation created. |
 | 1.1 | Backend Foundation screenshots added. |
+| 1.2 | Added Docker Compose, Docker Desktop, PostgreSQL database, Swagger through Nginx and Nginx reverse proxy screenshots. |
 
 ---
 
 # 10. Document Status
 
-Completed
+Actively Maintained
