@@ -3,6 +3,8 @@ from datetime import datetime
 
 from fastapi import APIRouter
 
+from app.services.background_tasks import send_notification
+
 router = APIRouter(
     prefix="/health",
     tags=["Health"],
@@ -11,6 +13,9 @@ router = APIRouter(
 
 @router.get("/")
 def health_check():
+
+    send_notification.delay("Health endpoint checked successfully.")
+
     return {
         "status": "healthy",
         "application": "CloudOps ServiceDesk",

@@ -4,7 +4,7 @@
 
 CloudOps ServiceDesk exposes a RESTful API that enables secure communication between client applications and the backend platform. The API follows REST principles and returns JSON responses for all supported operations.
 
-The API has been designed using FastAPI and follows a modular architecture that separates authentication, business logic, infrastructure services, and data access into independent layers.
+The API has been designed using FastAPI and follows a modular architecture that separates authentication, business logic, infrastructure services, background processing and data access into independent layers.
 
 Interactive API documentation is automatically generated through Swagger UI and OpenAPI.
 
@@ -23,6 +23,7 @@ The API has been designed according to the following principles:
 - Consistent Error Handling
 - Modular Endpoint Design
 - Enterprise Health Monitoring
+- Asynchronous Background Processing
 
 ---
 
@@ -45,7 +46,7 @@ Current Endpoints
 | /register | POST | Register a new user account. |
 | /login | POST | Authenticate a user and return a JWT access token. |
 | /me | GET | Return information about the authenticated user. |
-| /admin | GET | Example endpoint restricted to administrators. |
+| /admin | GET | Endpoint restricted to administrators. |
 
 Access
 
@@ -105,7 +106,7 @@ Current Endpoints
 
 | Endpoint | Method | Description |
 |----------|--------|-------------|
-| / | GET | Returns the current operational status of the application, environment, version and timestamp. |
+| / | GET | Returns the application's operational status, environment, version and current timestamp while triggering an asynchronous background notification task. |
 
 Example Response
 
@@ -122,11 +123,33 @@ Example Response
 Supported Consumers
 
 - Docker Health Checks
+- Docker Compose
 - Nginx Reverse Proxy
 - Kubernetes Readiness Probes
 - Kubernetes Liveness Probes
 - Monitoring Systems
 - Cloud Load Balancers
+
+---
+
+# Background Processing
+
+Purpose
+
+CloudOps ServiceDesk supports asynchronous task execution using Celery and Redis.
+
+Current Background Tasks
+
+| Task | Description |
+|------|-------------|
+| send_notification | Executes notification processing asynchronously without blocking API requests. |
+
+Infrastructure
+
+- Redis Message Broker
+- Celery Worker
+- Docker Container
+- Asynchronous Task Queue
 
 ---
 
@@ -150,7 +173,7 @@ Validation includes:
 
 Protected endpoints require a valid JWT Bearer Token.
 
-Authentication flow
+Authentication Flow
 
 ```text
 User Login
@@ -202,13 +225,17 @@ Common response codes include:
 
 # Interactive API Documentation
 
+Docker Deployment
+
 Swagger UI
 
 ```text
 http://localhost/docs
 ```
 
-FastAPI Swagger (Development)
+Local Development
+
+Swagger UI
 
 ```text
 http://localhost:8000/docs
@@ -222,10 +249,29 @@ http://localhost/health/
 
 ---
 
+# Current Enterprise Features
+
+The current API platform includes:
+
+- RESTful API
+- JWT Authentication
+- Role-Based Access Control (RBAC)
+- Ticket Management
+- Enterprise Health API
+- Docker Health Checks
+- Structured Logging
+- Environment Separation
+- Redis Integration
+- Celery Background Processing
+- OpenAPI (Swagger)
+
+---
+
 # Future API Expansion
 
 Planned API modules include:
 
+- Artificial Intelligence API
 - User Administration API
 - Dashboard API
 - Reporting API
@@ -233,7 +279,6 @@ Planned API modules include:
 - File Upload API
 - Audit Log API
 - Asset Management API
-- Artificial Intelligence API
 - Knowledge Base API
 - Analytics API
 
@@ -256,6 +301,7 @@ Planned API modules include:
 | 1.0 | Initial API Reference documentation created. |
 | 1.1 | Authentication and Ticket Management APIs documented. |
 | 1.2 | Health API documented and enterprise monitoring endpoints added. |
+| 1.3 | Added Docker Health Checks, Structured Logging, Environment Separation, Redis Integration and Celery Background Processing. |
 
 ---
 

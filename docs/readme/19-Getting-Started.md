@@ -4,15 +4,15 @@
 
 This guide explains how to set up and run CloudOps ServiceDesk in a local development environment.
 
-It is intended for developers, technical reviewers, recruiters, and interviewers who want to explore the project, understand its architecture, or contribute to its development.
+It is intended for developers, technical reviewers, recruiters and interviewers who want to explore the project, understand its architecture or contribute to its development.
 
-The guide will continue to evolve as additional enterprise technologies and cloud deployment environments are introduced throughout the project lifecycle.
+The guide will continue to evolve as additional enterprise technologies, cloud-native services and production deployment environments are introduced throughout the project lifecycle.
 
 ---
 
 # 2. Prerequisites
 
-Before running the project, ensure the following software is installed on your machine.
+Before running the project, ensure the following software is installed.
 
 | Software | Purpose |
 |----------|---------|
@@ -93,6 +93,10 @@ SECRET_KEY=your_secret_key
 ALGORITHM=HS256
 
 ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+ENVIRONMENT=development
+
+DEBUG=True
 ```
 
 ---
@@ -115,14 +119,15 @@ Start all services.
 docker compose up
 ```
 
-This starts:
+The following services will start automatically:
 
 - FastAPI
 - PostgreSQL
 - Redis
+- Celery Worker
 - Nginx
 
-The application will be available at:
+Application
 
 ```text
 http://localhost
@@ -144,7 +149,7 @@ http://localhost/health/
 
 ## Option 2 — Local Development
 
-Run database migrations.
+Run the database migrations.
 
 ```bash
 alembic upgrade head
@@ -156,7 +161,13 @@ Start the FastAPI application.
 uvicorn app.main:app --reload
 ```
 
-The application will be available at:
+In a second terminal, start the Celery worker.
+
+```bash
+celery -A app.celery.celery_app worker --loglevel=info
+```
+
+Application
 
 ```text
 http://127.0.0.1:8000
@@ -184,9 +195,14 @@ Confirm the following:
 - FastAPI application starts successfully.
 - PostgreSQL container is running.
 - Redis container is running.
+- Celery worker is running.
 - Nginx reverse proxy is running.
+- Docker Health Check reports the application as healthy.
+- Structured application logging is working.
 - Swagger UI loads successfully.
 - Health endpoint returns a successful response.
+- Redis connects successfully.
+- Background tasks execute successfully.
 - User registration works.
 - User login returns a JWT access token.
 - Protected endpoints require authentication.
@@ -216,6 +232,7 @@ Key directories include:
 
 The project currently includes:
 
+- Python
 - FastAPI
 - PostgreSQL
 - SQLAlchemy
@@ -225,7 +242,11 @@ The project currently includes:
 - Docker
 - Docker Compose
 - Redis
+- Celery
 - Nginx Reverse Proxy
+- Docker Health Checks
+- Structured Logging
+- Environment Separation
 - Enterprise Health API
 - OpenAPI (Swagger)
 
@@ -235,13 +256,14 @@ The project currently includes:
 
 The following capabilities will be introduced during future development milestones.
 
-- Artificial Intelligence Integration
-- Celery Background Processing
+- AI Service Layer
+- Intelligent Ticket Classification
+- Ticket Summarization
 - Terraform Infrastructure Provisioning
 - Ansible Configuration Management
-- Amazon Web Services (AWS)
 - GitHub Actions CI/CD
 - Kubernetes Orchestration
+- Amazon Web Services (AWS)
 - Prometheus Monitoring
 - Grafana Dashboards
 - Loki Centralized Logging
@@ -256,10 +278,12 @@ Common issues include:
 - Docker Desktop not running.
 - Docker containers fail to start.
 - PostgreSQL connection errors.
+- Redis connection errors.
+- Celery worker not starting.
+- Docker Health Check reports an unhealthy container.
 - Missing environment variables.
 - Alembic migration conflicts.
 - Missing Python dependencies.
-- Redis connection errors.
 - Port conflicts.
 
 ---
@@ -282,6 +306,7 @@ Common issues include:
 | 1.0 | Initial Getting Started guide created. |
 | 1.1 | Added Docker Compose deployment instructions. |
 | 1.2 | Added Enterprise Health API and Docker execution workflow. |
+| 1.3 | Added Structured Logging, Environment Separation, Redis Integration and Celery Background Processing. |
 
 ---
 

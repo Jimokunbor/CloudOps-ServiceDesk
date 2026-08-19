@@ -142,7 +142,7 @@ _To be added after implementation._
 
 **Purpose**
 
-Demonstrates the successful deployment of the PostgreSQL database inside a Docker container. The screenshot shows the cloudops_db database connected through pgAdmin with the project schema available for application use.
+Demonstrates the successful deployment of the PostgreSQL database inside a Docker container. The screenshot shows the `cloudops_db` database connected through pgAdmin with the project schema available for application use.
 
 **Screenshot**
 
@@ -168,7 +168,7 @@ _To be added after implementation._
 
 **Purpose**
 
-Demonstrates the successful deployment of the complete CloudOps ServiceDesk multi-container application using Docker Compose. The stack consists of FastAPI, PostgreSQL, Redis and Nginx running together.
+Demonstrates the successful deployment of the complete CloudOps ServiceDesk multi-container platform using Docker Compose. The deployment includes FastAPI, PostgreSQL, Redis and Nginx operating together as an integrated application stack.
 
 **Screenshot**
 
@@ -192,7 +192,7 @@ Displays Docker Desktop managing the CloudOps ServiceDesk application, confirmin
 
 **Purpose**
 
-Demonstrates that Nginx is successfully acting as a reverse proxy by exposing the FastAPI Swagger documentation through the standard HTTP port.
+Demonstrates that Nginx successfully exposes the FastAPI Swagger documentation through the standard HTTP port, confirming correct reverse proxy configuration.
 
 **Screenshot**
 
@@ -204,7 +204,7 @@ Demonstrates that Nginx is successfully acting as a reverse proxy by exposing th
 
 **Purpose**
 
-Demonstrates successful routing of client requests through the Nginx reverse proxy to the FastAPI application, confirming the production-style network architecture.
+Demonstrates successful routing of client requests through the Nginx reverse proxy to the FastAPI application, confirming a production-style networking architecture.
 
 **Screenshot**
 
@@ -216,7 +216,7 @@ Demonstrates successful routing of client requests through the Nginx reverse pro
 
 **Purpose**
 
-Demonstrates the Health API endpoint exposed through the automatically generated OpenAPI (Swagger) documentation. The endpoint provides a standardized mechanism for verifying the operational status of the CloudOps ServiceDesk application.
+Demonstrates the Health API endpoint exposed through the automatically generated OpenAPI (Swagger) documentation. The endpoint provides a standardized mechanism for verifying the operational status of the CloudOps ServiceDesk platform.
 
 **Screenshot**
 
@@ -228,7 +228,7 @@ Demonstrates the Health API endpoint exposed through the automatically generated
 
 **Purpose**
 
-Demonstrates successful application health verification through the FastAPI service. The endpoint returns the application's operational status, application name, version, deployment environment and current timestamp, providing a lightweight mechanism for service monitoring.
+Demonstrates successful application health verification through the FastAPI service. The endpoint returns the application's operational status, application name, version, deployment environment and current timestamp.
 
 **Screenshot**
 
@@ -236,11 +236,83 @@ Demonstrates successful application health verification through the FastAPI serv
 
 ---
 
-## 6.7 Nginx Health Endpoint
+## 6.7 Docker Health Check
 
 **Purpose**
 
-Demonstrates successful application health verification through the Nginx reverse proxy. This confirms that external requests are correctly forwarded from Nginx to the FastAPI application while preserving the expected response.
+Demonstrates Docker's built-in health monitoring successfully verifying the operational status of the FastAPI application. The application container reports a healthy status after executing automated health checks against the `/health` endpoint.
+
+**Screenshot**
+
+![Docker Health Check](../../screenshots/01-backend/11-docker-healthcheck.png)
+
+---
+
+## 6.8 Structured Logging
+
+**Purpose**
+
+Demonstrates successful structured application logging. The screenshot confirms that the application generates and writes structured log entries to the `cloudops.log` file, recording application startup, environment information and infrastructure connectivity.
+
+**Screenshot**
+
+![Structured Logging](../../screenshots/01-backend/12-log-file-verification.png)
+
+---
+
+## 6.9 Environment Configuration
+
+**Purpose**
+
+Demonstrates successful separation of application environments through dedicated Development and Production configuration modules. This implementation provides a scalable configuration strategy suitable for enterprise deployment.
+
+**Screenshot**
+
+![Environment Configuration](../../screenshots/01-backend/13-development-environment.png)
+
+---
+
+## 6.10 Redis Integration
+
+**Purpose**
+
+Demonstrates successful integration of Redis as the platform's in-memory cache and message broker. The application establishes a connection with Redis during startup and confirms service availability.
+
+**Screenshot**
+
+![Redis Integration](../../screenshots/01-backend/14-redis-integration.png)
+
+---
+
+## 6.11 Celery Background Processing
+
+**Purpose**
+
+Demonstrates successful asynchronous background task execution using Celery and Redis. The screenshot confirms that notification tasks are dispatched by the FastAPI application, received by the Celery worker, processed successfully and completed without blocking client requests.
+
+**Screenshot**
+
+![Celery Background Processing](../../screenshots/01-backend/15-celery-background-task-execution.png)
+
+---
+
+## 6.12 Docker Multi-Container Platform
+
+**Purpose**
+
+Demonstrates the complete CloudOps ServiceDesk platform operating as a production-style multi-container environment. The screenshot confirms that FastAPI, PostgreSQL, Redis, Celery and Nginx are all running successfully under Docker Compose.
+
+**Screenshot**
+
+![Docker Multi-Container Platform](../../screenshots/01-backend/16-docker-multi-container-platform.png)
+
+---
+
+## 6.13 AI Service Layer
+
+**Purpose**
+
+Demonstrates integration of enterprise AI services for intelligent ticket analysis, categorization and automation.
 
 **Screenshot**
 
@@ -248,31 +320,7 @@ _To be added after implementation._
 
 ---
 
-## 6.8 Redis
-
-**Purpose**
-
-Demonstrates Redis operating as the in-memory caching and message broker service for the CloudOps ServiceDesk platform.
-
-**Screenshot**
-
-_To be added after Redis integration._
-
----
-
-## 6.9 Celery
-
-**Purpose**
-
-Demonstrates asynchronous background task processing using Celery and Redis.
-
-**Screenshot**
-
-_To be added after implementation._
-
----
-
-## 6.10 Terraform
+## 6.14 Terraform
 
 **Purpose**
 
@@ -284,7 +332,7 @@ _To be added after implementation._
 
 ---
 
-## 6.11 Ansible
+## 6.15 Ansible
 
 **Purpose**
 
@@ -296,19 +344,7 @@ _To be added after implementation._
 
 ---
 
-## 6.12 Amazon Web Services (AWS)
-
-**Purpose**
-
-Demonstrates deployment of CloudOps ServiceDesk resources within the AWS cloud environment.
-
-**Screenshot**
-
-_To be added after implementation._
-
----
-
-## 6.13 GitHub Actions
+## 6.16 GitHub Actions
 
 **Purpose**
 
@@ -320,7 +356,7 @@ _To be added after implementation._
 
 ---
 
-## 6.14 Kubernetes
+## 6.17 Kubernetes
 
 **Purpose**
 
@@ -332,7 +368,19 @@ _To be added after implementation._
 
 ---
 
-## 6.15 Prometheus
+## 6.18 Amazon Web Services (AWS)
+
+**Purpose**
+
+Demonstrates deployment of CloudOps ServiceDesk resources within the AWS cloud environment.
+
+**Screenshot**
+
+_To be added after implementation._
+
+---
+
+## 6.19 Prometheus
 
 **Purpose**
 
@@ -344,7 +392,7 @@ _To be added after implementation._
 
 ---
 
-## 6.16 Grafana
+## 6.20 Grafana
 
 **Purpose**
 
@@ -356,7 +404,7 @@ _To be added after implementation._
 
 ---
 
-## 6.17 Loki
+## 6.21 Loki
 
 **Purpose**
 
@@ -368,7 +416,7 @@ _To be added after implementation._
 
 ---
 
-## 6.18 Production Deployment
+## 6.22 Production Deployment
 
 **Purpose**
 
@@ -410,6 +458,7 @@ Every screenshot included in this document should:
 | 1.1 | Backend Foundation screenshots added. |
 | 1.2 | Added Docker Compose, Docker Desktop, PostgreSQL database, Swagger through Nginx and Nginx reverse proxy screenshots. |
 | 1.3 | Added Health API documentation and FastAPI Health Endpoint screenshots. |
+| 1.4 | Added Docker Health Check, Structured Logging, Environment Configuration, Redis Integration, Celery Background Processing and Docker Multi-Container Platform screenshots. |
 
 ---
 
