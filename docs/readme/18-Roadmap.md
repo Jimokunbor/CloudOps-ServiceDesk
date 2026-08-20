@@ -165,7 +165,7 @@ Objectives
 
 Status
 
-Next Phase
+Completed
 
 Objectives
 
@@ -185,7 +185,7 @@ Objectives
 
 Status
 
-Planned
+Next Phase
 
 Objectives
 
@@ -313,17 +313,18 @@ The roadmap will be considered complete when:
 
 # Next Immediate Milestone
 
-The next development phase is the implementation of the AI Service Layer.
+The next development phase is the implementation of Infrastructure as Code (Terraform).
 
 This phase will introduce:
 
-- Enterprise AI architecture
-- AI provider abstraction
-- Prompt management
-- Intelligent ticket categorization
-- Automatic priority recommendation
-- Ticket summarization
-- Foundation for future OpenAI, Azure OpenAI, Ollama and AWS Bedrock integrations
+- Infrastructure as Code using Terraform
+- Automated AWS resource provisioning
+- Virtual Private Cloud (VPC) configuration
+- Identity and Access Management (IAM)
+- Security Groups
+- Network architecture
+- Reusable infrastructure modules
+- Foundation for automated cloud deployment
 
 ---
 
@@ -344,6 +345,7 @@ This phase will introduce:
 | 1.1 | Docker infrastructure and Health Monitoring completed. |
 | 1.2 | AI Integration phase introduced and roadmap expanded. |
 | 1.3 | Added Docker Health Checks, Structured Logging, Environment Separation, Redis Integration and Celery Background Processing. Updated roadmap for the AI Service Layer as the next implementation phase. |
+| 1.4 | Completed the Artificial Intelligence Service Layer milestone and updated the roadmap to position Terraform as the next development phase. |
 
 ---
 

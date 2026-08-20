@@ -203,6 +203,9 @@ Confirm the following:
 - Health endpoint returns a successful response.
 - Redis connects successfully.
 - Background tasks execute successfully.
+- Artificial Intelligence endpoints are available in Swagger UI.
+- AI service imports successfully during application startup.
+- AI classification, summarization and priority recommendation endpoints execute successfully.
 - User registration works.
 - User login returns a JWT access token.
 - Protected endpoints require authentication.
@@ -248,6 +251,10 @@ The project currently includes:
 - Structured Logging
 - Environment Separation
 - Enterprise Health API
+- Artificial Intelligence Service Layer
+- Ticket Classification API
+- Ticket Summarization API
+- Ticket Priority Recommendation API
 - OpenAPI (Swagger)
 
 ---
@@ -256,9 +263,6 @@ The project currently includes:
 
 The following capabilities will be introduced during future development milestones.
 
-- AI Service Layer
-- Intelligent Ticket Classification
-- Ticket Summarization
 - Terraform Infrastructure Provisioning
 - Ansible Configuration Management
 - GitHub Actions CI/CD
@@ -307,6 +311,7 @@ Common issues include:
 | 1.1 | Added Docker Compose deployment instructions. |
 | 1.2 | Added Enterprise Health API and Docker execution workflow. |
 | 1.3 | Added Structured Logging, Environment Separation, Redis Integration and Celery Background Processing. |
+| 1.4 | Added Artificial Intelligence Service Layer and AI API execution workflow. |
 
 ---
 

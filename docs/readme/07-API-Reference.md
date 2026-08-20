@@ -4,7 +4,7 @@
 
 CloudOps ServiceDesk exposes a RESTful API that enables secure communication between client applications and the backend platform. The API follows REST principles and returns JSON responses for all supported operations.
 
-The API has been designed using FastAPI and follows a modular architecture that separates authentication, business logic, infrastructure services, background processing and data access into independent layers.
+The API has been designed using FastAPI and follows a modular architecture that separates authentication, business logic, artificial intelligence, infrastructure services, background processing and data access into independent layers.
 
 Interactive API documentation is automatically generated through Swagger UI and OpenAPI.
 
@@ -24,6 +24,7 @@ The API has been designed according to the following principles:
 - Modular Endpoint Design
 - Enterprise Health Monitoring
 - Asynchronous Background Processing
+- Artificial Intelligence Service Integration
 
 ---
 
@@ -87,6 +88,44 @@ Access
 - Authenticated User
 - Technician
 - Administrator
+
+---
+
+# Artificial Intelligence API
+
+Base Path
+
+```text
+/ai
+```
+
+Purpose
+
+Provides Artificial Intelligence capabilities for ticket analysis and intelligent assistance within CloudOps ServiceDesk.
+
+Current Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| /classify | POST | Classify an IT support ticket using the AI service layer. |
+| /summarize | POST | Generate a concise summary of an IT support ticket. |
+| /priority | POST | Recommend an appropriate priority level for an IT support ticket. |
+
+Current Capabilities
+
+- AI Provider Abstraction
+- Prompt Management
+- Ticket Classification
+- Ticket Summarization
+- Priority Recommendation
+- Provider-independent AI Architecture
+
+Supported AI Providers
+
+- OpenAI
+- Azure OpenAI
+- Ollama
+- AWS Bedrock
 
 ---
 
@@ -257,6 +296,10 @@ The current API platform includes:
 - JWT Authentication
 - Role-Based Access Control (RBAC)
 - Ticket Management
+- Artificial Intelligence Service Layer
+- AI Ticket Classification
+- AI Ticket Summarization
+- AI Priority Recommendation
 - Enterprise Health API
 - Docker Health Checks
 - Structured Logging
@@ -271,7 +314,6 @@ The current API platform includes:
 
 Planned API modules include:
 
-- Artificial Intelligence API
 - User Administration API
 - Dashboard API
 - Reporting API
@@ -290,6 +332,7 @@ Planned API modules include:
 - 08-Authentication.md
 - 09-Ticket-Lifecycle.md
 - 10-Database-Design.md
+- 16-AI-Integration.md
 - 17-Project-Status.md
 
 ---
@@ -302,6 +345,7 @@ Planned API modules include:
 | 1.1 | Authentication and Ticket Management APIs documented. |
 | 1.2 | Health API documented and enterprise monitoring endpoints added. |
 | 1.3 | Added Docker Health Checks, Structured Logging, Environment Separation, Redis Integration and Celery Background Processing. |
+| 1.4 | Added the Artificial Intelligence API, AI provider abstraction, ticket classification, ticket summarization and priority recommendation endpoints. |
 
 ---
 
