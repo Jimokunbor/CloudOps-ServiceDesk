@@ -46,43 +46,115 @@ Demonstrates successful testing of the CloudOps ServiceDesk Artificial Intellige
 
 ---
 
-## 6.17 Terraform
+## 6.17 Terraform Project Structure
 
 **Purpose**
 
-Demonstrates infrastructure provisioning using Terraform.
+Demonstrates the professional Terraform project structure adopted for the CloudOps ServiceDesk infrastructure. The screenshot confirms the organization of Terraform configuration files, reusable modules, environment directories and supporting scripts, following Infrastructure as Code (IaC) best practices for enterprise cloud deployments.
 
 **Screenshot**
 
-_To be added after implementation._
+![Terraform Project Structure](../../screenshots/01-backend/21-terraform-project-structure.png)
 
 ---
 
-## 6.18 Ansible
+## 6.18 Terraform Installation Verification
 
 **Purpose**
 
-Demonstrates automated configuration management using Ansible.
+Demonstrates successful installation and verification of Terraform on the local development environment. The screenshot confirms that Terraform is correctly installed and accessible from the command line, providing the foundation for infrastructure provisioning and management.
 
 **Screenshot**
 
-_To be added after implementation._
+![Terraform Installation Verification](../../screenshots/01-backend/22-terraform-installation-verification.png)
 
 ---
 
-## 6.19 GitHub Actions
+## 6.19 AWS CLI Installation Verification
 
 **Purpose**
 
-Demonstrates Continuous Integration (CI) workflow execution using GitHub Actions.
+Demonstrates successful installation and configuration of the AWS Command Line Interface (AWS CLI). The screenshot confirms that the AWS CLI is installed correctly and available for authenticating and interacting with AWS services from the local development environment.
 
 **Screenshot**
 
-_To be added after implementation._
+![AWS CLI Installation Verification](../../screenshots/01-backend/23-aws-cli-installation-verification.png)
 
 ---
 
-## 6.20 Kubernetes
+## 6.20 Terraform Initialization
+
+**Purpose**
+
+Demonstrates successful initialization of the Terraform working directory. The screenshot confirms that Terraform downloaded the required provider plugins, initialized the backend configuration and prepared the project for infrastructure provisioning.
+
+**Screenshot**
+
+![Terraform Initialization](../../screenshots/01-backend/24-terraform-initialization.png)
+
+---
+
+## 6.21 Terraform Validation
+
+**Purpose**
+
+Demonstrates successful validation of the Terraform configuration. The screenshot confirms that all Terraform configuration files are syntactically correct and free from validation errors, ensuring that the infrastructure definition is ready for planning and deployment.
+
+**Screenshot**
+
+![Terraform Validation](../../screenshots/01-backend/25-terraform-validation.png)
+
+---
+
+## 6.22 Terraform Formatting
+
+**Purpose**
+
+Demonstrates successful formatting of the Terraform configuration using HashiCorp's official formatting standard. The screenshot confirms that the infrastructure code follows a consistent and professional coding style across all Terraform configuration files.
+
+**Screenshot**
+
+![Terraform Formatting](../../screenshots/01-backend/26-terraform-formatting.png)
+
+---
+
+## 6.23 Terraform Execution Plan
+
+**Purpose**
+
+Demonstrates successful execution of the Terraform planning phase. The screenshot confirms that Terraform compared the current configuration with the AWS environment and generated an execution plan, verifying that the infrastructure state matches the configuration before deployment.
+
+**Screenshot**
+
+![Terraform Execution Plan](../../screenshots/01-backend/27-terraform-plan.png)
+
+---
+
+## 6.24 Ansible
+
+**Purpose**
+
+Demonstrates automated infrastructure configuration and application provisioning using Ansible.
+
+**Screenshot**
+
+*To be added after implementation.*
+
+---
+
+## 6.25 GitHub Actions
+
+**Purpose**
+
+Demonstrates Continuous Integration (CI) workflow execution using GitHub Actions for automated testing, validation and deployment.
+
+**Screenshot**
+
+*To be added after implementation.*
+
+---
+
+## 6.26 Kubernetes
 
 **Purpose**
 
@@ -90,23 +162,23 @@ Demonstrates deployment and orchestration of CloudOps ServiceDesk using Kubernet
 
 **Screenshot**
 
-_To be added after implementation._
+*To be added after implementation.*
 
 ---
 
-## 6.21 Amazon Web Services (AWS)
+## 6.27 Amazon Web Services (AWS)
 
 **Purpose**
 
-Demonstrates deployment of CloudOps ServiceDesk resources within the AWS cloud environment.
+Demonstrates deployment of CloudOps ServiceDesk infrastructure and application resources within the Amazon Web Services cloud environment.
 
 **Screenshot**
 
-_To be added after implementation._
+*To be added after implementation.*
 
 ---
 
-## 6.22 Prometheus
+## 6.28 Prometheus
 
 **Purpose**
 
@@ -114,11 +186,11 @@ Demonstrates infrastructure and application monitoring using Prometheus.
 
 **Screenshot**
 
-_To be added after implementation._
+*To be added after implementation.*
 
 ---
 
-## 6.23 Grafana
+## 6.29 Grafana
 
 **Purpose**
 
@@ -126,31 +198,31 @@ Demonstrates dashboard visualization for infrastructure and application monitori
 
 **Screenshot**
 
-_To be added after implementation._
+*To be added after implementation.*
 
 ---
 
-## 6.24 Loki
+## 6.30 Loki
 
 **Purpose**
 
-Demonstrates centralized log aggregation and visualization using Loki.
+Demonstrates centralized log aggregation, storage and visualization using Loki.
 
 **Screenshot**
 
-_To be added after implementation._
+*To be added after implementation.*
 
 ---
 
-## 6.25 Production Deployment
+## 6.31 Production Deployment
 
 **Purpose**
 
-Demonstrates the final production deployment of CloudOps ServiceDesk.
+Demonstrates the final production deployment of the CloudOps ServiceDesk application within the cloud environment.
 
 **Screenshot**
 
-_To be added after implementation._
+*To be added after implementation.*
 
 ---
 
@@ -185,7 +257,8 @@ Every screenshot included in this document should:
 | 1.2 | Added Docker Compose, Docker Desktop, PostgreSQL database, Swagger through Nginx and Nginx reverse proxy screenshots. |
 | 1.3 | Added Health API documentation and FastAPI Health Endpoint screenshots. |
 | 1.4 | Added Docker Health Check, Structured Logging, Environment Configuration, Redis Integration, Celery Background Processing and Docker Multi-Container Platform screenshots. |
-| 1.5 | Added AI Module Import Verification, AI API Documentation, AI Runtime Verification and AI Service Testing screenshots.
+| 1.5 | Added AI Module Import Verification, AI API Documentation, AI Runtime Verification and AI Service Testing screenshots. |
+| 1.6 | Added Terraform Project Structure, Terraform Installation Verification, AWS CLI Installation Verification, Terraform Initialization, Terraform Validation, Terraform Formatting and Terraform Execution Plan screenshots. |
 
 ---
 

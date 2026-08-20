@@ -15,15 +15,25 @@ Interactive API documentation is automatically generated through Swagger UI and 
 The API has been designed according to the following principles:
 
 - RESTful Architecture
+
 - Stateless Communication
+
 - JSON Data Exchange
+
 - JWT Authentication
+
 - Role-Based Access Control (RBAC)
+
 - Input Validation
+
 - Consistent Error Handling
+
 - Modular Endpoint Design
+
 - Enterprise Health Monitoring
+
 - Asynchronous Background Processing
+
 - Artificial Intelligence Service Integration
 
 ---
@@ -52,7 +62,9 @@ Current Endpoints
 Access
 
 - Guest
+
 - Authenticated User
+
 - Administrator
 
 ---
@@ -86,7 +98,9 @@ Current Endpoints
 Access
 
 - Authenticated User
+
 - Technician
+
 - Administrator
 
 ---
@@ -114,17 +128,25 @@ Current Endpoints
 Current Capabilities
 
 - AI Provider Abstraction
+
 - Prompt Management
+
 - Ticket Classification
+
 - Ticket Summarization
+
 - Priority Recommendation
+
 - Provider-independent AI Architecture
 
 Supported AI Providers
 
 - OpenAI
+
 - Azure OpenAI
+
 - Ollama
+
 - AWS Bedrock
 
 ---
@@ -162,11 +184,17 @@ Example Response
 Supported Consumers
 
 - Docker Health Checks
+
 - Docker Compose
+
 - Nginx Reverse Proxy
+
 - Kubernetes Readiness Probes
+
 - Kubernetes Liveness Probes
+
 - Monitoring Systems
+
 - Cloud Load Balancers
 
 ---
@@ -186,8 +214,11 @@ Current Background Tasks
 Infrastructure
 
 - Redis Message Broker
+
 - Celery Worker
+
 - Docker Container
+
 - Asynchronous Task Queue
 
 ---
@@ -199,11 +230,17 @@ The API validates all incoming requests using Pydantic models.
 Validation includes:
 
 - Required fields
+
 - Data types
+
 - Enumerations
+
 - UUID validation
+
 - Request schema validation
+
 - Automatic request serialization
+
 - Automatic response validation
 
 ---
@@ -277,7 +314,7 @@ Local Development
 Swagger UI
 
 ```text
-http://localhost:8000/docs
+http://127.0.0.1:8000/docs
 ```
 
 Health Endpoint
@@ -306,6 +343,8 @@ The current API platform includes:
 - Environment Separation
 - Redis Integration
 - Celery Background Processing
+- Terraform Infrastructure as Code Foundation
+- AWS CLI Integration
 - OpenAPI (Swagger)
 
 ---
@@ -346,6 +385,7 @@ Planned API modules include:
 | 1.2 | Health API documented and enterprise monitoring endpoints added. |
 | 1.3 | Added Docker Health Checks, Structured Logging, Environment Separation, Redis Integration and Celery Background Processing. |
 | 1.4 | Added the Artificial Intelligence API, AI provider abstraction, ticket classification, ticket summarization and priority recommendation endpoints. |
+| 1.5 | Added Terraform Infrastructure as Code foundation and AWS CLI integration to the enterprise platform documentation. |
 
 ---
 
