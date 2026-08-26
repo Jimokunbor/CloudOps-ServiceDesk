@@ -2,9 +2,9 @@
 
 ## Introduction
 
-CloudOps ServiceDesk has been designed as an enterprise-oriented engineering project that demonstrates technologies, architectural patterns, and operational practices commonly adopted within modern software development, cloud computing, and DevOps environments.
+CloudOps ServiceDesk has been designed as an enterprise-oriented engineering project that demonstrates technologies, architectural patterns and operational practices commonly adopted within modern software engineering, cloud computing, Infrastructure as Code (IaC) and DevOps environments.
 
-Rather than focusing solely on application functionality, the project has been structured to showcase the complete software delivery lifecycle, from backend development and database design to infrastructure automation, deployment, monitoring, and operational management.
+Rather than focusing solely on application functionality, the project demonstrates the complete software delivery lifecycle, including backend engineering, database design, cloud infrastructure provisioning, automation, containerization, deployment, monitoring and enterprise documentation.
 
 The following sections describe the enterprise technologies and engineering disciplines demonstrated throughout the project.
 
@@ -20,8 +20,10 @@ CloudOps ServiceDesk demonstrates enterprise backend development through:
 - Layered application design.
 - RESTful API development.
 - Business service separation.
-- Dependency injection.
-- Request and response validation.
+- Dependency Injection.
+- Request validation.
+- Response validation.
+- Enterprise service architecture.
 
 Current Status
 
@@ -38,6 +40,7 @@ The project demonstrates secure identity and access management using:
 - Role-Based Access Control (RBAC).
 - Password hashing.
 - Protected API endpoints.
+- Current user validation.
 
 Current Status
 
@@ -55,6 +58,7 @@ The platform demonstrates enterprise database practices through:
 - UUID primary keys.
 - Relational database design.
 - Entity relationships.
+- Version-controlled schema management.
 
 Current Status
 
@@ -70,8 +74,28 @@ The REST API demonstrates:
 - JSON communication.
 - OpenAPI Specification.
 - Swagger UI documentation.
+- Request validation.
+- Response validation.
 - Consistent error handling.
-- Modular endpoint organisation.
+- Modular endpoint organization.
+
+Current Status
+
+Implemented
+
+---
+
+## Artificial Intelligence Engineering
+
+The platform demonstrates enterprise AI architecture through:
+
+- AI service layer.
+- Provider abstraction.
+- Prompt management.
+- Ticket classification.
+- Ticket summarization.
+- Priority recommendation.
+- Provider-independent architecture.
 
 Current Status
 
@@ -81,17 +105,63 @@ Implemented
 
 ## Infrastructure as Code
 
-Infrastructure provisioning will demonstrate:
+The platform demonstrates Infrastructure as Code (IaC) through:
 
 - Terraform.
 - Declarative infrastructure.
-- Repeatable deployments.
-- Infrastructure version control.
+- AWS Provider.
+- Variables and local values.
+- Reusable infrastructure components.
+- Infrastructure validation.
+- Infrastructure planning.
 - Automated resource provisioning.
+- Infrastructure version control.
 
 Current Status
 
-Planned
+Implemented
+
+---
+
+## Cloud Engineering
+
+CloudOps ServiceDesk currently demonstrates AWS cloud engineering through:
+
+- Amazon Virtual Private Cloud (VPC).
+- Public networking.
+- Private networking.
+- Internet Gateway.
+- NAT Gateway.
+- Route Tables.
+- Security Groups.
+- Amazon EC2.
+- IAM Roles.
+- IAM Instance Profiles.
+- EC2 User Data automation.
+- Infrastructure tagging.
+
+Current Status
+
+Implemented
+
+---
+
+## Containerization
+
+The project demonstrates enterprise containerization through:
+
+- Docker.
+- Docker Compose.
+- Multi-container architecture.
+- PostgreSQL container.
+- Redis container.
+- Celery worker.
+- NGINX reverse proxy.
+- Docker Health Checks.
+
+Current Status
+
+Implemented
 
 ---
 
@@ -110,47 +180,16 @@ Planned
 
 ---
 
-## Containerization
-
-Application packaging will demonstrate:
-
-- Docker.
-- Docker Compose.
-- Portable application environments.
-- Image standardisation.
-
-Current Status
-
-Planned
-
----
-
 ## Container Orchestration
 
 Container management will demonstrate:
 
 - Kubernetes.
+- Amazon Elastic Kubernetes Service (EKS).
 - Service discovery.
-- Scaling.
+- Horizontal scaling.
 - High availability.
 - Self-healing workloads.
-
-Current Status
-
-Planned
-
----
-
-## Cloud Engineering
-
-Cloud infrastructure will demonstrate:
-
-- Amazon Web Services (AWS).
-- Virtual networking.
-- Compute services.
-- Storage services.
-- Identity and Access Management (IAM).
-- Load balancing.
 
 Current Status
 
@@ -168,6 +207,7 @@ The project will demonstrate:
 - Automated testing.
 - Build automation.
 - Deployment pipelines.
+- Infrastructure validation.
 
 Current Status
 
@@ -179,11 +219,13 @@ Planned
 
 Operational monitoring will demonstrate:
 
+- Amazon CloudWatch.
 - Prometheus.
 - Grafana.
 - Infrastructure metrics.
 - Application metrics.
 - Health monitoring.
+- Alerting.
 
 Current Status
 
@@ -197,7 +239,7 @@ Operational logging will demonstrate:
 
 - Loki.
 - Promtail.
-- Centralised logging.
+- Centralized logging.
 - Log aggregation.
 - Operational troubleshooting.
 
@@ -209,18 +251,24 @@ Planned
 
 ## Security Engineering
 
-CloudOps ServiceDesk applies security throughout the application by incorporating:
+CloudOps ServiceDesk currently applies enterprise security through:
 
 - Secure password storage.
-- JWT authentication.
-- Role-Based Access Control.
+- Bcrypt password hashing.
+- JWT Authentication.
+- OAuth2 Password Flow.
+- Role-Based Access Control (RBAC).
+- Protected API endpoints.
+- UUID primary keys.
 - Environment variable configuration.
+- IAM Roles.
+- Security Groups.
+- IMDSv2 enforcement.
 - Principle of Least Privilege.
-- Secure API development.
 
 Current Status
 
-Partially Implemented
+Implemented
 
 ---
 
@@ -230,8 +278,10 @@ The project demonstrates professional documentation practices through:
 
 - Software Requirements Specification (SRS).
 - Technical architecture documentation.
+- Infrastructure documentation.
+- Deployment documentation.
 - API documentation.
-- Development documentation.
+- Screenshot documentation.
 - README documentation.
 - Milestone-driven documentation workflow.
 
@@ -250,6 +300,7 @@ The development workflow demonstrates:
 - Incremental commits.
 - Milestone-based development.
 - Version history.
+- Documentation versioning.
 
 Current Status
 
@@ -261,25 +312,28 @@ Implemented
 
 CloudOps ServiceDesk has been developed according to the following engineering principles:
 
-- Clean Architecture
-- Separation of Concerns
-- Documentation-Driven Development
-- Infrastructure as Code
-- Security by Design
-- Modular Development
-- Cloud-Native Design
-- Automation First
-- Scalability
-- Maintainability
-- Production Readiness
+- Clean Architecture.
+- Separation of Concerns.
+- Documentation-Driven Development.
+- Infrastructure as Code (IaC).
+- Security by Design.
+- Modular Development.
+- Cloud-Native Engineering.
+- Automation First.
+- Scalability.
+- Maintainability.
+- Production Readiness.
+- Incremental Delivery.
 
 ---
 
 # Enterprise Readiness
 
-Upon completion of the planned roadmap, CloudOps ServiceDesk will demonstrate practical experience across multiple enterprise engineering disciplines, including backend development, cloud engineering, DevOps, Infrastructure as Code, container orchestration, security, monitoring, automation, and production deployment.
+CloudOps ServiceDesk currently demonstrates practical experience across multiple enterprise engineering disciplines, including backend development, database engineering, Artificial Intelligence integration, cloud infrastructure provisioning, Infrastructure as Code (IaC), containerization, authentication, security engineering and technical documentation.
 
-The project is intended to reflect the technologies, workflows, and engineering standards commonly expected within modern enterprise software teams.
+As development continues, the platform will be expanded through Application Load Balancing, managed database services, configuration management, Continuous Integration and Continuous Deployment (CI/CD), Kubernetes orchestration, monitoring, centralized logging and production deployment.
+
+The completed project will demonstrate the technologies, workflows and engineering standards commonly adopted by modern enterprise software and cloud engineering teams.
 
 ---
 
@@ -297,10 +351,11 @@ The project is intended to reflect the technologies, workflows, and engineering 
 
 | Version | Description |
 |----------|-------------|
-| 1.0 | Initial enterprise technologies documentation. |
+| 1.0 | Initial enterprise technologies documentation created. |
+| 1.1 | Added Artificial Intelligence engineering, Docker, Docker Compose, Infrastructure as Code (Terraform), AWS cloud infrastructure provisioning, enterprise security enhancements and updated implementation status across all engineering disciplines. |
 
 ---
 
 # Document Status
 
-Draft
+Actively Maintained

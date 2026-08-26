@@ -2,15 +2,15 @@
 
 ## Introduction
 
-CloudOps ServiceDesk is designed to support a modern, automated deployment process that promotes consistency, reliability, and repeatability. The deployment strategy combines Infrastructure as Code (IaC), containerization, orchestration, and Continuous Integration/Continuous Deployment (CI/CD) to reduce manual effort and improve operational efficiency.
+CloudOps ServiceDesk follows a modern deployment strategy that combines Infrastructure as Code (IaC), containerization, cloud infrastructure provisioning and automation to produce consistent, reliable and repeatable deployments.
 
-As the project evolves, the deployment process will become increasingly automated while maintaining clear visibility into every stage of software delivery.
+The deployment process has been designed to minimise manual configuration by managing both application components and cloud infrastructure through version-controlled code. As the project evolves, additional automation will be introduced through Continuous Integration (CI), Continuous Deployment (CD), configuration management and container orchestration.
 
 ---
 
 # Deployment Objectives
 
-The deployment strategy aims to:
+The deployment strategy has been designed to:
 
 - Automate software delivery.
 - Reduce manual deployment activities.
@@ -19,6 +19,7 @@ The deployment strategy aims to:
 - Minimise deployment errors.
 - Enable scalable production deployments.
 - Demonstrate enterprise deployment practices.
+- Apply Infrastructure as Code (IaC) throughout the deployment lifecycle.
 
 ---
 
@@ -27,18 +28,76 @@ The deployment strategy aims to:
 The current implementation includes:
 
 - Local application execution.
+- Docker containerization.
+- Docker Compose multi-container deployment.
 - PostgreSQL integration.
+- Redis integration.
+- Celery background processing.
+- NGINX reverse proxy.
 - Database migrations using Alembic.
 - REST API validation through Swagger UI.
+- Health API verification.
+- Structured logging.
+- Terraform Infrastructure as Code.
+- AWS CLI authentication.
+- Amazon VPC deployment.
+- Public and private networking.
+- Internet Gateway.
+- NAT Gateway.
+- Route Tables.
+- Security Groups.
+- IAM Roles.
+- IAM Instance Profiles.
+- Amazon EC2 deployment.
+- EC2 User Data automation.
 - Version control using Git and GitHub.
 
-These components provide a stable foundation before introducing cloud deployment automation.
+These components provide a production-style deployment foundation before introducing load balancing, managed database services and continuous deployment pipelines.
 
 ---
 
-# Planned Deployment Workflow
+# Current Deployment Workflow
 
-The planned deployment process follows the workflow below.
+The current deployment process follows the workflow below.
+
+```text
+Developer
+    │
+    ▼
+Source Code
+    │
+    ▼
+Git Commit
+    │
+    ▼
+GitHub Repository
+    │
+    ▼
+Terraform Plan
+    │
+    ▼
+Terraform Apply
+    │
+    ▼
+AWS Infrastructure Provisioning
+    │
+    ▼
+EC2 User Data Configuration
+    │
+    ▼
+Infrastructure Validation
+    │
+    ▼
+Application Verification
+```
+
+Each deployment stage is verified before development proceeds to the next milestone.
+
+---
+
+# Target Enterprise Deployment Workflow
+
+The long-term deployment workflow will follow the process below.
 
 ```text
 Developer
@@ -71,7 +130,7 @@ Kubernetes Deployment
 Amazon Web Services (AWS)
 ```
 
-Each stage contributes to a reliable and repeatable deployment process.
+This workflow represents the project's production deployment objective.
 
 ---
 
@@ -79,62 +138,125 @@ Each stage contributes to a reliable and repeatable deployment process.
 
 ## Source Control
 
-Git and GitHub manage source code, documentation, and version history.
+Current implementation includes:
 
----
-
-## Continuous Integration
-
-GitHub Actions will automatically:
-
-- Validate code.
-- Install dependencies.
-- Execute automated tests.
-- Verify application builds.
+- Git.
+- GitHub.
+- Branch-based development.
+- Incremental commits.
+- Documentation versioning.
 
 ---
 
 ## Containerization
 
-Docker will package the application into portable images suitable for deployment across multiple environments.
+Current implementation includes:
+
+- Docker.
+- Docker Compose.
+- Multi-container deployment.
+- PostgreSQL container.
+- Redis container.
+- Celery worker.
+- NGINX reverse proxy.
 
 ---
 
 ## Infrastructure Provisioning
 
-Terraform will provision AWS resources using Infrastructure as Code (IaC).
+Current implementation includes:
+
+- Terraform.
+- AWS Provider.
+- Amazon VPC.
+- Public Subnets.
+- Private Subnets.
+- Internet Gateway.
+- NAT Gateway.
+- Route Tables.
+- Security Groups.
+- IAM Roles.
+- IAM Instance Profiles.
+- Amazon EC2.
+- EC2 User Data automation.
+
+---
+
+## Continuous Integration
+
+Future implementation will include GitHub Actions to automate:
+
+- Code validation.
+- Dependency installation.
+- Unit testing.
+- Terraform validation.
+- Build verification.
 
 ---
 
 ## Configuration Management
 
-Ansible will automate software installation, server configuration, and deployment preparation.
+Future implementation will include Ansible for:
+
+- Server provisioning.
+- Software installation.
+- Configuration management.
+- Deployment preparation.
 
 ---
 
 ## Container Orchestration
 
-Kubernetes will deploy, manage, and scale application containers.
+Future implementation will include Kubernetes for:
+
+- Container orchestration.
+- High availability.
+- Service discovery.
+- Horizontal scaling.
+- Self-healing workloads.
 
 ---
 
 ## Production Hosting
 
-The production environment will be hosted on Amazon Web Services (AWS).
+Amazon Web Services (AWS) will provide the production cloud platform.
+
+Future production services include:
+
+- Application Load Balancer.
+- Amazon RDS PostgreSQL.
+- Amazon S3.
+- Auto Scaling Groups.
+- Route 53.
+- AWS Certificate Manager.
+- CloudWatch.
+- AWS WAF.
 
 ---
 
 # Deployment Verification
 
-Every deployment should be verified by confirming:
+Current deployment verification includes:
 
-- Application availability.
+- Terraform validation.
+- Terraform execution plan.
+- Successful infrastructure provisioning.
+- Amazon EC2 deployment.
+- EC2 User Data execution.
+- Apache web server deployment.
+- Infrastructure connectivity.
+- REST API availability.
 - Database connectivity.
-- API functionality.
-- Authentication.
-- Ticket management operations.
-- Monitoring availability.
-- Logging functionality.
+- Docker container health.
+- Health API verification.
+
+Future deployment verification will additionally include:
+
+- Load balancer health checks.
+- Auto Scaling validation.
+- CloudWatch monitoring.
+- Kubernetes deployment verification.
+- CI/CD pipeline validation.
 
 ---
 
@@ -142,14 +264,15 @@ Every deployment should be verified by confirming:
 
 CloudOps ServiceDesk follows the following deployment principles:
 
-- Automation
-- Repeatability
-- Reliability
-- Scalability
-- Security
-- Infrastructure as Code
-- Continuous Delivery
-- Operational Visibility
+- Automation.
+- Infrastructure as Code (IaC).
+- Repeatability.
+- Reliability.
+- Scalability.
+- Security.
+- Documentation-Driven Development.
+- Operational Visibility.
+- Incremental Delivery.
 
 ---
 
@@ -166,10 +289,11 @@ CloudOps ServiceDesk follows the following deployment principles:
 
 | Version | Description |
 |----------|-------------|
-| 1.0 | Initial deployment documentation. |
+| 1.0 | Initial deployment documentation created. |
+| 1.1 | Added Docker deployment, Docker Compose, Infrastructure as Code (Terraform), AWS infrastructure provisioning, Amazon VPC networking, EC2 deployment, deployment workflow and updated enterprise deployment roadmap. |
 
 ---
 
 # Document Status
 
-Draft
+Actively Maintained

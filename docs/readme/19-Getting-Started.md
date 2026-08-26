@@ -21,11 +21,12 @@ Before running the project, ensure the following software is installed.
 | Docker Desktop | Containerized application |
 | Docker Compose | Multi-container orchestration |
 | Visual Studio Code | Development environment |
-| GitHub Desktop | Version control (optional) |
+| GitHub Desktop (Optional) | Git repository management |
 | Terraform | Infrastructure as Code (IaC) |
 | AWS CLI | AWS authentication and infrastructure deployment |
-| pgAdmin 4 | Database administration (optional) |
-| Postman | API testing (optional) |
+| EC2 Instance Connect | Secure access to Amazon EC2 instances |
+| pgAdmin 4 (Optional) | PostgreSQL administration |
+| Postman (Optional) | API testing |
 
 ---
 
@@ -252,6 +253,20 @@ Confirm the following.
 - Terraform validates successfully.
 - Terraform formatting completes successfully.
 - Terraform execution plan completes successfully.
+- AWS Provider configuration is verified successfully.
+- Terraform local values load successfully.
+- Terraform variables are loaded successfully.
+- Amazon Virtual Private Cloud (VPC) is deployed successfully.
+- Public subnets are created successfully.
+- Private subnets are created successfully.
+- Internet Gateway is attached successfully.
+- NAT Gateway is deployed successfully.
+- Public Route Table is configured successfully.
+- Private Route Table is configured successfully.
+- Security Groups are created successfully.
+- Amazon EC2 web server is deployed successfully.
+- Apache installs automatically through Terraform User Data.
+- CloudOps ServiceDesk web application is accessible through the EC2 public endpoint.
 
 ---
 
@@ -302,36 +317,67 @@ The project currently includes:
 - Terraform
 - AWS CLI
 - Infrastructure as Code (IaC)
-
----
-
-# 12. Planned Enterprise Enhancements
-
-The following capabilities will be introduced during future development milestones.
-
 - Amazon Virtual Private Cloud (VPC)
 - Public Subnets
 - Private Subnets
 - Internet Gateway
 - NAT Gateway
-- Route Tables
+- Public Route Tables
+- Private Route Tables
 - Security Groups
-- EC2 Instances
-- Application Load Balancer
+- IAM Roles & Instance Profiles
+- Amazon EC2
+- Apache Web Server
+
+---
+
+# 12. Enterprise Infrastructure Progress
+
+The CloudOps ServiceDesk infrastructure is being developed incrementally using Infrastructure as Code (IaC). The following AWS infrastructure components have been completed and verified.
+
+Completed
+
+- AWS Provider Configuration
+- Project Variables
+- Local Values
+- Amazon Virtual Private Cloud (VPC)
+- Public Subnets
+- Private Subnets
+- Internet Gateway
+- NAT Gateway
+- Public Route Tables
+- Private Route Tables
+- Security Groups
+- Amazon EC2 Web Server
+- Apache Web Server Deployment
+- Terraform User Data Provisioning
+- AWS Console Infrastructure Verification
+- Public Web Application Verification
+
+The following enterprise infrastructure components are planned for future development milestones.
+
+Planned
+
+- Application Load Balancer (ALB)
 - Amazon S3
 - Amazon RDS PostgreSQL
-- IAM Roles and Policies
-- CloudWatch Logging
+- Auto Scaling Group
+- CloudWatch Monitoring
 - Route 53
 - AWS Certificate Manager (ACM)
-- HTTPS Load Balancer
+- IAM Roles and Policies
+- AWS Secrets Manager
+- AWS Systems Manager Parameter Store
+- VPC Endpoints
+- AWS CloudTrail
+- AWS Web Application Firewall (WAF)
+- Backup Strategy
 - Terraform Remote State
 - Terraform Reusable Modules
 - Ansible Configuration Management
 - GitHub Actions Continuous Integration (CI)
 - GitHub Actions Continuous Deployment (CD)
 - Kubernetes Orchestration
-- Amazon Web Services (AWS) Production Deployment
 - Prometheus Monitoring
 - Grafana Dashboards
 - Loki Centralized Logging
@@ -358,13 +404,21 @@ Common issues include:
 - Terraform validation errors.
 - Terraform initialization errors.
 - Port conflicts.
+- AWS authentication failures.
+- EC2 Instance Connect connection errors.
+- Security Group configuration issues.
+- Route Table association errors.
+- Internet Gateway attachment issues.
+- NAT Gateway provisioning failures.
+- Apache web server not responding.
+- Terraform state synchronization issues.
 
 ---
 
 # 14. Related Documentation
 
 - PROJECT_OVERVIEW.md
-- REQUIREMENTS.md
+- 13-Infrastructure.md
 - 16-AI-Integration.md
 - 17-Project-Status.md
 - 18-Roadmap.md
@@ -382,6 +436,7 @@ Common issues include:
 | 1.3 | Added Structured Logging, Environment Separation, Redis Integration and Celery Background Processing. |
 | 1.4 | Added Artificial Intelligence Service Layer and AI API execution workflow. |
 | 1.5 | Added Terraform installation, AWS CLI configuration, Infrastructure as Code (IaC) workflow, Terraform validation and AWS authentication setup. |
+| 1.6 | Updated enterprise infrastructure progress to include completed AWS networking, security groups, EC2 deployment, Apache web server provisioning and infrastructure verification. |
 
 ---
 

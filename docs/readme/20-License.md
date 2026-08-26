@@ -80,19 +80,23 @@ All contributions should follow the project's coding standards and documentation
 
 # 7. Third-Party Software
 
-CloudOps ServiceDesk makes use of open-source software and libraries.
-
-Each dependency remains subject to its own license terms.
-
 Examples include:
 
 - FastAPI
 - SQLAlchemy
 - PostgreSQL
 - Alembic
+- Uvicorn
 - Passlib
 - Python-JOSE
-- Uvicorn
+- Redis
+- Celery
+- Docker
+- Docker Compose
+- Nginx
+- Terraform
+- AWS CLI
+- Amazon Web Services (AWS)
 
 Future technologies introduced into the project will continue to comply with their respective licensing requirements.
 
@@ -111,9 +115,10 @@ LICENSE
 # 9. Related Documentation
 
 - PROJECT_OVERVIEW.md
-- REQUIREMENTS.md
-- 17-Roadmap.md
+- 17-Project-Status.md
+- 18-Roadmap.md
 - 19-Getting-Started.md
+- 21-Screenshots.md
 
 ---
 
@@ -122,9 +127,10 @@ LICENSE
 | Version | Description |
 |----------|-------------|
 | 1.0 | Initial license documentation created. |
+| 1.1 | Updated third-party software list and related documentation references to reflect the current CloudOps ServiceDesk implementation. |
 
 ---
 
 # 11. Document Status
 
-Completed
+Actively Maintained

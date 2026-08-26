@@ -2,9 +2,9 @@
 
 ## Introduction
 
-CloudOps ServiceDesk follows a structured project layout that separates application components according to their responsibilities. This organisation improves maintainability, readability, scalability, and collaboration while supporting enterprise software engineering practices.
+CloudOps ServiceDesk follows a structured, enterprise-oriented repository layout that separates application components according to their responsibilities. This organisation improves maintainability, readability, scalability and collaboration while supporting modern software engineering, cloud engineering and DevOps practices.
 
-Each directory has a clearly defined purpose, allowing new contributors and reviewers to understand the project without needing to inspect the source code first.
+Each directory has a clearly defined purpose, allowing developers, recruiters, reviewers and future contributors to understand the overall architecture without needing to inspect the implementation details first.
 
 ---
 
@@ -12,6 +12,7 @@ Each directory has a clearly defined purpose, allowing new contributors and revi
 
 ```text
 CloudOps-ServiceDesk/
+
 │
 ├── .github/
 ├── alembic/
@@ -30,9 +31,11 @@ CloudOps-ServiceDesk/
 │
 ├── .env
 ├── alembic.ini
+├── docker-compose.yml
 ├── LICENSE
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+└── .gitignore
 ```
 
 ---
@@ -41,97 +44,126 @@ CloudOps-ServiceDesk/
 
 ## .github/
 
-Contains GitHub-specific configuration, including future GitHub Actions workflows for Continuous Integration and Continuous Deployment (CI/CD).
+Contains GitHub configuration, repository templates and future GitHub Actions workflows for Continuous Integration (CI) and Continuous Deployment (CD).
 
 ---
 
 ## alembic/
 
-Stores all database migration scripts and Alembic configuration used to manage PostgreSQL schema versioning.
+Stores all database migration scripts and Alembic configuration used to manage PostgreSQL schema versioning throughout the application lifecycle.
 
 ---
 
 ## app/
 
-Contains the application's source code.
+Contains the complete backend application source code.
 
 This directory includes:
 
 - API endpoints
+- Authentication
+- Authorization
 - Business services
+- Artificial Intelligence services
 - Database models
 - Validation schemas
-- Security components
-- Application configuration
-- Utility functions
+- Configuration
+- Security
+- Utilities
+- Background task processing
 
 ---
 
 ## database/
 
-Stores SQL scripts, database resources, seed data, and supporting database documentation.
+Stores database resources, SQL scripts, development data and supporting database documentation.
 
 ---
 
 ## diagrams/
 
-Contains architecture diagrams, database diagrams, workflow diagrams, deployment diagrams, and other visual documentation used throughout the project.
+Contains architecture diagrams, infrastructure diagrams, workflow diagrams, deployment diagrams, database diagrams and other technical illustrations used throughout the documentation.
 
 ---
 
 ## docker/
 
-Contains Docker-related configuration files used to build and run containerized versions of the application.
+Contains Docker configuration files required to build and manage the application's containerized environment.
 
 ---
 
 ## docs/
 
-Contains all project documentation.
+Contains all technical documentation maintained throughout the project lifecycle.
 
-Documentation is organised into:
+Documentation includes:
 
-- Internal development documentation
-- Software requirements
-- Project overview
-- README source files
-- Future architecture documentation
+- Project documentation
+- Architecture documentation
+- Infrastructure documentation
+- Deployment documentation
+- AI documentation
+- Project management documentation
+- Developer documentation
 
 ---
 
 ## kubernetes/
 
-Contains Kubernetes deployment manifests and related configuration files used for container orchestration.
+Contains Kubernetes manifests and deployment configuration prepared for future container orchestration.
 
 ---
 
 ## monitoring/
 
-Contains monitoring configuration for services such as Prometheus and Grafana.
+Contains monitoring configuration for enterprise observability platforms including Prometheus, Grafana and Loki.
 
 ---
 
 ## nginx/
 
-Contains reverse proxy configuration used to route requests to the backend application.
+Contains NGINX reverse proxy configuration used to securely route incoming requests to the FastAPI application.
+
+---
+
+## screenshots/
+
+Contains implementation screenshots used throughout the technical documentation to provide evidence of completed milestones.
 
 ---
 
 ## scripts/
 
-Contains automation scripts that simplify development, deployment, maintenance, and operational tasks.
+Contains automation scripts used for infrastructure provisioning, application deployment, server configuration and operational tasks.
 
 ---
 
 ## terraform/
 
-Contains Infrastructure as Code (IaC) modules used to provision AWS resources.
+Contains the Infrastructure as Code (IaC) implementation for provisioning Amazon Web Services (AWS) infrastructure.
+
+The directory currently includes:
+
+- Provider configuration
+- Project variables
+- Local values
+- Virtual Private Cloud (VPC)
+- Public subnets
+- Private subnets
+- Internet Gateway
+- NAT Gateway
+- Route tables
+- Security Groups
+- IAM Roles
+- IAM Instance Profiles
+- Amazon EC2 deployment
+- User Data scripts
 
 ---
 
 ## tests/
 
-Contains automated tests for validating application functionality, business logic, and API behaviour.
+Contains automated tests used to validate application functionality, authentication, business logic, APIs and future infrastructure components.
 
 ---
 
@@ -139,13 +171,19 @@ Contains automated tests for validating application functionality, business logi
 
 ## .env
 
-Stores environment-specific configuration values that should not be committed to version control.
+Stores environment-specific configuration values that are excluded from version control.
 
 ---
 
 ## alembic.ini
 
-Contains Alembic configuration used for database migrations.
+Contains Alembic configuration used to manage database migrations.
+
+---
+
+## docker-compose.yml
+
+Defines the multi-container Docker environment used for local development.
 
 ---
 
@@ -157,13 +195,19 @@ Defines the software license governing the project.
 
 ## README.md
 
-Provides the public overview of the repository and links to supporting documentation.
+Provides the public overview of the repository together with setup instructions and links to the complete technical documentation.
 
 ---
 
 ## requirements.txt
 
-Lists all Python package dependencies required to build and run the application.
+Lists all Python package dependencies required to build and run the backend application.
+
+---
+
+## .gitignore
+
+Specifies files and directories that should not be committed to the Git repository.
 
 ---
 
@@ -172,13 +216,15 @@ Lists all Python package dependencies required to build and run the application.
 The repository has been organised according to the following engineering principles:
 
 - Separation of Concerns
+- Layered Architecture
 - Modular Design
 - Scalability
 - Maintainability
-- Clear Directory Ownership
+- Infrastructure as Code (IaC)
 - Documentation-Driven Development
-- Infrastructure as Code
-- Production-Oriented Project Structure
+- Enterprise Repository Structure
+- Cloud-Native Engineering
+- Production-Oriented Development
 
 ---
 
@@ -186,9 +232,12 @@ The repository has been organised according to the following engineering princip
 
 The chosen repository structure provides several advantages:
 
-- Improves maintainability by separating responsibilities.
-- Simplifies navigation for developers and reviewers.
-- Supports future project growth without major restructuring.
-- Encourages modular software development.
-- Aligns with enterprise software engineering practices.
+- Separates responsibilities across independent components.
+- Improves maintainability and long-term scalability.
+- Simplifies navigation for developers, reviewers and recruiters.
+- Supports Infrastructure as Code (IaC) development.
+- Encourages modular software engineering practices.
 - Simplifies onboarding for future contributors.
+- Supports enterprise cloud deployment workflows.
+- Enables future automation through DevOps and CI/CD pipelines.
+- Provides a structured foundation for production-ready cloud infrastructure.

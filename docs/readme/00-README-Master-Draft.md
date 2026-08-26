@@ -4,9 +4,9 @@
 
 Welcome to the official technical documentation for CloudOps ServiceDesk.
 
-This documentation has been developed alongside the project to provide a complete reference for the platform's architecture, implementation, engineering decisions, operational workflow, and future development roadmap.
+This documentation has been developed alongside the project to provide a complete reference for the platform's architecture, implementation, engineering decisions, operational workflow, deployment process and future development roadmap.
 
-Rather than documenting the project only after completion, the documentation evolves together with the application to ensure that every implemented feature is accurately represented and every planned enhancement is clearly defined.
+Rather than documenting the project only after completion, the documentation evolves together with the application to ensure that every implemented feature is accurately represented, every completed milestone is recorded and every planned enhancement is clearly defined.
 
 ---
 
@@ -17,10 +17,11 @@ The purpose of this documentation is to:
 - Explain the architecture of the platform.
 - Document engineering decisions.
 - Describe implementation progress.
+- Record completed development milestones.
 - Support future maintenance.
 - Provide onboarding guidance for new developers.
 - Demonstrate enterprise software engineering practices.
-- Serve as technical evidence for recruiters, interviewers, and project reviewers.
+- Serve as technical evidence for recruiters, interviewers and project reviewers.
 
 ---
 
@@ -59,7 +60,7 @@ These documents explain how the platform has been designed and implemented.
 
 ## Project Management
 
-These documents describe the current state and future direction of the project.
+These documents describe the current implementation status, development progress and future direction of the project.
 
 - 16 – Project Status
 - 17 – Roadmap
@@ -69,7 +70,7 @@ These documents describe the current state and future direction of the project.
 
 ## Developer Resources
 
-These documents assist developers who wish to use or contribute to the project.
+These documents assist developers who wish to use, evaluate or contribute to the project.
 
 - 19 – Getting Started
 - 20 – License
@@ -92,13 +93,13 @@ These documents assist developers who wish to use or contribute to the project.
 | 10 – Database Design | Under Review |
 | 11 – Security | Under Review |
 | 12 – DevOps | Under Review |
-| 13 – Infrastructure | Under Review |
-| 14 – Deployment | Under Review |
+| 13 – Infrastructure | In Progress |
+| 14 – Deployment | In Progress |
 | 15 – Enterprise Technologies | Under Review |
-| 16 – Project Status | Under Review |
-| 17 – Roadmap | Under Review |
-| 18 – Screenshots | Draft |
-| 19 – Getting Started | Under Review |
+| 16 – Project Status | Active |
+| 17 – Roadmap | Active |
+| 18 – Screenshots | In Progress |
+| 19 – Getting Started | Active |
 | 20 – License | Completed |
 
 ---
@@ -128,7 +129,7 @@ For readers who are new to the project, the recommended reading sequence is:
 19. Getting Started
 20. License
 
-Following this order provides a gradual understanding of the project, beginning with high-level concepts before progressing into technical implementation and operational details.
+Following this order provides a gradual understanding of the project, beginning with high-level concepts before progressing into technical implementation, cloud infrastructure, deployment and operational workflows.
 
 ---
 
@@ -139,13 +140,16 @@ This documentation follows a documentation-driven development approach.
 Whenever a development milestone is completed, the following activities are performed:
 
 - Review the implementation.
+- Verify functionality.
 - Update the relevant documentation.
 - Capture implementation screenshots.
 - Update the Project Status document.
 - Update the Roadmap.
+- Update the Screenshot documentation.
 - Commit both the implementation and documentation together.
+- Push the completed milestone to GitHub.
 
-This workflow ensures that the documentation remains accurate and reflects the current state of the project.
+This workflow ensures that the documentation remains accurate, synchronized with the source code and reflects the current state of the project.
 
 ---
 
@@ -166,6 +170,9 @@ Implement
 Test
    │
    ▼
+Verify
+   │
+   ▼
 Capture Screenshots
    │
    ▼
@@ -176,6 +183,9 @@ Review
    │
    ▼
 Git Commit
+   │
+   ▼
+Push to GitHub
 ```
 
 ---
@@ -190,6 +200,14 @@ README.md
 
 The README provides a high-level overview of the project and directs readers to this documentation set for more detailed technical information.
 
+Additional supporting documents include:
+
+- 17-Project-Status.md
+- 18-Roadmap.md
+- 19-Getting-Started.md
+- 20-License.md
+- 21-Screenshots.md
+
 ---
 
 # 9. Revision History
@@ -198,9 +216,10 @@ The README provides a high-level overview of the project and directs readers to 
 |----------|-------------|
 | 1.0 | Initial documentation index created. |
 | 1.1 | Completed documentation structure for all project documents. |
+| 1.2 | Updated documentation status, maintenance workflow, repository workflow and document references to reflect the Terraform foundation, AWS infrastructure implementation, screenshot documentation and ongoing enterprise cloud development. |
 
 ---
 
 # 10. Document Status
 
-Completed
+Actively Maintained

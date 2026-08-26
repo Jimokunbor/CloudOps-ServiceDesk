@@ -4,7 +4,7 @@
 
 Authentication and authorization are fundamental security components of CloudOps ServiceDesk. They ensure that only verified users can access protected resources while restricting operations according to assigned roles.
 
-The platform uses modern authentication standards that are widely adopted in enterprise backend applications.
+The platform implements modern authentication standards that are widely adopted within enterprise backend applications and cloud-native services.
 
 ---
 
@@ -16,7 +16,8 @@ The authentication system has been designed to:
 - Protect application resources.
 - Secure API endpoints.
 - Enforce Role-Based Access Control (RBAC).
-- Prevent unauthorised access.
+- Prevent unauthorized access.
+- Support stateless authentication.
 - Support future enterprise security enhancements.
 
 ---
@@ -42,6 +43,12 @@ Bearer Token
       │
       ▼
 Protected API Endpoint
+      │
+      ▼
+Role Validation (RBAC)
+      │
+      ▼
+Authorized Response
 ```
 
 Every protected request must include a valid JWT Bearer Token.
@@ -88,26 +95,27 @@ Plain-text passwords are never stored.
 
 ## JWT Authentication
 
-The platform currently uses JSON Web Tokens (JWT) for stateless authentication.
+The platform uses JSON Web Tokens (JWT) for stateless authentication.
 
-JWT tokens are issued after successful login and must accompany all protected API requests.
+JWT tokens are issued after successful login and must accompany all protected API requests through the Authorization header.
 
 ---
 
 ## OAuth2
 
-CloudOps ServiceDesk implements OAuth2 Password Flow to authenticate users through FastAPI's security framework.
+CloudOps ServiceDesk implements OAuth2 Password Flow using FastAPI's built-in security framework to authenticate API requests.
 
 ---
 
 ## Role-Based Access Control (RBAC)
 
-The platform currently supports:
+The platform currently supports three user roles:
 
-- Administrator
+- User
 - Technician
+- Administrator
 
-Each protected endpoint validates the authenticated user's role before allowing access.
+Each protected endpoint validates both the authenticated user's identity and assigned role before allowing access.
 
 ---
 
@@ -116,31 +124,49 @@ Each protected endpoint validates the authenticated user's role before allowing 
 | Technology | Purpose |
 |------------|---------|
 | JWT | Stateless authentication |
-| OAuth2 | Authentication framework |
+| OAuth2 Password Flow | Authentication framework |
 | Passlib | Password hashing |
-| Bcrypt | Secure password encryption |
+| Bcrypt | Secure password hashing |
 | FastAPI Security | Authentication dependencies |
+| Pydantic | Request and response validation |
 
 ---
 
 # Current Protected Endpoints
 
-Current protected endpoints include:
+The following endpoints currently require authentication.
 
-Authentication
+## Authentication
 
 - /auth/me
 - /auth/admin
 
-Tickets
+## Ticket Management
 
 - Create Ticket
 - View Tickets
+- View My Tickets
+- Dashboard Summary
+- View Ticket
 - Update Ticket
 - Delete Ticket
 - Assign Ticket
 - Update Ticket Status
-- Dashboard Summary
+
+---
+
+# Authentication Flow
+
+The authentication process follows these steps:
+
+1. A user submits their email address and password.
+2. The application validates the supplied credentials.
+3. The password hash is verified.
+4. A JWT access token is generated.
+5. The client stores the access token.
+6. The client includes the Bearer Token in future requests.
+7. Protected endpoints validate the token.
+8. RBAC verifies the user's permissions before granting access.
 
 ---
 
@@ -152,14 +178,16 @@ The authentication system follows these principles:
 - Secure Password Storage
 - Stateless Authentication
 - Endpoint Protection
-- Role Validation
+- Role-Based Authorization
 - Separation of Authentication and Authorization
+- Defense in Depth
+- Secure by Default
 
 ---
 
 # Enterprise Roadmap
 
-Future security improvements include:
+Future security enhancements include:
 
 - Refresh Tokens
 - Password Reset
@@ -169,6 +197,9 @@ Future security improvements include:
 - Session Management
 - Account Lockout
 - Security Audit Logging
+- AWS Secrets Manager Integration
+- AWS Systems Manager Parameter Store
+- AWS IAM Identity Integration
 
 ---
 
@@ -185,10 +216,11 @@ Future security improvements include:
 
 | Version | Description |
 |----------|-------------|
-| 1.0 | Initial authentication documentation. |
+| 1.0 | Initial authentication documentation created. |
+| 1.1 | Added JWT authentication, OAuth2 Password Flow, Role-Based Access Control (RBAC), authentication workflow, protected endpoints and enterprise security roadmap. |
 
 ---
 
 # Document Status
 
-Draft
+Actively Maintained

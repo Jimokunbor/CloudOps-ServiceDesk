@@ -270,21 +270,41 @@ In Progress
 
 Objectives
 
+Completed
+
+- AWS Provider Configuration
+- Terraform Variables
+- Terraform Local Values
 - Virtual Private Cloud (VPC)
-
 - Public Subnets
-
 - Private Subnets
-
 - Internet Gateway
-
-- Route Tables
-
+- NAT Gateway
+- Public Route Tables
+- Private Route Tables
 - Security Groups
+- IAM Roles
+- IAM Instance Profiles
+- Amazon EC2 Deployment
+- Apache Web Server Provisioning
+- Terraform User Data Automation
+- AWS Infrastructure Verification
 
-- EC2 Deployment
+Remaining
 
-- Infrastructure Automation
+- Application Load Balancer
+- Auto Scaling Group
+- Amazon S3
+- Amazon RDS PostgreSQL
+- Route 53
+- AWS Certificate Manager (ACM)
+- CloudWatch
+- Secrets Manager
+- Systems Manager Parameter Store
+- VPC Endpoints
+- CloudTrail
+- AWS WAF
+- Backup Strategy
 
 ---
 
@@ -354,21 +374,17 @@ Planned
 
 Objectives
 
-- Amazon Web Services
-
-- EC2
-
-- Amazon RDS PostgreSQL
-
-- Amazon S3
-
+- Production VPC Architecture
+- Multi-AZ Deployment
 - Application Load Balancer
-
+- Amazon EC2 Auto Scaling
+- Amazon RDS PostgreSQL
+- Amazon S3
 - Route 53
-
 - AWS Certificate Manager (ACM)
-
+- HTTPS Load Balancer
 - Secure Networking
+- Enterprise High Availability
 
 ---
 
@@ -442,36 +458,28 @@ The roadmap will be considered complete when:
 
 # Next Immediate Milestone
 
-The next development phase is AWS Infrastructure Provisioning using Terraform.
+The next development phase is completing the AWS Infrastructure Provisioning milestone.
 
-This phase will introduce:
+The following enterprise infrastructure components will be implemented next.
 
-- Virtual Private Cloud (VPC)
-
-- Public and Private Subnets
-
-- Internet Gateway
-
-- Route Tables
-
-- Security Groups
-
-- Amazon EC2
-
-- Infrastructure Modules
-
-- Foundation for Amazon RDS and Load Balancer deployment
+- Application Load Balancer (ALB)
+- Auto Scaling Group
+- Amazon S3
+- Amazon RDS PostgreSQL
+- Route 53
+- AWS Certificate Manager (ACM)
+- CloudWatch
+- Secrets Manager
+- Systems Manager Parameter Store
 
 ---
 
 # Related Documentation
 
+- 13-Infrastructure.md
 - 16-AI-Integration.md
-
 - 17-Project-Status.md
-
-- 20-Getting-Started.md
-
+- 19-Getting-Started.md
 - 21-Screenshots.md
 
 ---
@@ -486,6 +494,7 @@ This phase will introduce:
 | 1.3 | Added Docker Health Checks, Structured Logging, Environment Separation, Redis Integration and Celery Background Processing. Updated roadmap for the AI Service Layer as the next implementation phase. |
 | 1.4 | Completed the Artificial Intelligence Service Layer milestone and updated the roadmap to position Terraform as the next development phase. |
 | 1.5 | Completed the Infrastructure as Code (Terraform) foundation, including AWS CLI configuration, IAM authentication, Terraform initialization, validation, formatting and planning. Updated the roadmap to begin AWS Infrastructure Provisioning. |
+| 1.6 | Updated AWS Infrastructure Provisioning to include completed VPC networking, NAT Gateway, route tables, Security Groups, IAM Roles, EC2 deployment, Apache web server provisioning and infrastructure verification. Updated the roadmap to position the Application Load Balancer as the next implementation milestone. |
 
 ---
 

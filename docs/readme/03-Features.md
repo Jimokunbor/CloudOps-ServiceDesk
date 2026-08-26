@@ -2,9 +2,9 @@
 
 ## Introduction
 
-CloudOps ServiceDesk is designed as an enterprise-style Information Technology Service Management (ITSM) platform. Its features are being introduced through milestone-based development, ensuring that each capability is fully implemented, tested, documented, and integrated before progressing to the next phase.
+CloudOps ServiceDesk is designed as an enterprise-style Information Technology Service Management (ITSM) platform. Its capabilities are introduced through milestone-based development, ensuring that each feature is fully implemented, tested, documented and validated before progressing to the next phase.
 
-This document distinguishes between functionality that has already been implemented and enterprise capabilities planned for future milestones.
+This document distinguishes between functionality that has already been implemented and enterprise capabilities planned for future development milestones.
 
 ---
 
@@ -21,6 +21,8 @@ The following features are currently available within the platform.
 - OAuth2 Password Flow
 - Protected API Endpoints
 - Current User Profile
+- Access Token Generation
+- Bearer Token Authentication
 
 ---
 
@@ -29,8 +31,10 @@ The following features are currently available within the platform.
 - Role-Based Access Control (RBAC)
 - Administrator Role
 - Technician Role
+- User Role
 - Endpoint Authorization
 - Permission Validation
+- Role-Based Endpoint Protection
 
 ---
 
@@ -44,6 +48,21 @@ The following features are currently available within the platform.
 - View Assigned Tickets
 - Update Ticket Status
 - Dashboard Summary
+- Ticket Ownership
+- Ticket Workflow Management
+
+---
+
+## Artificial Intelligence
+
+- AI Service Layer
+- Provider Abstraction Layer
+- AI Configuration
+- Ticket Classification
+- Ticket Summarization
+- Ticket Priority Recommendation
+- AI REST API Endpoints
+- Swagger AI Documentation
 
 ---
 
@@ -54,6 +73,7 @@ The following features are currently available within the platform.
 - Alembic Database Migrations
 - UUID Primary Keys
 - Relational Data Model
+- Version-Controlled Database Schema
 
 ---
 
@@ -65,10 +85,46 @@ The following features are currently available within the platform.
 - OpenAPI Specification
 - Request Validation
 - Response Validation
+- Interactive API Documentation
+- Enterprise Health API
 
 ---
 
-# Enterprise Roadmap
+## Containerization
+
+- Docker
+- Docker Compose
+- Multi-Container Architecture
+- Docker Networking
+- Persistent Volumes
+- Docker Health Checks
+- Nginx Reverse Proxy
+- Redis Integration
+- Celery Background Processing
+- Structured Logging
+
+---
+
+## Cloud Infrastructure
+
+- Infrastructure as Code (Terraform)
+- AWS CLI Integration
+- Amazon Virtual Private Cloud (VPC)
+- Public Subnets
+- Private Subnets
+- Internet Gateway
+- NAT Gateway
+- Public Route Tables
+- Private Route Tables
+- Security Groups
+- Amazon EC2 Deployment
+- Apache Web Server Provisioning
+- Automated Infrastructure Deployment
+- Resource Tagging
+
+---
+
+# Planned Enterprise Features
 
 The following capabilities will be implemented throughout future development milestones.
 
@@ -136,15 +192,32 @@ The following capabilities will be implemented throughout future development mil
 
 ---
 
-## Infrastructure
+## AWS Infrastructure
 
-- Docker
-- Docker Compose
-- Terraform
+- Application Load Balancer (ALB)
+- Amazon S3
+- Amazon RDS PostgreSQL
+- Auto Scaling Group
+- Launch Template
+- CloudWatch
+- Route 53
+- AWS Certificate Manager (ACM)
+- IAM Roles and Instance Profiles
+- AWS Secrets Manager
+- Systems Manager Parameter Store
+- VPC Endpoints
+- AWS CloudTrail
+- AWS WAF
+- Backup Strategy
+
+---
+
+## Configuration Management
+
 - Ansible
-- Kubernetes
-- Nginx
-- AWS Deployment
+- Automated Server Provisioning
+- Configuration Standardization
+- Deployment Automation
 
 ---
 
@@ -158,14 +231,25 @@ The following capabilities will be implemented throughout future development mil
 
 ---
 
-## Monitoring
+## Container Orchestration
+
+- Kubernetes
+- Amazon EKS
+- High Availability
+- Self-Healing Workloads
+- Horizontal Scaling
+
+---
+
+## Monitoring and Observability
 
 - Prometheus
 - Grafana
+- Loki
 - Centralized Logging
-- Health Checks
 - Performance Monitoring
 - Metrics Collection
+- Alert Management
 
 ---
 
@@ -192,12 +276,21 @@ The following capabilities will be implemented throughout future development mil
 Every new feature follows the same engineering lifecycle:
 
 1. Requirements Analysis
-2. System Design
-3. Implementation
-4. Testing
-5. Documentation
-6. Technical Review
-7. Git Commit
-8. Repository Update
 
-This structured approach ensures that each capability is delivered to a consistent standard while maintaining alignment with the project's architecture and long-term roadmap.
+2. System Design
+
+3. Implementation
+
+4. Testing
+
+5. Verification
+
+6. Documentation
+
+7. Technical Review
+
+8. Git Commit
+
+9. Push to GitHub
+
+This structured approach ensures that every capability is fully implemented, verified, documented and committed before development proceeds to the next milestone, maintaining consistency with the project's enterprise architecture and long-term roadmap.

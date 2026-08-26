@@ -2,9 +2,9 @@
 
 ## Introduction
 
-The ticket lifecycle defines the journey of every support request submitted through CloudOps ServiceDesk. It provides a structured workflow that ensures incidents are managed consistently, responsibilities are clearly assigned, and progress can be monitored from creation to completion.
+The ticket lifecycle defines the complete journey of every support request submitted through CloudOps ServiceDesk. It provides a structured workflow that ensures incidents are managed consistently, responsibilities are clearly assigned and progress can be monitored from creation to completion.
 
-The workflow has been designed to reflect enterprise IT Service Management (ITSM) practices while remaining simple enough to evolve as additional functionality is introduced.
+The workflow has been designed to reflect enterprise Information Technology Service Management (ITSM) practices while supporting secure role-based operations, future automation and cloud-native deployment.
 
 ---
 
@@ -12,12 +12,13 @@ The workflow has been designed to reflect enterprise IT Service Management (ITSM
 
 The ticket lifecycle has been designed to:
 
-- Standardise ticket processing.
+- Standardize ticket processing.
 - Track ticket progress.
 - Improve accountability.
 - Support technician workflows.
-- Maintain consistent status transitions.
-- Prepare the platform for future ITSM capabilities.
+- Enforce consistent status transitions.
+- Support role-based ticket management.
+- Prepare the platform for future enterprise ITSM capabilities.
 
 ---
 
@@ -41,9 +42,9 @@ Resolved
 Closed
 ```
 
-Each status must follow the defined sequence.
+Each ticket progresses through the lifecycle using controlled status transitions.
 
-Invalid status transitions are rejected by the application.
+The application validates every status update to maintain workflow consistency.
 
 ---
 
@@ -51,33 +52,33 @@ Invalid status transitions are rejected by the application.
 
 ## New
 
-A ticket has been created by a user but has not yet been assigned to a technician.
+A ticket has been created by an authenticated user and is awaiting assignment to a technician.
 
 ---
 
 ## Assigned
 
-An administrator assigns the ticket to a technician who becomes responsible for handling the request.
+An administrator assigns the ticket to a technician, transferring ownership and responsibility for resolving the request.
 
 ---
 
 ## In Progress
 
-The assigned technician has started investigating or resolving the issue.
+The assigned technician has acknowledged the request and is actively investigating or resolving the reported issue.
 
 ---
 
 ## Resolved
 
-The technician has completed the required work and marked the ticket as resolved.
+The technician has completed the required work and marked the issue as resolved.
 
 ---
 
 ## Closed
 
-The ticket has been completed and no further action is required.
+The support request has been completed and no further action is required.
 
-Closed tickets become read-only unless future functionality allows reopening.
+Closed tickets remain available for reporting and auditing but cannot be modified under the current implementation.
 
 ---
 
@@ -87,9 +88,10 @@ Closed tickets become read-only unless future functionality allows reopening.
 
 Can:
 
-- Create tickets
-- View personal tickets
-- Update eligible tickets
+- Create support tickets.
+- View personal tickets.
+- View personal dashboard.
+- Update eligible tickets.
 
 ---
 
@@ -97,9 +99,10 @@ Can:
 
 Can:
 
-- View assigned tickets
-- Update ticket status
-- Resolve assigned tickets
+- View assigned tickets.
+- Update assigned tickets.
+- Update ticket status.
+- Resolve assigned tickets.
 
 ---
 
@@ -107,19 +110,43 @@ Can:
 
 Can:
 
-- View all tickets
-- Assign technicians
-- Update any ticket
-- Delete tickets
-- Monitor ticket activity
+- View all tickets.
+- Assign tickets to technicians.
+- Update any ticket.
+- Delete tickets.
+- Monitor ticket activity.
+- Manage ticket workflow.
 
 ---
 
 # Workflow Validation
 
-CloudOps ServiceDesk validates every status transition to ensure that tickets follow the defined lifecycle.
+CloudOps ServiceDesk validates every ticket operation before applying any changes.
 
-The application prevents users from skipping stages or performing invalid transitions that could compromise workflow consistency.
+Current validation includes:
+
+- Authenticated user verification.
+- Role-Based Access Control (RBAC).
+- Ticket ownership validation.
+- Ticket existence validation.
+- Status transition validation.
+- Request data validation.
+
+These controls ensure that only authorized users can perform permitted operations while maintaining workflow integrity.
+
+---
+
+# Artificial Intelligence Integration
+
+The current platform includes an enterprise Artificial Intelligence Service Layer that complements the ticket lifecycle.
+
+Current AI capabilities include:
+
+- Ticket classification.
+- Ticket summarization.
+- Ticket priority recommendation.
+
+These services assist users and administrators while preparing the platform for future intelligent workflow automation.
 
 ---
 
@@ -155,7 +182,7 @@ Closed
 Reopened
 ```
 
-These additional states will improve operational visibility and more closely align the platform with enterprise service desk workflows.
+These additional states will improve operational visibility and more closely align the platform with enterprise IT Service Management practices.
 
 ---
 
@@ -163,15 +190,18 @@ These additional states will improve operational visibility and more closely ali
 
 Planned improvements include:
 
-- Service Level Agreement (SLA) tracking
-- Automatic ticket escalation
-- Priority-based routing
-- Assignment history
-- Internal technician notes
-- Activity timeline
-- Email notifications
-- Ticket reopening
-- Audit logging
+- Service Level Agreement (SLA) tracking.
+- Automatic ticket escalation.
+- Priority-based routing.
+- Assignment history.
+- Internal technician notes.
+- Activity timeline.
+- Email notifications.
+- Ticket reopening.
+- Audit logging.
+- AI-assisted ticket routing.
+- AI-generated resolution suggestions.
+- AI-powered knowledge recommendations.
 
 ---
 
@@ -188,10 +218,11 @@ Planned improvements include:
 
 | Version | Description |
 |----------|-------------|
-| 1.0 | Initial ticket lifecycle documentation. |
+| 1.0 | Initial ticket lifecycle documentation created. |
+| 1.1 | Added role-based responsibilities, workflow validation, Artificial Intelligence integration and expanded enterprise workflow planning. |
 
 ---
 
 # Document Status
 
-Draft
+Actively Maintained

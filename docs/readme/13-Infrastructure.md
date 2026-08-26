@@ -2,15 +2,15 @@
 
 ## Introduction
 
-CloudOps ServiceDesk is designed to run within a secure, scalable, and production-oriented cloud environment. The infrastructure has been planned using modern cloud engineering principles to provide high availability, security, automation, and operational reliability.
+CloudOps ServiceDesk is being developed within a secure, scalable and production-oriented Amazon Web Services (AWS) environment. The infrastructure is designed using modern cloud engineering principles to provide security, automation, scalability and operational reliability.
 
-The platform will be hosted on Amazon Web Services (AWS), with infrastructure provisioned through Infrastructure as Code (IaC) to ensure consistency, repeatability, and simplified maintenance.
+Infrastructure is provisioned using Infrastructure as Code (IaC) with Terraform, ensuring every cloud resource is deployed consistently, repeatably and through version-controlled configuration rather than manual creation.
 
 ---
 
 # Infrastructure Objectives
 
-The infrastructure is designed to:
+The infrastructure has been designed to:
 
 - Provide a secure cloud environment.
 - Support scalable application deployment.
@@ -18,7 +18,7 @@ The infrastructure is designed to:
 - Automate infrastructure provisioning.
 - Simplify operational management.
 - Support future enterprise expansion.
-- Demonstrate modern cloud engineering practices.
+- Demonstrate modern cloud engineering and Infrastructure as Code (IaC) practices.
 
 ---
 
@@ -26,41 +26,92 @@ The infrastructure is designed to:
 
 ## Amazon Web Services (AWS)
 
-AWS has been selected as the target cloud platform because it provides a comprehensive ecosystem of services widely adopted by enterprise organisations.
+Amazon Web Services (AWS) provides the cloud platform for CloudOps ServiceDesk.
 
-The platform will make use of multiple AWS services to support networking, compute, storage, monitoring, and security.
+The current implementation provisions enterprise networking, compute resources and security using Terraform while preparing the platform for production deployment through additional AWS managed services.
 
 ---
 
-# Planned Infrastructure Components
+# Current Infrastructure
 
-The infrastructure will consist of the following core services.
+The following infrastructure components have already been implemented.
 
 ## Networking
+
+Current implementation includes:
 
 - Amazon Virtual Private Cloud (VPC)
 - Public Subnets
 - Private Subnets
-- Route Tables
 - Internet Gateway
 - NAT Gateway
+- Public Route Tables
+- Private Route Tables
 - Security Groups
-- Network Access Control Lists (NACLs)
 
-Purpose:
+Purpose
 
-Provide secure and isolated network communication between infrastructure components.
+Provide secure, isolated and scalable network communication between cloud resources.
 
 ---
 
 ## Compute
 
+Current implementation includes:
+
 - Amazon EC2
-- Amazon Elastic Kubernetes Service (EKS)
+- Apache Web Server
+- EC2 User Data Automation
 
-Purpose:
+Purpose
 
-Host backend services and containerized workloads.
+Provide compute resources for hosting and validating the CloudOps ServiceDesk application within AWS.
+
+---
+
+## Identity and Access Management
+
+Current implementation includes:
+
+- IAM User
+- IAM Role
+- IAM Instance Profile
+
+Purpose
+
+Provide secure authentication and authorization for AWS resources while following the Principle of Least Privilege.
+
+---
+
+## Infrastructure as Code
+
+Current implementation includes:
+
+- Terraform Provider Configuration
+- Variables
+- Local Values
+- Resource Tagging
+- Infrastructure Planning
+- Infrastructure Validation
+- Infrastructure Provisioning
+
+Purpose
+
+Provision AWS infrastructure using reusable, version-controlled Infrastructure as Code.
+
+---
+
+# Planned Infrastructure Components
+
+The following infrastructure components will be implemented during future development milestones.
+
+## Load Balancing
+
+- Application Load Balancer (ALB)
+
+Purpose
+
+Distribute incoming traffic across multiple application servers while improving scalability, availability and fault tolerance.
 
 ---
 
@@ -68,29 +119,19 @@ Host backend services and containerized workloads.
 
 - Amazon S3
 
-Purpose:
+Purpose
 
-Store uploaded files, backups, and static assets.
-
----
-
-## Identity and Access Management
-
-- AWS Identity and Access Management (IAM)
-
-Purpose:
-
-Control permissions for users, services, and infrastructure resources following the Principle of Least Privilege.
+Store uploaded files, application assets, Terraform state (future) and backup resources.
 
 ---
 
-## Load Balancing
+## Database
 
-- Application Load Balancer (ALB)
+- Amazon RDS PostgreSQL
 
-Purpose:
+Purpose
 
-Distribute incoming traffic across backend services to improve availability and scalability.
+Provide a managed, scalable and highly available PostgreSQL database service.
 
 ---
 
@@ -100,79 +141,182 @@ Distribute incoming traffic across backend services to improve availability and 
 - Prometheus
 - Grafana
 
-Purpose:
+Purpose
 
-Collect infrastructure metrics, monitor application health, and provide operational dashboards.
+Collect infrastructure metrics, application metrics, logs and operational dashboards.
+
+---
+
+## Security
+
+Future infrastructure security services include:
+
+- AWS Certificate Manager (ACM)
+- AWS WAF
+- AWS Secrets Manager
+- AWS Systems Manager Parameter Store
+- AWS CloudTrail
+- VPC Endpoints
+
+Purpose
+
+Improve cloud security, compliance, auditing and secure secret management.
+
+---
+
+## Container Platform
+
+Future deployment will include:
+
+- Docker
+- Kubernetes
+- Amazon Elastic Kubernetes Service (EKS)
+
+Purpose
+
+Support scalable container orchestration and production-ready application deployment.
 
 ---
 
 # Infrastructure Automation
 
-Infrastructure provisioning will be automated using Terraform.
+Infrastructure provisioning is automated using Terraform.
 
-Terraform will manage:
+Terraform currently manages:
 
-- VPC creation
-- Networking resources
-- Compute resources
+- AWS Provider
+- Variables
+- Local Values
+- Amazon VPC
+- Public Subnets
+- Private Subnets
+- Internet Gateway
+- NAT Gateway
+- Route Tables
 - Security Groups
-- IAM resources
-- Storage resources
+- IAM Roles
+- IAM Instance Profiles
+- Amazon EC2
+- Apache User Data provisioning
 
-This approach ensures that infrastructure can be recreated consistently across different environments.
+Future Terraform modules will provision:
+
+- Application Load Balancer
+- Amazon S3
+- Amazon RDS
+- Auto Scaling
+- CloudWatch
+- Route 53
+- AWS Certificate Manager
+
+This approach ensures infrastructure can be recreated consistently across development, testing and production environments.
 
 ---
 
 # Infrastructure Security
 
-The infrastructure design incorporates multiple security controls.
+The current infrastructure incorporates multiple security controls.
 
-These include:
+Current implementation includes:
 
-- Private networking
-- Security Groups
-- IAM Roles
-- Least Privilege Access
-- Secrets Management
-- Encrypted communication
-- Environment variable configuration
+- Virtual Private Cloud (VPC) isolation.
+- Public and private subnet separation.
+- Security Groups.
+- IAM Roles.
+- IAM Instance Profiles.
+- EC2 User Data automation.
+- IMDSv2 enforcement.
+- Principle of Least Privilege.
+- Infrastructure tagging.
+
+Future security enhancements include:
+
+- Private EC2 instances behind an Application Load Balancer.
+- AWS WAF.
+- HTTPS using AWS Certificate Manager.
+- Secrets Manager.
+- CloudTrail auditing.
 
 ---
 
 # Scalability
 
-The infrastructure is designed to support future growth through:
+The infrastructure has been designed to support future growth through:
 
-- Kubernetes orchestration
-- Horizontal scaling
-- Load balancing
-- Containerized deployment
-- Modular infrastructure
+- Application Load Balancer.
+- Auto Scaling Groups.
+- Kubernetes orchestration.
+- Amazon Elastic Kubernetes Service (EKS).
+- Containerized deployment.
+- Modular Terraform architecture.
+- Managed database services.
 
 ---
 
-# High-Level Infrastructure
+# Current Infrastructure Architecture
 
 ```text
-Internet
-    │
-    ▼
-Application Load Balancer
-    │
-    ▼
-Kubernetes Cluster (EKS)
-    │
-    ▼
-FastAPI Application
-    │
-    ▼
-PostgreSQL Database
-    │
-    ▼
-Amazon S3
+                    Internet
+                        │
+                        ▼
+                Internet Gateway
+                        │
+                        ▼
+          Amazon Virtual Private Cloud
+                        │
+        ┌───────────────┴───────────────┐
+        ▼                               ▼
+ Public Subnet                    Private Subnet
+        │                               │
+        ▼                               ▼
+ Security Group                 NAT Gateway
+        │
+        ▼
+ Amazon EC2
+        │
+        ▼
+ Apache Web Server
 ```
 
-This architecture supports a scalable and resilient cloud-native deployment.
+The entire infrastructure is provisioned automatically using Terraform.
+
+---
+
+# Target Enterprise Infrastructure
+
+```text
+                    Internet
+                        │
+                        ▼
+                  Route 53 DNS
+                        │
+                        ▼
+            AWS Certificate Manager
+                        │
+                        ▼
+         Application Load Balancer
+                        │
+          ┌─────────────┴─────────────┐
+          ▼                           ▼
+     Amazon EC2                  Amazon EC2
+    Auto Scaling Group      Auto Scaling Group
+          │                           │
+          └─────────────┬─────────────┘
+                        ▼
+                FastAPI Application
+                        │
+        ┌───────────────┴───────────────┐
+        ▼                               ▼
+ Amazon RDS PostgreSQL             Amazon S3
+                        │
+                        ▼
+                  CloudWatch
+                        │
+                        ▼
+       Prometheus • Grafana • Loki
+```
+
+This architecture represents the production target for CloudOps ServiceDesk and provides a secure, scalable and highly available cloud-native platform.
 
 ---
 
@@ -189,10 +333,11 @@ This architecture supports a scalable and resilient cloud-native deployment.
 
 | Version | Description |
 |----------|-------------|
-| 1.0 | Initial infrastructure documentation. |
+| 1.0 | Initial infrastructure documentation created. |
+| 1.1 | Added Terraform Infrastructure as Code (IaC), Amazon VPC, public and private networking, Internet Gateway, NAT Gateway, route tables, Security Groups, IAM, Amazon EC2 deployment, infrastructure automation and updated enterprise infrastructure roadmap. |
 
 ---
 
 # Document Status
 
-Draft
+Actively Maintained
