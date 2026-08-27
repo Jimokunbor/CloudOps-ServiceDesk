@@ -706,7 +706,77 @@ Demonstrates successful verification of the Application Load Balancer Target Gro
 
 ---
 
-## 6.72 Ansible
+## 6.72 Amazon S3 Terraform Plan
+
+**Purpose**
+
+Demonstrates successful execution of the Terraform planning phase before deploying the Amazon S3 storage infrastructure. The screenshot confirms that Terraform identified all S3 resources that would be provisioned, including the storage bucket, versioning, server-side encryption, lifecycle policy, public access protection and ownership controls before deployment.
+
+**Screenshot**
+
+![Amazon S3 Terraform Plan](../../screenshots/01-backend/76-amazon-s3-terraform-plan.png)
+
+---
+
+**Purpose**
+
+Demonstrates successful execution of the Terraform planning phase before deploying the Amazon S3 storage infrastructure. The screenshot confirms that Terraform identified all S3 resources that would be provisioned, including the storage bucket, versioning, server-side encryption, lifecycle policy, public access protection and ownership controls before deployment.
+
+**Screenshot**
+
+![Amazon S3 Terraform Plan](../../screenshots/01-backend/76-amazon-s3-terraform-plan.png)
+
+---
+
+## 6.73 Amazon S3 Deployment
+
+**Purpose**
+
+Demonstrates successful deployment of the Amazon S3 storage infrastructure using Terraform. The screenshot confirms that Terraform successfully created the CloudOps ServiceDesk storage bucket together with its security configurations, encryption settings, versioning configuration and lifecycle policy.
+
+**Screenshot**
+
+![Amazon S3 Deployment](../../screenshots/01-backend/77-amazon-s3-deployment.png)
+
+---
+
+## 6.74 Amazon S3 Bucket Verification
+
+**Purpose**
+
+Demonstrates successful verification of the deployed Amazon S3 bucket within the AWS Management Console. The screenshot confirms that the CloudOps ServiceDesk storage bucket was created successfully and is available for securely storing application files and future project assets.
+
+**Screenshot**
+
+![Amazon S3 Bucket Verification](../../screenshots/01-backend/78-amazon-s3-bucket-verification.png)
+
+---
+
+## 6.75 Amazon S3 Versioning Verification
+
+**Purpose**
+
+Demonstrates successful verification that bucket versioning has been enabled. The screenshot confirms that Amazon S3 maintains multiple versions of stored objects, providing protection against accidental deletion, unintended modifications and supporting reliable data recovery.
+
+**Screenshot**
+
+![Amazon S3 Versioning Verification](../../screenshots/01-backend/79-amazon-s3-versioning-verification.png)
+
+---
+
+## 6.76 Amazon S3 Server-Side Encryption Verification
+
+**Purpose**
+
+Demonstrates successful verification of server-side encryption for the Amazon S3 bucket. The screenshot confirms that all newly uploaded objects are automatically encrypted using Amazon S3 managed keys (SSE-S3), ensuring that stored data remains protected while at rest.
+
+**Screenshot**
+
+![Amazon S3 Server-Side Encryption Verification](../../screenshots/01-backend/80-amazon-s3-encryption-verification.png)
+
+---
+
+## 6.77 Ansible
 
 **Purpose**
 
@@ -718,7 +788,7 @@ Demonstrates automated infrastructure configuration, software provisioning and s
 
 ---
 
-## 6.73 GitHub Actions
+## 6.78 GitHub Actions
 
 **Purpose**
 
@@ -730,7 +800,7 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 ---
 
-## 6.74 Kubernetes
+## 6.79 Kubernetes
 
 **Purpose**
 
@@ -742,7 +812,7 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 ---
 
-## 6.75 AWS Production Infrastructure
+## 6.80 AWS Production Infrastructure
 
 **Purpose**
 
@@ -754,7 +824,7 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 ---
 
-## 6.76 Prometheus
+## 6.81 Prometheus
 
 **Purpose**
 
@@ -766,7 +836,7 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 ---
 
-## 6.77 Grafana
+## 6.82 Grafana
 
 **Purpose**
 
@@ -778,7 +848,7 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 ---
 
-## 6.78 Loki
+## 6.83 Loki
 
 **Purpose**
 
@@ -790,7 +860,7 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 ---
 
-## 6.79 Production Deployment
+## 6.84 Production Deployment
 
 **Purpose**
 
@@ -837,9 +907,10 @@ Every screenshot included in this document should:
 | 1.6 | Added Terraform Project Structure, Terraform Installation Verification, AWS CLI Installation Verification, Terraform Initialization, Terraform Validation, Terraform Formatting and Terraform Execution Plan screenshots. |
 | 1.7 | Added Terraform Provider configuration, Terraform variables, local values, Virtual Private Cloud (VPC), public and private subnets, Internet Gateway, NAT Gateway, public and private route tables, Security Groups, Amazon EC2 deployment and CloudOps ServiceDesk web application deployment screenshots. |
 | 1.8 | Added Application Load Balancer deployment, Application Load Balancer verification, DNS verification, Target Group health verification, Listener verification, Launch Template creation, Auto Scaling Group deployment, Launch Template verification, Auto Scaling Group verification, Auto Scaling instance verification and Auto Scaling Target Group health verification screenshots. |
+| 1.9 | Added Amazon S3 Terraform Plan, Amazon S3 deployment, Amazon S3 bucket verification, Amazon S3 versioning verification and Amazon S3 server-side encryption verification screenshots. |
 
 ---
 
 # 10. Document Status
 
-Actively Maintained
+**Actively Maintained**
