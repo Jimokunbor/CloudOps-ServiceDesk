@@ -634,7 +634,79 @@ Demonstrates successful verification of the HTTP Listener configured for the App
 
 ---
 
-**## 6.61 Ansible**
+## 6.66 Auto Scaling Group Terraform Plan
+
+**Purpose**
+
+Demonstrates successful execution of the Terraform planning phase before deploying the Launch Template and Auto Scaling Group. The screenshot confirms that Terraform generated the required execution plan for the Auto Scaling infrastructure, allowing the planned resources to be reviewed before deployment.
+
+**Screenshot**
+
+![Auto Scaling Group Terraform Plan](../../screenshots/01-backend/70-auto-scaling-group-terraform-plan.png)
+
+---
+
+## 6.67 Auto Scaling Group Deployment
+
+**Purpose**
+
+Demonstrates successful deployment of the Launch Template and Auto Scaling Group using Terraform. The screenshot confirms that Terraform provisioned both resources successfully and completed the deployment without errors.
+
+**Screenshot**
+
+![Auto Scaling Group Deployment](../../screenshots/01-backend/71-auto-scaling-group-deployment.png)
+
+---
+
+## 6.68 Launch Template Verification
+
+**Purpose**
+
+Demonstrates successful verification of the Launch Template within the AWS Management Console. The screenshot confirms that the Launch Template has been configured with the Ubuntu Amazon Machine Image (AMI), EC2 instance type, Security Group, IAM Instance Profile and CloudOps ServiceDesk EC2 Key Pair required for launching identical web server instances.
+
+**Screenshot**
+
+![Launch Template Verification](../../screenshots/01-backend/72-launch-template-verification.png)
+
+---
+
+## 6.69 Auto Scaling Group Verification
+
+**Purpose**
+
+Demonstrates successful verification of the deployed Auto Scaling Group within the AWS Management Console. The screenshot confirms that the Auto Scaling Group is configured with the Launch Template, maintains a desired capacity of two instances, supports automatic scaling between two and four instances and is operating normally.
+
+**Screenshot**
+
+![Auto Scaling Group Verification](../../screenshots/01-backend/73-auto-scaling-group-verification.png)
+
+---
+
+## 6.70 Auto Scaling Instance Verification
+
+**Purpose**
+
+Demonstrates successful verification of the EC2 instances automatically launched by the Auto Scaling Group. The screenshot confirms that both instances are in the **InService** lifecycle state and have passed the configured health checks, validating successful integration between the Launch Template and Auto Scaling Group.
+
+**Screenshot**
+
+![Auto Scaling Instance Verification](../../screenshots/01-backend/74-auto-scaling-instance-verification.png)
+
+---
+
+## 6.71 Target Group Health Verification
+
+**Purpose**
+
+Demonstrates successful verification of the Application Load Balancer Target Group after integrating the Auto Scaling Group. The screenshot confirms that all registered EC2 instances are healthy and available to receive application traffic through the Application Load Balancer, validating successful end-to-end load balancing and automatic instance registration.
+
+**Screenshot**
+
+![Target Group Health Verification](../../screenshots/01-backend/75-target-group-health-verification.png)
+
+---
+
+## 6.72 Ansible
 
 **Purpose**
 
@@ -646,7 +718,7 @@ Demonstrates automated infrastructure configuration, software provisioning and s
 
 ---
 
-**## 6.62 GitHub Actions**
+## 6.73 GitHub Actions
 
 **Purpose**
 
@@ -658,7 +730,7 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 ---
 
-**## 6.63 Kubernetes**
+## 6.74 Kubernetes
 
 **Purpose**
 
@@ -670,7 +742,7 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 ---
 
-**## 6.64 AWS Production Infrastructure**
+## 6.75 AWS Production Infrastructure
 
 **Purpose**
 
@@ -682,7 +754,7 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 ---
 
-**## 6.65 Prometheus**
+## 6.76 Prometheus
 
 **Purpose**
 
@@ -694,7 +766,7 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 ---
 
-**## 6.66 Grafana**
+## 6.77 Grafana
 
 **Purpose**
 
@@ -706,7 +778,7 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 ---
 
-**## 6.67 Loki**
+## 6.78 Loki
 
 **Purpose**
 
@@ -718,7 +790,7 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 ---
 
-**## 6.68 Production Deployment**
+## 6.79 Production Deployment
 
 **Purpose**
 
@@ -735,17 +807,11 @@ Demonstrates the completed production deployment of the CloudOps ServiceDesk pla
 Every screenshot included in this document should:
 
 - Be clear, readable and high resolution.
-
 - Display only the relevant implementation or completed feature.
-
 - Follow the project's screenshot naming convention.
-
 - Reflect the latest implementation.
-
 - Include a short purpose describing what the screenshot demonstrates.
-
 - Be captured after successful execution or deployment.
-
 - Exclude sensitive information such as passwords, tokens and secret keys.
 
 ---
@@ -753,9 +819,7 @@ Every screenshot included in this document should:
 # 8. Related Documentation
 
 - 17-Project-Status.md
-
 - 18-Roadmap.md
-
 - 19-Getting-Started.md
 
 ---
@@ -772,6 +836,7 @@ Every screenshot included in this document should:
 | 1.5 | Added AI Module Import Verification, AI API Documentation, AI Runtime Verification and AI Service Testing screenshots. |
 | 1.6 | Added Terraform Project Structure, Terraform Installation Verification, AWS CLI Installation Verification, Terraform Initialization, Terraform Validation, Terraform Formatting and Terraform Execution Plan screenshots. |
 | 1.7 | Added Terraform Provider configuration, Terraform variables, local values, Virtual Private Cloud (VPC), public and private subnets, Internet Gateway, NAT Gateway, public and private route tables, Security Groups, Amazon EC2 deployment and CloudOps ServiceDesk web application deployment screenshots. |
+| 1.8 | Added Application Load Balancer deployment, Application Load Balancer verification, DNS verification, Target Group health verification, Listener verification, Launch Template creation, Auto Scaling Group deployment, Launch Template verification, Auto Scaling Group verification, Auto Scaling instance verification and Auto Scaling Target Group health verification screenshots. |
 
 ---
 

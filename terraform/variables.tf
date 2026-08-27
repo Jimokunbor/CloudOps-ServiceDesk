@@ -57,3 +57,15 @@ variable "availability_zone_2" {
   type        = string
   default     = "eu-west-1b"
 }
+
+variable "instance_type" {
+  description = "EC2 instance type used by the Launch Template and Auto Scaling Group"
+  type        = string
+  default     = "t3.micro"
+}
+
+variable "key_pair_name" {
+  description = "AWS EC2 Key Pair name"
+  type        = string
+  default     = "cloudops-servicedesk-key"
+}
