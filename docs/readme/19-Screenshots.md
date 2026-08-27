@@ -574,6 +574,66 @@ Demonstrates successful end-to-end deployment of the CloudOps ServiceDesk infras
 
 ---
 
+## 6.61 Application Load Balancer Terraform Deployment
+
+**Purpose**
+
+Demonstrates successful execution of the Terraform deployment for the Application Load Balancer (ALB). The screenshot confirms that Terraform successfully provisioned the Application Load Balancer, Target Group, Target Group Attachment and HTTP Listener within the CloudOps ServiceDesk AWS infrastructure.
+
+**Screenshot**
+
+![Application Load Balancer Terraform Deployment](../../screenshots/01-backend/65-Application-Load-Balancer-apply.png)
+
+---
+
+## 6.62 Application Load Balancer Deployment Verification
+
+**Purpose**
+
+Demonstrates successful verification of the deployed Application Load Balancer within the AWS Management Console. The screenshot confirms that the Application Load Balancer is active, internet-facing, associated with the correct Virtual Private Cloud (VPC), deployed across multiple Availability Zones and configured with the expected resource tags.
+
+**Screenshot**
+
+![Application Load Balancer Deployment Verification](../../screenshots/01-backend/66-Application-Load-Balancer-Deployment-Completed.png)
+
+---
+
+## 6.63 Application Load Balancer DNS Verification
+
+**Purpose**
+
+Demonstrates successful verification of the public Domain Name System (DNS) endpoint assigned to the Application Load Balancer. The screenshot confirms that AWS generated a public DNS name, providing a single entry point through which users can access the CloudOps ServiceDesk web application.
+
+**Screenshot**
+
+![Application Load Balancer DNS Verification](../../screenshots/01-backend/67-Application-Load-Balancer-DNS-Verification.png)
+
+---
+
+## 6.64 Target Group Health Verification
+
+**Purpose**
+
+Demonstrates successful verification of the Application Load Balancer Target Group. The screenshot confirms that the registered Amazon EC2 web server passed the configured health checks and is reported as healthy, verifying that the Application Load Balancer can successfully route client requests to the backend web server.
+
+**Screenshot**
+
+![Target Group Health Verification](../../screenshots/01-backend/68-Target-Group-Health-Verification.png)
+
+---
+
+## 6.65 Application Load Balancer Listener Verification
+
+**Purpose**
+
+Demonstrates successful verification of the HTTP Listener configured for the Application Load Balancer. The screenshot confirms that the listener is configured to receive HTTP requests on port 80 and forward incoming traffic to the CloudOps ServiceDesk Target Group, completing the Application Load Balancer request routing configuration.
+
+**Screenshot**
+
+![Application Load Balancer Listener Verification](../../screenshots/01-backend/69-Application-Load-Balancer-Listener.png)
+
+---
+
 **## 6.61 Ansible**
 
 **Purpose**

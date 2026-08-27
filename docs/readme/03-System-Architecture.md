@@ -1,3 +1,32 @@
+# System Architecture
+
+## Introduction
+
+CloudOps ServiceDesk follows a layered architecture designed to promote modularity, maintainability, scalability and separation of concerns. Each layer has a clearly defined responsibility, allowing the application to evolve without introducing unnecessary coupling between components.
+
+This architectural approach reflects software engineering practices commonly adopted within enterprise environments and supports future expansion as additional application features, cloud infrastructure and enterprise services are introduced.
+
+---
+
+# Architectural Principles
+
+The platform has been designed around the following principles:
+
+- Separation of Concerns
+- Modular Design
+- Layered Architecture
+- RESTful API Design
+- Stateless Authentication
+- Role-Based Access Control (RBAC)
+- Infrastructure as Code (IaC)
+- Cloud-Native Design
+- Security by Design
+- Scalability
+- High Availability
+- Automation First
+
+---
+
 # Technology Stack
 
 ## Introduction
@@ -250,7 +279,7 @@ Amazon VPC provides secure network isolation for the CloudOps ServiceDesk infras
 - Private subnets
 - Internet Gateway
 - NAT Gateway
-- Route tables
+- Route Tables
 - Security Groups
 
 **Status**
@@ -268,7 +297,7 @@ Amazon EC2 provides scalable virtual servers for hosting the CloudOps ServiceDes
 **Role in the Project**
 
 - Application hosting
-- Apache web server
+- Apache Web Server
 - Terraform User Data provisioning
 - Infrastructure validation
 
@@ -341,11 +370,11 @@ Implemented
 
 # Reverse Proxy
 
-## Nginx
+## NGINX
 
 **Purpose**
 
-Nginx acts as the reverse proxy for incoming application traffic.
+NGINX acts as the reverse proxy for incoming application traffic.
 
 **Role in the Project**
 
@@ -535,3 +564,180 @@ GitHub hosts the source code repository and supports collaborative development.
 **Status**
 
 Implemented
+
+---
+
+# High-Level Architecture
+
+The application currently follows the request flow shown below.
+
+```text
+                        User / Client
+                              │
+                              ▼
+                    Web Browser / Swagger UI
+                              │
+                              ▼
+                           NGINX
+                     (Reverse Proxy)
+                              │
+                              ▼
+                     FastAPI REST API
+                              │
+                              ▼
+             Authentication & Authorization
+                  (JWT / OAuth2 / RBAC)
+                              │
+                              ▼
+                    API Endpoints Layer
+                              │
+                              ▼
+                  Business Services Layer
+                              │
+          ┌───────────────────┴───────────────────┐
+          ▼                                       ▼
+ Artificial Intelligence                  Celery Worker
+      Service Layer                  Background Processing
+          │                                       │
+          └───────────────────┬───────────────────┘
+                              ▼
+                         Redis Broker
+                              │
+                              ▼
+                     SQLAlchemy ORM Layer
+                              │
+                              ▼
+                     PostgreSQL Database
+```
+
+Every incoming request passes through the appropriate application layers before a response is returned to the client.
+
+---
+
+# Application Layers
+
+## Client Layer
+
+The Client Layer represents applications that communicate with CloudOps ServiceDesk, including Swagger UI, future web applications, mobile applications and third-party integrations.
+
+Responsibilities include:
+
+- Sending HTTP requests
+- Displaying responses
+- User interaction
+- API consumption
+
+---
+
+## Reverse Proxy Layer
+
+The Reverse Proxy Layer is implemented using NGINX.
+
+Responsibilities include:
+
+- Routing incoming requests
+- Reverse proxy services
+- Request forwarding
+- Backend service isolation
+
+---
+
+## API Layer
+
+The API Layer exposes RESTful endpoints using FastAPI.
+
+Responsibilities include:
+
+- Receiving requests
+- Request validation
+- Response serialization
+- Endpoint routing
+- OpenAPI documentation
+
+---
+
+## Authentication Layer
+
+The Authentication Layer verifies user identity and controls access to protected resources.
+
+Responsibilities include:
+
+- User authentication
+- JWT validation
+- OAuth2 Password Flow
+- Role verification
+- Access control
+
+---
+
+## Business Logic Layer
+
+The Business Logic Layer contains the application's core functionality.
+
+Responsibilities include:
+
+- Ticket management
+- User management
+- Business rules
+- Workflow validation
+- Dashboard calculations
+- Administrative operations
+
+---
+
+## Artificial Intelligence Layer
+
+The Artificial Intelligence Layer provides intelligent support services for ticket processing.
+
+Responsibilities include:
+
+- Ticket classification
+- Ticket summarization
+- Priority recommendation
+- AI service abstraction
+- AI provider integration
+
+---
+
+## Background Processing Layer
+
+Redis and Celery provide asynchronous task processing.
+
+Responsibilities include:
+
+- Background jobs
+- Task queues
+- Asynchronous processing
+- Future notification services
+
+---
+
+## Data Access Layer
+
+The Data Access Layer communicates with the database through SQLAlchemy.
+
+Responsibilities include:
+
+- Database queries
+- Data persistence
+- Relationship management
+- Transaction handling
+
+---
+
+## Database Layer
+
+PostgreSQL serves as the primary relational database.
+
+Responsibilities include:
+
+- Data storage
+- Data integrity
+- Relationship enforcement
+- Transaction consistency
+
+---
+
+# Cloud Infrastructure Architecture
+
+...
