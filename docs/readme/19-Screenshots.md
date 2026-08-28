@@ -776,7 +776,67 @@ Demonstrates successful verification of server-side encryption for the Amazon S3
 
 ---
 
-## 6.77 Ansible
+## 6.77 Amazon RDS PostgreSQL Deployment
+
+**Purpose**
+
+Demonstrates successful deployment of the Amazon RDS PostgreSQL database using Terraform. The screenshot confirms that Terraform successfully provisioned the managed PostgreSQL database instance and completed the infrastructure deployment without errors.
+
+**Screenshot**
+
+![Amazon RDS PostgreSQL Deployment](../../screenshots/01-backend/81-amazon-rds-deployment.png)
+
+---
+
+## 6.78 Amazon RDS PostgreSQL Verification
+
+**Purpose**
+
+Demonstrates successful verification of the Amazon RDS PostgreSQL database within the AWS Management Console. The screenshot confirms that the database instance was provisioned successfully and is available for use within the CloudOps ServiceDesk infrastructure.
+
+**Screenshot**
+
+![Amazon RDS PostgreSQL Verification](../../screenshots/01-backend/82-amazon-rds-verification.png)
+
+---
+
+## 6.79 Amazon RDS Connectivity and Security Verification
+
+**Purpose**
+
+Demonstrates successful verification of the networking and security configuration for the Amazon RDS PostgreSQL database. The screenshot confirms that the database is deployed within the private subnets, associated with the correct Virtual Private Cloud (VPC), protected by a dedicated Security Group and configured as a non-publicly accessible database instance.
+
+**Screenshot**
+
+![Amazon RDS Connectivity and Security Verification](../../screenshots/01-backend/83-amazon-rds-connectivity.png)
+
+---
+
+## 6.80 Amazon RDS Configuration Verification
+
+**Purpose**
+
+Demonstrates successful verification of the Amazon RDS PostgreSQL configuration. The screenshot confirms the configured database engine, instance class, allocated storage, encryption settings and automated backup configuration for the managed database service.
+
+**Screenshot**
+
+![Amazon RDS Configuration Verification](../../screenshots/01-backend/84-amazon-rds-configuration.png)
+
+---
+
+## 6.81 Amazon RDS Terraform Outputs
+
+**Purpose**
+
+Demonstrates successful generation of Terraform outputs following the Amazon RDS deployment. The screenshot confirms that Terraform exported the database endpoint, identifier and port, providing the connection details required for future application integration.
+
+**Screenshot**
+
+![Amazon RDS Terraform Outputs](../../screenshots/01-backend/85-amazon-rds-terraform-outputs.png)
+
+---
+
+## 6.82 Ansible
 
 **Purpose**
 
@@ -788,7 +848,7 @@ Demonstrates automated infrastructure configuration, software provisioning and s
 
 ---
 
-## 6.78 GitHub Actions
+## 6.83 GitHub Actions
 
 **Purpose**
 
@@ -800,7 +860,7 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 ---
 
-## 6.79 Kubernetes
+## 6.84 Kubernetes
 
 **Purpose**
 
@@ -812,7 +872,7 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 ---
 
-## 6.80 AWS Production Infrastructure
+## 6.85 AWS Production Infrastructure
 
 **Purpose**
 
@@ -824,7 +884,7 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 ---
 
-## 6.81 Prometheus
+## 6.86 Prometheus
 
 **Purpose**
 
@@ -836,7 +896,7 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 ---
 
-## 6.82 Grafana
+## 6.87 Grafana
 
 **Purpose**
 
@@ -848,7 +908,7 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 ---
 
-## 6.83 Loki
+## 6.88 Loki
 
 **Purpose**
 
@@ -860,7 +920,7 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 ---
 
-## 6.84 Production Deployment
+## 6.89 Production Deployment
 
 **Purpose**
 
@@ -908,6 +968,7 @@ Every screenshot included in this document should:
 | 1.7 | Added Terraform Provider configuration, Terraform variables, local values, Virtual Private Cloud (VPC), public and private subnets, Internet Gateway, NAT Gateway, public and private route tables, Security Groups, Amazon EC2 deployment and CloudOps ServiceDesk web application deployment screenshots. |
 | 1.8 | Added Application Load Balancer deployment, Application Load Balancer verification, DNS verification, Target Group health verification, Listener verification, Launch Template creation, Auto Scaling Group deployment, Launch Template verification, Auto Scaling Group verification, Auto Scaling instance verification and Auto Scaling Target Group health verification screenshots. |
 | 1.9 | Added Amazon S3 Terraform Plan, Amazon S3 deployment, Amazon S3 bucket verification, Amazon S3 versioning verification and Amazon S3 server-side encryption verification screenshots. |
+| 2.0 | Added Amazon RDS PostgreSQL deployment, database verification, connectivity and security verification, configuration verification and Terraform outputs screenshots. |
 
 ---
 

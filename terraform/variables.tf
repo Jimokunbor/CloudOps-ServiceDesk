@@ -69,3 +69,33 @@ variable "key_pair_name" {
   type        = string
   default     = "cloudops-servicedesk-key"
 }
+
+variable "db_instance_class" {
+  description = "Amazon RDS instance class"
+  type        = string
+  default     = "db.t3.micro"
+}
+
+variable "db_allocated_storage" {
+  description = "Initial storage allocated for PostgreSQL"
+  type        = number
+  default     = 20
+}
+
+variable "db_name" {
+  description = "CloudOps ServiceDesk database name"
+  type        = string
+  default     = "cloudopsdb"
+}
+
+variable "db_username" {
+  description = "Master username for PostgreSQL"
+  type        = string
+  default     = "cloudopsadmin"
+}
+
+variable "db_password" {
+  description = "Master password for PostgreSQL"
+  type        = string
+  sensitive   = true
+}

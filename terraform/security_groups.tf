@@ -1,4 +1,4 @@
-# ALB Security Group
+# Application Load Balancer Security Group
 
 resource "aws_security_group" "alb" {
   name        = "${local.project_name}-alb-sg"
@@ -29,11 +29,12 @@ resource "aws_security_group" "alb" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name        = "${local.project_name}-alb-sg"
-    Environment = local.environment
-    ManagedBy   = "Terraform"
-  }
+  tags = merge(
+    local.common_tags,
+    {
+      Name = "${local.project_name}-alb-sg"
+    }
+  )
 }
 
 # Web Server Security Group
@@ -44,7 +45,7 @@ resource "aws_security_group" "web" {
   vpc_id      = aws_vpc.main.id
 
   ingress {
-    description     = "HTTP from ALB"
+    description     = "HTTP from Application Load Balancer"
     from_port       = 80
     to_port         = 80
     protocol        = "tcp"
@@ -52,7 +53,7 @@ resource "aws_security_group" "web" {
   }
 
   ingress {
-    description = "SSH"
+    description = "SSH Administration"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
@@ -67,22 +68,24 @@ resource "aws_security_group" "web" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name        = "${local.project_name}-web-sg"
-    Environment = local.environment
-    ManagedBy   = "Terraform"
-  }
+  tags = merge(
+    local.common_tags,
+    {
+      Name = "${local.project_name}-web-sg"
+    }
+  )
 }
 
-# PostgreSQL Security Group
+
+# Amazon RDS PostgreSQL Security Group
 
 resource "aws_security_group" "rds" {
   name        = "${local.project_name}-rds-sg"
-  description = "Security Group for PostgreSQL Database"
+  description = "Security Group for Amazon RDS PostgreSQL"
   vpc_id      = aws_vpc.main.id
 
   ingress {
-    description     = "PostgreSQL from Web Servers"
+    description     = "Allow PostgreSQL from Web Servers"
     from_port       = 5432
     to_port         = 5432
     protocol        = "tcp"
@@ -97,9 +100,10 @@ resource "aws_security_group" "rds" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name        = "${local.project_name}-rds-sg"
-    Environment = local.environment
-    ManagedBy   = "Terraform"
-  }
+  tags = merge(
+    local.common_tags,
+    {
+      Name = "${local.project_name}-rds-sg"
+    }
+  )
 }

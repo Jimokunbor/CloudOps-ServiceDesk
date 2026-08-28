@@ -2,7 +2,7 @@
 
 resource "aws_launch_template" "web" {
   name_prefix   = "${local.project_name}-lt-"
-  image_id      = data.aws_ami.ubuntu.id
+  image_id      = "ami-08c7a4b4f234dfa77"
   instance_type = var.instance_type
 
   key_name = var.key_pair_name
