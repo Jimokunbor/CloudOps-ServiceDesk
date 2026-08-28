@@ -836,7 +836,67 @@ Demonstrates successful generation of Terraform outputs following the Amazon RDS
 
 ---
 
-## 6.82 Ansible
+## 6.82 AWS Secrets Manager Deployment
+
+**Purpose**
+
+Demonstrates successful deployment of AWS Secrets Manager using Terraform. The screenshot confirms that the database secret and its initial secret version were successfully created and integrated into the CloudOps ServiceDesk infrastructure.
+
+**Screenshot**
+
+![AWS Secrets Manager Deployment](../../screenshots/01-backend/86-amazon-secrets-manager-deployment.png)
+
+---
+
+## 6.83 AWS Secrets Manager Verification
+
+**Purpose**
+
+Demonstrates successful verification of the AWS Secrets Manager secret within the AWS Management Console. The screenshot confirms the secret name, description, encryption key and resource identifier.
+
+**Screenshot**
+
+![AWS Secrets Manager Verification](../../screenshots/01-backend/87-amazon-secrets-manager-verification.png)
+
+---
+
+## 6.84 Secret Version Verification
+
+**Purpose**
+
+Demonstrates successful creation of the initial secret version. The screenshot confirms that the current version is securely stored and managed by AWS Secrets Manager.
+
+**Screenshot**
+
+![Secret Version Verification](../../screenshots/01-backend/88-amazon-secrets-manager-version.png)
+
+---
+
+## 6.85 Secret Value Verification
+
+**Purpose**
+
+Demonstrates successful storage of the PostgreSQL database username and password within AWS Secrets Manager. The screenshot confirms that sensitive credentials are securely managed and protected from direct exposure within the infrastructure code.
+
+**Screenshot**
+
+![Secret Value Verification](../../screenshots/01-backend/89-amazon-secrets-manager-secret-value.png)
+
+---
+
+## 6.86 Terraform Outputs Verification
+
+**Purpose**
+
+Demonstrates successful completion of the Terraform deployment after integrating AWS Secrets Manager. The screenshot confirms that the infrastructure remains operational and that Terraform successfully exported the required deployment outputs.
+
+**Screenshot**
+
+![Terraform Outputs Verification](../../screenshots/01-backend/90-amazon-secrets-manager-terraform-output.png)
+
+---
+
+## 6.87 Ansible
 
 **Purpose**
 
@@ -848,7 +908,7 @@ Demonstrates automated infrastructure configuration, software provisioning and s
 
 ---
 
-## 6.83 GitHub Actions
+## 6.88 GitHub Actions
 
 **Purpose**
 
@@ -860,7 +920,7 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 ---
 
-## 6.84 Kubernetes
+## 6.89 Kubernetes
 
 **Purpose**
 
@@ -872,7 +932,7 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 ---
 
-## 6.85 AWS Production Infrastructure
+## 6.90 AWS Production Infrastructure
 
 **Purpose**
 
@@ -884,7 +944,7 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 ---
 
-## 6.86 Prometheus
+## 6.91 Prometheus
 
 **Purpose**
 
@@ -896,7 +956,7 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 ---
 
-## 6.87 Grafana
+## 6.92 Grafana
 
 **Purpose**
 
@@ -908,7 +968,7 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 ---
 
-## 6.88 Loki
+## 6.93 Loki
 
 **Purpose**
 
@@ -920,7 +980,7 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 ---
 
-## 6.89 Production Deployment
+## 6.94 Production Deployment
 
 **Purpose**
 
@@ -948,9 +1008,12 @@ Every screenshot included in this document should:
 
 # 8. Related Documentation
 
-- 17-Project-Status.md
-- 18-Roadmap.md
-- 19-Getting-Started.md
+- 01-Project-Overview.md
+- 11-Infrastructure.md
+- 12-Deployment.md
+- 15-Project-Status.md
+- 16-Roadmap.md
+- 17-Getting-Started.md
 
 ---
 
@@ -969,6 +1032,7 @@ Every screenshot included in this document should:
 | 1.8 | Added Application Load Balancer deployment, Application Load Balancer verification, DNS verification, Target Group health verification, Listener verification, Launch Template creation, Auto Scaling Group deployment, Launch Template verification, Auto Scaling Group verification, Auto Scaling instance verification and Auto Scaling Target Group health verification screenshots. |
 | 1.9 | Added Amazon S3 Terraform Plan, Amazon S3 deployment, Amazon S3 bucket verification, Amazon S3 versioning verification and Amazon S3 server-side encryption verification screenshots. |
 | 2.0 | Added Amazon RDS PostgreSQL deployment, database verification, connectivity and security verification, configuration verification and Terraform outputs screenshots. |
+| 2.1 | Added AWS Secrets Manager deployment, verification, secret version, secret value and Terraform outputs verification screenshots. |
 
 ---
 
