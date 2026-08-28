@@ -896,7 +896,67 @@ Demonstrates successful completion of the Terraform deployment after integrating
 
 ---
 
-## 6.87 Ansible
+## 6.91 AWS Systems Manager (SSM) Deployment
+
+**Purpose**
+
+Demonstrates the successful deployment of AWS Systems Manager (SSM) using Terraform. The screenshot confirms that the required IAM permissions have been successfully applied to enable secure Systems Manager integration.
+
+**Screenshot**
+
+![AWS Systems Manager Deployment](../../screenshots/01-backend/91-amazon-ssm-deployment.png)
+
+---
+
+## 6.92 EC2 IAM Role Verification
+
+**Purpose**
+
+Demonstrates successful verification of the EC2 IAM role configured for AWS Systems Manager. The screenshot confirms the IAM role, instance profile and associated identity required for secure instance management.
+
+**Screenshot**
+
+![EC2 IAM Role Verification](../../screenshots/01-backend/92-amazon-ssm-iam-role-verification.png)
+
+---
+
+## 6.93 AmazonSSMManagedInstanceCore Policy Verification
+
+**Purpose**
+
+Demonstrates that the AmazonSSMManagedInstanceCore AWS managed policy has been successfully attached to the EC2 IAM role, allowing Systems Manager to securely manage the CloudOps ServiceDesk EC2 instances.
+
+**Screenshot**
+
+![AmazonSSMManagedInstanceCore Policy Verification](../../screenshots/01-backend/93-amazon-ssm-policy-verification.png)
+
+---
+
+## 6.94 AWS Systems Manager Managed Nodes Verification
+
+**Purpose**
+
+Demonstrates successful registration of the CloudOps ServiceDesk EC2 instances with AWS Systems Manager. The screenshot confirms that the managed nodes are online and available for secure administration.
+
+**Screenshot**
+
+![AWS Systems Manager Managed Nodes Verification](../../screenshots/01-backend/94-amazon-ssm-managed-nodes.png)
+
+---
+
+## 6.95 AWS Systems Manager Session Manager Verification
+
+**Purpose**
+
+Demonstrates successful configuration of AWS Systems Manager Session Manager. The screenshot confirms that secure remote sessions can be established with the managed EC2 instances without requiring inbound SSH access.
+
+**Screenshot**
+
+![AWS Systems Manager Session Manager Verification](../../screenshots/01-backend/95-amazon-ssm-session-manager.png)
+
+---
+
+## 6.96 Ansible
 
 **Purpose**
 
@@ -908,7 +968,7 @@ Demonstrates automated infrastructure configuration, software provisioning and s
 
 ---
 
-## 6.88 GitHub Actions
+## 6.97 GitHub Actions
 
 **Purpose**
 
@@ -920,7 +980,7 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 ---
 
-## 6.89 Kubernetes
+## 6.98 Kubernetes
 
 **Purpose**
 
@@ -932,7 +992,7 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 ---
 
-## 6.90 AWS Production Infrastructure
+## 6.99 AWS Production Infrastructure
 
 **Purpose**
 
@@ -944,7 +1004,7 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 ---
 
-## 6.91 Prometheus
+## 6.100 Prometheus
 
 **Purpose**
 
@@ -956,7 +1016,7 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 ---
 
-## 6.92 Grafana
+## 6.101 Grafana
 
 **Purpose**
 
@@ -968,7 +1028,7 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 ---
 
-## 6.93 Loki
+## 6.102 Loki
 
 **Purpose**
 
@@ -980,7 +1040,7 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 ---
 
-## 6.94 Production Deployment
+## 6.103 Production Deployment
 
 **Purpose**
 
@@ -997,11 +1057,17 @@ Demonstrates the completed production deployment of the CloudOps ServiceDesk pla
 Every screenshot included in this document should:
 
 - Be clear, readable and high resolution.
+
 - Display only the relevant implementation or completed feature.
+
 - Follow the project's screenshot naming convention.
+
 - Reflect the latest implementation.
+
 - Include a short purpose describing what the screenshot demonstrates.
+
 - Be captured after successful execution or deployment.
+
 - Exclude sensitive information such as passwords, tokens and secret keys.
 
 ---
@@ -1009,10 +1075,15 @@ Every screenshot included in this document should:
 # 8. Related Documentation
 
 - 01-Project-Overview.md
+
 - 11-Infrastructure.md
+
 - 12-Deployment.md
+
 - 15-Project-Status.md
+
 - 16-Roadmap.md
+
 - 17-Getting-Started.md
 
 ---
@@ -1033,6 +1104,7 @@ Every screenshot included in this document should:
 | 1.9 | Added Amazon S3 Terraform Plan, Amazon S3 deployment, Amazon S3 bucket verification, Amazon S3 versioning verification and Amazon S3 server-side encryption verification screenshots. |
 | 2.0 | Added Amazon RDS PostgreSQL deployment, database verification, connectivity and security verification, configuration verification and Terraform outputs screenshots. |
 | 2.1 | Added AWS Secrets Manager deployment, verification, secret version, secret value and Terraform outputs verification screenshots. |
+| 2.2 | Added AWS Systems Manager (SSM) deployment, EC2 IAM role verification, AmazonSSMManagedInstanceCore policy verification, managed nodes verification and Session Manager verification screenshots. |
 
 ---
 

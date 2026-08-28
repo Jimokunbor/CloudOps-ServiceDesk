@@ -39,7 +39,8 @@ resource "aws_db_instance" "postgres" {
   publicly_accessible = false
   multi_az            = false
 
-  db_subnet_group_name   = aws_db_subnet_group.postgres.name
+  db_subnet_group_name = aws_db_subnet_group.postgres.name
+
   vpc_security_group_ids = [
     aws_security_group.rds.id
   ]
@@ -49,6 +50,12 @@ resource "aws_db_instance" "postgres" {
   skip_final_snapshot     = true
 
   apply_immediately = true
+
+  lifecycle {
+    ignore_changes = [
+      password
+    ]
+  }
 
   tags = merge(
     local.common_tags,
