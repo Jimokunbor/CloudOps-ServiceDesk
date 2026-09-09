@@ -956,7 +956,119 @@ Demonstrates successful configuration of AWS Systems Manager Session Manager. Th
 
 ---
 
-## 6.96 Ansible
+## 6.96 Amazon VPC Endpoint Deployment
+
+**Purpose**
+
+Demonstrates the successful deployment of an Amazon S3 Gateway VPC Endpoint using Terraform, enabling private connectivity between the CloudOps ServiceDesk VPC and Amazon S3 without traversing the public internet.
+
+**AWS Console Navigation**
+
+VPC → Endpoints
+
+**What to expect**
+
+- The CloudOps ServiceDesk S3 VPC Endpoint is created.
+- The endpoint type is Gateway.
+- The endpoint status is Available.
+- The service name is com.amazonaws.eu-west-1.s3.
+
+**Screenshot**
+
+![Amazon VPC Endpoint Deployment](../../screenshots/01-backend/96-vpc-endpoint-deployment.png)
+
+---
+
+## 6.97 Amazon VPC Endpoint Verification
+
+**Purpose**
+
+Demonstrates verification that the Amazon S3 Gateway VPC Endpoint is correctly configured and associated with the CloudOps ServiceDesk VPC.
+
+**AWS Console Navigation**
+
+VPC → Endpoints → cloudops-servicedesk-s3-endpoint
+
+**What to expect**
+
+- The endpoint status is Available.
+- The VPC is cloudops-servicedesk-vpc.
+- The endpoint service is Amazon S3.
+- The associated route table is displayed.
+
+**Screenshot**
+
+![Amazon VPC Endpoint Verification](../../screenshots/01-backend/97-amazon-vpc-endpoint-verification.png)
+
+---
+
+## 6.98 Amazon VPC Peering Deployment
+
+**Purpose**
+
+Demonstrates deployment of a VPC Peering Connection using Terraform to establish secure private communication between two Amazon VPCs.
+
+**AWS Console Navigation**
+
+VPC → Peering Connections
+
+**What to expect**
+
+- The VPC Peering Connection is created.
+- The requester and accepter VPCs are displayed.
+- The peering status is Active.
+
+**Screenshot**
+
+![Amazon VPC Peering Deployment](../../screenshots/01-backend/98-amazon-vpc-peering-deployment.png)
+
+---
+
+## 6.99 Amazon VPC Peering Verification
+
+**Purpose**
+
+Demonstrates successful verification of the VPC Peering Connection and confirms that both VPCs are securely connected.
+
+**AWS Console Navigation**
+
+VPC → Peering Connections → cloudops-servicedesk-vpc-peering
+
+**What to expect**
+
+- The peering connection status is Active.
+- The requester and accepter VPC information is displayed.
+- The requester and accepter CIDR blocks are shown.
+
+**Screenshot**
+
+![Amazon VPC Peering Verification](../../screenshots/01-backend/99-amazon-vpc-peering-verification.png)
+
+---
+
+## 6.100 Amazon VPC Peering Route Verification
+
+**Purpose**
+
+Demonstrates verification that the route tables have been updated to route traffic through the VPC Peering Connection.
+
+**AWS Console Navigation**
+
+VPC → Route Tables
+
+**What to expect**
+
+- A route exists for the remote VPC CIDR block.
+- The target is the VPC Peering Connection.
+- The route status is Active.
+
+**Screenshot**
+
+![Amazon VPC Peering Route Verification](../../screenshots/01-backend/100-amazon-vpc-peering-routing.png)
+
+---
+
+## 6.101 Ansible
 
 **Purpose**
 
@@ -968,7 +1080,7 @@ Demonstrates automated infrastructure configuration, software provisioning and s
 
 ---
 
-## 6.97 GitHub Actions
+## 6.102 GitHub Actions
 
 **Purpose**
 
@@ -980,7 +1092,7 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 ---
 
-## 6.98 Kubernetes
+## 6.103 Kubernetes
 
 **Purpose**
 
@@ -992,7 +1104,7 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 ---
 
-## 6.99 AWS Production Infrastructure
+## 6.104 AWS Production Infrastructure
 
 **Purpose**
 
@@ -1004,7 +1116,7 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 ---
 
-## 6.100 Prometheus
+## 6.105 Prometheus
 
 **Purpose**
 
@@ -1016,7 +1128,7 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 ---
 
-## 6.101 Grafana
+## 6.106 Grafana
 
 **Purpose**
 
@@ -1028,7 +1140,7 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 ---
 
-## 6.102 Loki
+## 6.107 Loki
 
 **Purpose**
 
@@ -1040,7 +1152,7 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 ---
 
-## 6.103 Production Deployment
+## 6.108 Production Deployment
 
 **Purpose**
 
@@ -1065,6 +1177,10 @@ Every screenshot included in this document should:
 - Reflect the latest implementation.
 
 - Include a short purpose describing what the screenshot demonstrates.
+
+- Include clear AWS Console navigation for locating the evidence.
+
+- Describe what to expect on the AWS Console after successful deployment.
 
 - Be captured after successful execution or deployment.
 
@@ -1105,6 +1221,7 @@ Every screenshot included in this document should:
 | 2.0 | Added Amazon RDS PostgreSQL deployment, database verification, connectivity and security verification, configuration verification and Terraform outputs screenshots. |
 | 2.1 | Added AWS Secrets Manager deployment, verification, secret version, secret value and Terraform outputs verification screenshots. |
 | 2.2 | Added AWS Systems Manager (SSM) deployment, EC2 IAM role verification, AmazonSSMManagedInstanceCore policy verification, managed nodes verification and Session Manager verification screenshots. |
+| 2.3 | Added Amazon S3 Gateway VPC Endpoint deployment, endpoint verification, Amazon VPC Peering deployment, peering verification and route table verification screenshots. |
 
 ---
 
