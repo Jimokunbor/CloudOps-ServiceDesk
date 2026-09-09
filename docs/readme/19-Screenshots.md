@@ -1066,9 +1066,161 @@ VPC → Route Tables
 
 ![Amazon VPC Peering Route Verification](../../screenshots/01-backend/100-amazon-vpc-peering-routing.png)
 
----
+**---**
 
-## 6.101 Ansible
+## 6.101 Amazon Route 53 Deployment
+
+**Purpose**
+
+Demonstrates the successful deployment of Amazon Route 53 DNS infrastructure using Terraform for the CloudOps ServiceDesk environment.
+
+**Screenshot**
+
+![Amazon Route 53 Deployment](../../screenshots/01-backend/101-amazon-route53-deployment.png)
+
+**Navigation**
+
+Terraform CLI
+
+Run:
+
+```bash
+terraform apply
+```
+
+**Expected**
+
+- Route 53 Hosted Zone is created successfully.
+- Alias A record is created successfully.
+- Terraform reports "Apply complete".
+- No deployment errors are displayed.
+
+**---**
+
+## 6.102 Amazon Route 53 Hosted Zone Verification
+
+**Purpose**
+
+Demonstrates the successful creation of the Public Hosted Zone used to manage DNS records for the CloudOps ServiceDesk domain.
+
+**Screenshot**
+
+![Amazon Route 53 Hosted Zone Verification](../../screenshots/01-backend/102-amazon-route53-hosted-zone-verification.png)
+
+**Navigation**
+
+AWS Console
+
+→ Route 53
+
+→ Hosted zones
+
+→ cloudopsservicedesk.com
+
+**Expected**
+
+- Public Hosted Zone is displayed.
+- Domain name is cloudopsservicedesk.com.
+- Hosted Zone is active.
+- DNS records are available.
+
+**---**
+
+## 6.103 Amazon Route 53 Alias Record Verification
+
+**Purpose**
+
+Demonstrates the successful creation of the Alias A record that routes the CloudOps ServiceDesk domain to the Application Load Balancer.
+
+**Screenshot**
+
+![Amazon Route 53 Alias Record Verification](../../screenshots/01-backend/103-amazon-route53-alias-record-verification.png)
+
+**Navigation**
+
+AWS Console
+
+→ Route 53
+
+→ Hosted zones
+
+→ cloudopsservicedesk.com
+
+→ Select the **A** record
+
+**Expected**
+
+- Record Type is A.
+- Alias is enabled.
+- Target points to the CloudOps ServiceDesk Application Load Balancer.
+- Routing Policy is Simple.
+
+**---**
+
+## 6.104 Amazon Route 53 Name Server Records Verification
+
+**Purpose**
+
+Demonstrates the automatically generated Name Server (NS) records responsible for delegating the CloudOps ServiceDesk domain to Amazon Route 53.
+
+**Screenshot**
+
+![Amazon Route 53 Name Server Records Verification](../../screenshots/01-backend/104-amazon-route53-name-server-records.png)
+
+**Navigation**
+
+AWS Console
+
+→ Route 53
+
+→ Hosted zones
+
+→ cloudopsservicedesk.com
+
+→ Select the **NS** record
+
+**Expected**
+
+- Record Type is NS.
+- Four AWS Name Servers are listed.
+- Routing Policy is Simple.
+- TTL value is displayed.
+
+**---**
+
+## 6.105 Amazon Route 53 SOA Record Verification
+
+**Purpose**
+
+Demonstrates the automatically generated Start of Authority (SOA) record that defines the authoritative DNS configuration for the CloudOps ServiceDesk hosted zone.
+
+**Screenshot**
+
+![Amazon Route 53 SOA Record Verification](../../screenshots/01-backend/105-amazon-route53-soa-record-verification.png)
+
+**Navigation**
+
+AWS Console
+
+→ Route 53
+
+→ Hosted zones
+
+→ cloudopsservicedesk.com
+
+→ Select the **SOA** record
+
+**Expected**
+
+- Record Type is SOA.
+- Primary Name Server is displayed.
+- Administrative Contact is displayed.
+- Serial Number is displayed.
+- Refresh, Retry, Expire and TTL values are displayed.
+
+**---**
+
+## 6.106 Ansible
 
 **Purpose**
 
@@ -1078,9 +1230,9 @@ Demonstrates automated infrastructure configuration, software provisioning and s
 
 *To be added after implementation.*
 
----
+**---**
 
-## 6.102 GitHub Actions
+## 6.107 GitHub Actions
 
 **Purpose**
 
@@ -1090,9 +1242,9 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 *To be added after implementation.*
 
----
+**---**
 
-## 6.103 Kubernetes
+## 6.108 Kubernetes
 
 **Purpose**
 
@@ -1102,9 +1254,9 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 *To be added after implementation.*
 
----
+**---**
 
-## 6.104 AWS Production Infrastructure
+## 6.109 AWS Production Infrastructure
 
 **Purpose**
 
@@ -1114,9 +1266,9 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 *To be added after implementation.*
 
----
+**---**
 
-## 6.105 Prometheus
+## 6.110 Prometheus
 
 **Purpose**
 
@@ -1126,9 +1278,9 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 *To be added after implementation.*
 
----
+**---**
 
-## 6.106 Grafana
+## 6.111 Grafana
 
 **Purpose**
 
@@ -1138,9 +1290,9 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 *To be added after implementation.*
 
----
+**---**
 
-## 6.107 Loki
+## 6.112 Loki
 
 **Purpose**
 
@@ -1150,9 +1302,9 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 *To be added after implementation.*
 
----
+**---**
 
-## 6.108 Production Deployment
+## 6.113 Production Deployment
 
 **Purpose**
 
@@ -1162,47 +1314,7 @@ Demonstrates the completed production deployment of the CloudOps ServiceDesk pla
 
 *To be added after implementation.*
 
----
-
-# 7. Screenshot Standards
-
-Every screenshot included in this document should:
-
-- Be clear, readable and high resolution.
-
-- Display only the relevant implementation or completed feature.
-
-- Follow the project's screenshot naming convention.
-
-- Reflect the latest implementation.
-
-- Include a short purpose describing what the screenshot demonstrates.
-
-- Include clear AWS Console navigation for locating the evidence.
-
-- Describe what to expect on the AWS Console after successful deployment.
-
-- Be captured after successful execution or deployment.
-
-- Exclude sensitive information such as passwords, tokens and secret keys.
-
----
-
-# 8. Related Documentation
-
-- 01-Project-Overview.md
-
-- 11-Infrastructure.md
-
-- 12-Deployment.md
-
-- 15-Project-Status.md
-
-- 16-Roadmap.md
-
-- 17-Getting-Started.md
-
----
+**---**
 
 # 9. Revision History
 
@@ -1222,9 +1334,4 @@ Every screenshot included in this document should:
 | 2.1 | Added AWS Secrets Manager deployment, verification, secret version, secret value and Terraform outputs verification screenshots. |
 | 2.2 | Added AWS Systems Manager (SSM) deployment, EC2 IAM role verification, AmazonSSMManagedInstanceCore policy verification, managed nodes verification and Session Manager verification screenshots. |
 | 2.3 | Added Amazon S3 Gateway VPC Endpoint deployment, endpoint verification, Amazon VPC Peering deployment, peering verification and route table verification screenshots. |
-
----
-
-# 10. Document Status
-
-**Actively Maintained**
+| 2.4 | Added Amazon Route 53 deployment, Hosted Zone verification, Alias record verification, Name Server (NS) record verification and Start of Authority (SOA) record verification screenshots. |
