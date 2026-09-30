@@ -1218,9 +1218,43 @@ AWS Console
 - Serial Number is displayed.
 - Refresh, Retry, Expire and TTL values are displayed.
 
+ |## 6.106 Amazon ACM Terraform Deployment
+
+**Purpose**
+
+Demonstrates the deployment and integration of AWS Certificate Manager (ACM) with the CloudOps ServiceDesk infrastructure using Terraform, including DNS-based certificate validation through Amazon Route 53.
+
+**Screenshot**
+
+![Amazon ACM Terraform Deployment](../../screenshots/01-backend/106-amazon-acm-terraform-deployment.png)
+
 **---**
 
-## 6.106 Ansible
+## 6.107 Amazon ACM Certificate Validation
+
+**Purpose**
+
+Demonstrates successful SSL/TLS certificate issuance for cloudopsservicedesk.ie through AWS Certificate Manager (ACM), confirming successful DNS validation and integration with the Route 53 hosted zone.
+
+**Screenshot**
+
+![Amazon ACM Certificate Validation](../../screenshots/01-backend/107-amazon-acm-certificate-validation.png)
+
+**---**
+
+## 6.108 Amazon Route 53 Domain Access Verification
+
+**Purpose**
+
+Demonstrates successful public DNS resolution of cloudopsservicedesk.ie through Amazon Route 53, confirming that the registered domain routes successfully to the Terraform-provisioned CloudOps ServiceDesk application infrastructure.
+
+**Screenshot**
+
+![Amazon Route 53 Domain Access Verification](../../screenshots/01-backend/108-amazon-route53-domain-access-verification.png)
+
+**---**
+
+## 6.109 Ansible
 
 **Purpose**
 
@@ -1232,7 +1266,7 @@ Demonstrates automated infrastructure configuration, software provisioning and s
 
 **---**
 
-## 6.107 GitHub Actions
+## 6.110 GitHub Actions
 
 **Purpose**
 
@@ -1244,7 +1278,7 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 **---**
 
-## 6.108 Kubernetes
+## 6.111 Kubernetes
 
 **Purpose**
 
@@ -1256,7 +1290,7 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 **---**
 
-## 6.109 AWS Production Infrastructure
+## 6.112 AWS Production Infrastructure
 
 **Purpose**
 
@@ -1268,7 +1302,7 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 **---**
 
-## 6.110 Prometheus
+## 6.113 Prometheus
 
 **Purpose**
 
@@ -1280,7 +1314,7 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 **---**
 
-## 6.111 Grafana
+## 6.114 Grafana
 
 **Purpose**
 
@@ -1292,7 +1326,7 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 **---**
 
-## 6.112 Loki
+## 6.115 Loki
 
 **Purpose**
 
@@ -1304,7 +1338,7 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 **---**
 
-## 6.113 Production Deployment
+## 6.116 Production Deployment
 
 **Purpose**
 
@@ -1335,3 +1369,4 @@ Demonstrates the completed production deployment of the CloudOps ServiceDesk pla
 | 2.2 | Added AWS Systems Manager (SSM) deployment, EC2 IAM role verification, AmazonSSMManagedInstanceCore policy verification, managed nodes verification and Session Manager verification screenshots. |
 | 2.3 | Added Amazon S3 Gateway VPC Endpoint deployment, endpoint verification, Amazon VPC Peering deployment, peering verification and route table verification screenshots. |
 | 2.4 | Added Amazon Route 53 deployment, Hosted Zone verification, Alias record verification, Name Server (NS) record verification and Start of Authority (SOA) record verification screenshots. |
+| 2.5 | Added AWS Certificate Manager Terraform deployment, successful ACM certificate DNS validation and Amazon Route 53 domain access verification screenshots. |
