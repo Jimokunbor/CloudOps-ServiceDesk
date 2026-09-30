@@ -1,1 +1,1 @@
-domain_name = "cloudopsservicedesk.com"
+domain_name = "cloudopsservicedesk.ie"
