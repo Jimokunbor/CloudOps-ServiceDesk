@@ -1252,9 +1252,43 @@ Demonstrates successful public DNS resolution of cloudopsservicedesk.ie through 
 
 ![Amazon Route 53 Domain Access Verification](../../screenshots/01-backend/108-amazon-route53-domain-access-verification.png)
 
+## 6.109 AWS Budget Terraform Apply
+
+**Purpose**
+
+Demonstrates successful Terraform deployment of an AWS monthly cost budget for the CloudOps ServiceDesk environment, establishing Infrastructure as Code (IaC) based cloud cost governance and expenditure monitoring.
+
+**Screenshot**
+
+![AWS Budget Terraform Apply](../../screenshots/01-backend/109-aws-budget-terraform-apply.png)
+
 **---**
 
-## 6.109 Ansible
+## 6.110 AWS Budget Terraform Deployment Verification
+
+**Purpose**
+
+Demonstrates successful verification of the Terraform-provisioned CloudOps ServiceDesk monthly AWS cost budget, confirming the $10 monthly budget limit, healthy status and configured cost alert thresholds.
+
+**Screenshot**
+
+![AWS Budget Terraform Deployment Verification](../../screenshots/01-backend/110-aws-budget-terraform-deployment-verification.png)
+
+**---**
+
+## 6.111 AWS Budget Notification Email Verification
+
+**Purpose**
+
+Demonstrates successful verification of the AWS Budget notification email recipient, confirming that automated budget and cost threshold notifications can be delivered for CloudOps ServiceDesk expenditure monitoring.
+
+**Screenshot**
+
+![AWS Budget Notification Email Verification](../../screenshots/01-backend/111-aws-budget-notification-email-verification.png)
+
+**---**
+
+## 6.112 Ansible
 
 **Purpose**
 
@@ -1266,7 +1300,7 @@ Demonstrates automated infrastructure configuration, software provisioning and s
 
 **---**
 
-## 6.110 GitHub Actions
+## 6.113 GitHub Actions
 
 **Purpose**
 
@@ -1278,7 +1312,7 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 **---**
 
-## 6.111 Kubernetes
+## 6.114 Kubernetes
 
 **Purpose**
 
@@ -1290,7 +1324,7 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 **---**
 
-## 6.112 AWS Production Infrastructure
+## 6.115 AWS Production Infrastructure
 
 **Purpose**
 
@@ -1302,7 +1336,7 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 **---**
 
-## 6.113 Prometheus
+## 6.116 Prometheus
 
 **Purpose**
 
@@ -1314,7 +1348,7 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 **---**
 
-## 6.114 Grafana
+## 6.117 Grafana
 
 **Purpose**
 
@@ -1326,7 +1360,7 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 **---**
 
-## 6.115 Loki
+## 6.118 Loki
 
 **Purpose**
 
@@ -1338,7 +1372,7 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 **---**
 
-## 6.116 Production Deployment
+## 6.119 Production Deployment
 
 **Purpose**
 
@@ -1370,3 +1404,4 @@ Demonstrates the completed production deployment of the CloudOps ServiceDesk pla
 | 2.3 | Added Amazon S3 Gateway VPC Endpoint deployment, endpoint verification, Amazon VPC Peering deployment, peering verification and route table verification screenshots. |
 | 2.4 | Added Amazon Route 53 deployment, Hosted Zone verification, Alias record verification, Name Server (NS) record verification and Start of Authority (SOA) record verification screenshots. |
 | 2.5 | Added AWS Certificate Manager Terraform deployment, successful ACM certificate DNS validation and Amazon Route 53 domain access verification screenshots. |
+| 2.6 | Added Terraform-managed AWS monthly cost budget deployment, AWS Budget configuration verification and budget notification email verification screenshots. |
