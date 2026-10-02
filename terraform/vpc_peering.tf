@@ -48,18 +48,22 @@ resource "aws_internet_gateway" "peer" {
 resource "aws_route_table" "peer_public" {
   vpc_id = aws_vpc.peer.id
 
-  route {
-    cidr_block = "0.0.0.0/0"
-
-    gateway_id = aws_internet_gateway.peer.id
-  }
-
   tags = merge(
     local.common_tags,
     {
       Name = "${local.project_name}-peer-public-route-table"
     }
   )
+}
+
+# Create the internet route for the peer public subnet
+
+resource "aws_route" "peer_internet" {
+  route_table_id = aws_route_table.peer_public.id
+
+  destination_cidr_block = "0.0.0.0/0"
+
+  gateway_id = aws_internet_gateway.peer.id
 }
 
 # Associate the peer route table

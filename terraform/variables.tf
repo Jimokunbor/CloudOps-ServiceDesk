@@ -104,3 +104,27 @@ variable "domain_name" {
   description = "Domain name for CloudOps ServiceDesk"
   type        = string
 }
+
+variable "enable_nat_gateway" {
+  description = "Controls whether the NAT Gateway and its Elastic IP are deployed"
+  type        = bool
+  default     = false
+}
+
+variable "enable_load_balancer" {
+  description = "Controls whether the Application Load Balancer and related resources are deployed"
+  type        = bool
+  default     = false
+}
+
+variable "enable_standalone_ec2" {
+  description = "Controls whether the standalone EC2 web server is deployed"
+  type        = bool
+  default     = false
+}
+
+variable "enable_rds" {
+  description = "Controls whether the Amazon RDS PostgreSQL instance is deployed"
+  type        = bool
+  default     = false
+}

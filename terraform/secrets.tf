@@ -20,4 +20,10 @@ resource "aws_secretsmanager_secret_version" "database" {
     username = var.db_username
     password = var.db_password
   })
+
+  lifecycle {
+    ignore_changes = [
+      secret_string
+    ]
+  }
 }

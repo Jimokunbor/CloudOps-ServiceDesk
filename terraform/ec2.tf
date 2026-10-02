@@ -1,4 +1,6 @@
 resource "aws_instance" "web_server_1" {
+  count = var.enable_standalone_ec2 ? 1 : 0
+
   ami           = "ami-08c7a4b4f234dfa77"
   instance_type = "t3.micro"
 

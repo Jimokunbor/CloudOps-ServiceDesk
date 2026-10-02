@@ -19,6 +19,8 @@ resource "aws_db_subnet_group" "postgres" {
 # Amazon RDS PostgreSQL
 
 resource "aws_db_instance" "postgres" {
+  count = var.enable_rds ? 1 : 0
+
   identifier = "${local.project_name}-postgres"
 
   engine         = "postgres"

@@ -14,14 +14,16 @@ resource "aws_route53_zone" "main" {
 # Create the DNS record for the Application Load Balancer
 
 resource "aws_route53_record" "application" {
+  count = var.enable_load_balancer ? 1 : 0
+
   zone_id = aws_route53_zone.main.zone_id
 
   name = var.domain_name
   type = "A"
 
   alias {
-    name                   = aws_lb.web_alb.dns_name
-    zone_id                = aws_lb.web_alb.zone_id
+    name                   = aws_lb.web_alb[0].dns_name
+    zone_id                = aws_lb.web_alb[0].zone_id
     evaluate_target_health = true
   }
 }

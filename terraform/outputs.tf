@@ -5,31 +5,30 @@ output "vpc_id" {
 
 output "web_server_public_ip" {
   description = "Web Server Public IP"
-  value       = aws_instance.web_server_1.public_ip
+  value       = var.enable_standalone_ec2 ? aws_instance.web_server_1[0].public_ip : null
 }
 
 output "application_url" {
   description = "CloudOps ServiceDesk URL"
-  value       = "http://${aws_instance.web_server_1.public_ip}"
+  value       = var.enable_standalone_ec2 ? "http://${aws_instance.web_server_1[0].public_ip}" : null
 }
 
 output "load_balancer_dns" {
   description = "Application Load Balancer DNS Name"
-  value       = aws_lb.web_alb.dns_name
-
+  value       = var.enable_load_balancer ? aws_lb.web_alb[0].dns_name : null
 }
 
 output "rds_endpoint" {
   description = "Amazon RDS Endpoint"
-  value       = aws_db_instance.postgres.endpoint
+  value       = var.enable_rds ? aws_db_instance.postgres[0].endpoint : null
 }
 
 output "rds_port" {
   description = "Amazon RDS Port"
-  value       = aws_db_instance.postgres.port
+  value       = var.enable_rds ? aws_db_instance.postgres[0].port : null
 }
 
 output "rds_identifier" {
   description = "Amazon RDS Identifier"
-  value       = aws_db_instance.postgres.identifier
+  value       = var.enable_rds ? aws_db_instance.postgres[0].identifier : null
 }

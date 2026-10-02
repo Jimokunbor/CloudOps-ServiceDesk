@@ -41,8 +41,8 @@ resource "aws_launch_template" "web" {
 resource "aws_autoscaling_group" "web" {
   name = "${local.project_name}-asg"
 
-  min_size         = 2
-  desired_capacity = 2
+  min_size         = 0
+  desired_capacity = 0
   max_size         = 4
 
   vpc_zone_identifier = [
@@ -50,11 +50,11 @@ resource "aws_autoscaling_group" "web" {
     aws_subnet.public_2.id
   ]
 
-  target_group_arns = [
-    aws_lb_target_group.web_tg.arn
-  ]
+  target_group_arns = var.enable_load_balancer ? [
+    aws_lb_target_group.web_tg[0].arn
+  ] : []
 
-  health_check_type         = "ELB"
+  health_check_type         = var.enable_load_balancer ? "ELB" : "EC2"
   health_check_grace_period = 300
 
   launch_template {

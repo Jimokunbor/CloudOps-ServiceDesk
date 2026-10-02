@@ -1,6 +1,8 @@
 # Application Load Balancer
 
 resource "aws_lb" "web_alb" {
+  count = var.enable_load_balancer ? 1 : 0
+
   name               = "${local.project_name}-alb"
   internal           = false
   load_balancer_type = "application"
@@ -27,6 +29,8 @@ resource "aws_lb" "web_alb" {
 # Target Group
 
 resource "aws_lb_target_group" "web_tg" {
+  count = var.enable_load_balancer ? 1 : 0
+
   name        = "${local.project_name}-tg"
   port        = 80
   protocol    = "HTTP"
@@ -52,23 +56,17 @@ resource "aws_lb_target_group" "web_tg" {
   )
 }
 
-# Target Group Attachment
-
-resource "aws_lb_target_group_attachment" "web_server" {
-  target_group_arn = aws_lb_target_group.web_tg.arn
-  target_id        = aws_instance.web_server_1.id
-  port             = 80
-}
-
 # HTTP Listener
 
 resource "aws_lb_listener" "http" {
-  load_balancer_arn = aws_lb.web_alb.arn
+  count = var.enable_load_balancer ? 1 : 0
+
+  load_balancer_arn = aws_lb.web_alb[0].arn
   port              = 80
   protocol          = "HTTP"
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.web_tg.arn
+    target_group_arn = aws_lb_target_group.web_tg[0].arn
   }
 }
