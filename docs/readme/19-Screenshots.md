@@ -1288,7 +1288,91 @@ Demonstrates successful verification of the AWS Budget notification email recipi
 
 **---**
 
-## 6.112 Ansible
+## 6.112 AWS Cost Explorer Service Cost Analysis
+
+**Purpose**
+
+Demonstrates service-level AWS cost analysis using AWS Cost Explorer to identify cost activity across CloudOps ServiceDesk services, including Data Transfer, Secrets Manager, EC2, Elastic Load Balancing, Amazon RDS and Amazon S3.
+
+**Screenshot**
+
+![AWS Cost Explorer Service Cost Analysis](../../screenshots/01-backend/112-aws-cost-explorer-service-cost-analysis.png)
+
+**---**
+
+## 6.113 AWS RDS Manual Recovery Snapshot Verification
+
+**Purpose**
+
+Demonstrates verification of an encrypted Amazon RDS PostgreSQL manual recovery snapshot before database decommissioning, ensuring that a recoverable backup of the CloudOps ServiceDesk database was preserved.
+
+**Screenshot**
+
+![AWS RDS Manual Recovery Snapshot Verification](../../screenshots/01-backend/113-aws-rds-manual-recovery-snapshot-verification.png)
+
+**---**
+
+## 6.114 Terraform RDS Decommissioning Verification
+
+**Purpose**
+
+Demonstrates controlled decommissioning of the CloudOps ServiceDesk Amazon RDS PostgreSQL instance through Terraform after recovery protection was established, supporting infrastructure cost optimization while maintaining Infrastructure as Code control.
+
+**Screenshot**
+
+![Terraform RDS Decommissioning Verification](../../screenshots/01-backend/114-terraform-rds-decommissioning-verification.png)
+
+**---**
+
+## 6.115 AWS RDS Recovery Snapshot Copy Creation
+
+**Purpose**
+
+Demonstrates creation of an encrypted manual Amazon RDS recovery snapshot by copying the latest automated PostgreSQL backup before database decommissioning, preserving a recoverable database asset.
+
+**Screenshot**
+
+![AWS RDS Recovery Snapshot Copy Creation](../../screenshots/01-backend/115-aws-rds-recovery-snapshot-copy-creation.png)
+
+**---**
+
+## 6.116 AWS RDS Post-Decommission Recovery Snapshot Verification
+
+**Purpose**
+
+Demonstrates post-decommission verification that the encrypted 20 GB PostgreSQL manual recovery snapshot remained available after deletion of the Amazon RDS instance, confirming successful retention of the database recovery asset.
+
+**Screenshot**
+
+![AWS RDS Post-Decommission Recovery Snapshot Verification](../../screenshots/01-backend/116-aws-rds-post-decommission-recovery-snapshot-verification.png)
+
+**---**
+
+## 6.117 AWS Cost Explorer Post-Optimization Verification
+
+**Purpose**
+
+Demonstrates post-optimization AWS cost monitoring using AWS Cost Explorer, providing service-level verification of near-zero or zero current usage across key CloudOps ServiceDesk AWS services following decommissioning and cost-control activities.
+
+**Screenshot**
+
+![AWS Cost Explorer Post-Optimization Verification](../../screenshots/01-backend/117-aws-cost-explorer-post-optimization-verification.png)
+
+**---**
+
+## 6.118 Terraform Post-Optimization Infrastructure Verification
+
+**Purpose**
+
+Demonstrates final Terraform infrastructure verification after AWS cost optimization, resource decommissioning, route reconciliation and Terraform state cleanup, confirming that the deployed infrastructure matches the Infrastructure as Code configuration with no pending changes.
+
+**Screenshot**
+
+![Terraform Post-Optimization Infrastructure Verification](../../screenshots/01-backend/118-terraform-post-optimization-infrastructure-verification.png)
+
+**---**
+
+## 6.119 Ansible
 
 **Purpose**
 
@@ -1300,7 +1384,7 @@ Demonstrates automated infrastructure configuration, software provisioning and s
 
 **---**
 
-## 6.113 GitHub Actions
+## 6.120 GitHub Actions
 
 **Purpose**
 
@@ -1312,7 +1396,7 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 **---**
 
-## 6.114 Kubernetes
+## 6.121 Kubernetes
 
 **Purpose**
 
@@ -1324,7 +1408,7 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 **---**
 
-## 6.115 AWS Production Infrastructure
+## 6.122 AWS Production Infrastructure
 
 **Purpose**
 
@@ -1336,7 +1420,7 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 **---**
 
-## 6.116 Prometheus
+## 6.123 Prometheus
 
 **Purpose**
 
@@ -1348,7 +1432,7 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 **---**
 
-## 6.117 Grafana
+## 6.124 Grafana
 
 **Purpose**
 
@@ -1360,7 +1444,7 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 **---**
 
-## 6.118 Loki
+## 6.125 Loki
 
 **Purpose**
 
@@ -1372,7 +1456,7 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 **---**
 
-## 6.119 Production Deployment
+## 6.126 Production Deployment
 
 **Purpose**
 
@@ -1405,3 +1489,4 @@ Demonstrates the completed production deployment of the CloudOps ServiceDesk pla
 | 2.4 | Added Amazon Route 53 deployment, Hosted Zone verification, Alias record verification, Name Server (NS) record verification and Start of Authority (SOA) record verification screenshots. |
 | 2.5 | Added AWS Certificate Manager Terraform deployment, successful ACM certificate DNS validation and Amazon Route 53 domain access verification screenshots. |
 | 2.6 | Added Terraform-managed AWS monthly cost budget deployment, AWS Budget configuration verification and budget notification email verification screenshots. |
+| 2.7 | Added AWS Cost Explorer service cost analysis, encrypted RDS recovery snapshot creation and verification, Terraform-managed RDS decommissioning, post-decommission recovery verification, post-optimization AWS cost analysis and final Terraform infrastructure consistency verification screenshots. |
