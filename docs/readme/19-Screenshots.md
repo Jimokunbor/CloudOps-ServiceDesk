@@ -1372,7 +1372,19 @@ Demonstrates final Terraform infrastructure verification after AWS cost optimiza
 
 **---**
 
-## 6.119 Ansible
+## 6.119 AWS Budget Forecasted Cost Alert Verification
+
+**Purpose**
+
+Demonstrates operational verification of the CloudOps ServiceDesk AWS monthly cost budget, showing that AWS Budgets automatically triggered an email notification when the forecasted monthly cost exceeded the configured 50% ($5.00) threshold of the $10.00 monthly budget.
+
+**Screenshot**
+
+![AWS Budget Forecasted Cost Alert Verification](../../screenshots/01-backend/119-aws-budget-forecasted-cost-alert-verification.png)
+
+**---**
+
+## 6.120 Ansible
 
 **Purpose**
 
@@ -1384,7 +1396,7 @@ Demonstrates automated infrastructure configuration, software provisioning and s
 
 **---**
 
-## 6.120 GitHub Actions
+## 6.121 GitHub Actions
 
 **Purpose**
 
@@ -1396,7 +1408,7 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 **---**
 
-## 6.121 Kubernetes
+## 6.122 Kubernetes
 
 **Purpose**
 
@@ -1408,7 +1420,7 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 **---**
 
-## 6.122 AWS Production Infrastructure
+## 6.123 AWS Production Infrastructure
 
 **Purpose**
 
@@ -1420,7 +1432,7 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 **---**
 
-## 6.123 Prometheus
+## 6.124 Prometheus
 
 **Purpose**
 
@@ -1432,7 +1444,7 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 **---**
 
-## 6.124 Grafana
+## 6.125 Grafana
 
 **Purpose**
 
@@ -1444,7 +1456,7 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 **---**
 
-## 6.125 Loki
+## 6.126 Loki
 
 **Purpose**
 
@@ -1456,7 +1468,7 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 **---**
 
-## 6.126 Production Deployment
+## 6.127 Production Deployment
 
 **Purpose**
 
@@ -1490,3 +1502,4 @@ Demonstrates the completed production deployment of the CloudOps ServiceDesk pla
 | 2.5 | Added AWS Certificate Manager Terraform deployment, successful ACM certificate DNS validation and Amazon Route 53 domain access verification screenshots. |
 | 2.6 | Added Terraform-managed AWS monthly cost budget deployment, AWS Budget configuration verification and budget notification email verification screenshots. |
 | 2.7 | Added AWS Cost Explorer service cost analysis, encrypted RDS recovery snapshot creation and verification, Terraform-managed RDS decommissioning, post-decommission recovery verification, post-optimization AWS cost analysis and final Terraform infrastructure consistency verification screenshots. |
+| 2.8 | Added AWS Budget forecasted cost alert verification, demonstrating successful automatic notification when the configured forecasted cost threshold was exceeded. |
