@@ -1442,9 +1442,31 @@ Demonstrates verification that the validated AWS Certificate Manager certificate
 
 ![AWS Application Load Balancer HTTPS Certificate Verification](../../screenshots/01-backend/124-aws-alb-https-certificate-verification.png)
 
+## 6.125 Terraform Post-HTTPS FinOps Shutdown Verification
+
+**Purpose**
+
+Demonstrates controlled decommissioning of the temporary CloudOps ServiceDesk HTTPS testing infrastructure through Terraform after successful live verification, removing the Application Load Balancer and related resources while returning the Auto Scaling Group to its cost-optimized state.
+
+**Screenshot**
+
+![Terraform Post-HTTPS FinOps Shutdown Verification](../../screenshots/01-backend/125-terraform-post-https-finops-shutdown-verification.png)
+
 **---**
 
-## 6.125 Ansible
+## 6.126 Terraform Post-HTTPS FinOps State Verification
+
+**Purpose**
+
+Demonstrates final Terraform infrastructure consistency verification after HTTPS testing and FinOps shutdown, confirming that the deployed AWS infrastructure matches the Infrastructure as Code configuration with no pending changes.
+
+**Screenshot**
+
+![Terraform Post-HTTPS FinOps State Verification](../../screenshots/01-backend/126-terraform-post-https-finops-state-verification.png)
+
+**---**
+
+## 6.127 Ansible
 
 **Purpose**
 
@@ -1456,7 +1478,7 @@ Demonstrates automated infrastructure configuration, software provisioning and s
 
 **---**
 
-## 6.126 GitHub Actions
+## 6.128 GitHub Actions
 
 **Purpose**
 
@@ -1468,7 +1490,7 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 **---**
 
-## 6.127 Kubernetes
+## 6.129 Kubernetes
 
 **Purpose**
 
@@ -1480,7 +1502,7 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 **---**
 
-## 6.128 AWS Production Infrastructure
+## 6.130 AWS Production Infrastructure
 
 **Purpose**
 
@@ -1492,7 +1514,7 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 **---**
 
-## 6.129 Prometheus
+## 6.131 Prometheus
 
 **Purpose**
 
@@ -1504,7 +1526,7 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 **---**
 
-## 6.130 Grafana
+## 6.132 Grafana
 
 **Purpose**
 
@@ -1516,7 +1538,7 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 **---**
 
-## 6.131 Loki
+## 6.133 Loki
 
 **Purpose**
 
@@ -1528,7 +1550,7 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 **---**
 
-## 6.132 Production Deployment
+## 6.134 Production Deployment
 
 **Purpose**
 
@@ -1564,3 +1586,4 @@ Demonstrates the completed production deployment of the CloudOps ServiceDesk pla
 | 2.7 | Added AWS Cost Explorer service cost analysis, encrypted RDS recovery snapshot creation and verification, Terraform-managed RDS decommissioning, post-decommission recovery verification, post-optimization AWS cost analysis and final Terraform infrastructure consistency verification screenshots. |
 | 2.8 | Added AWS Budget forecasted cost alert verification, demonstrating successful automatic notification when the configured forecasted cost threshold was exceeded. |
 | 2.9 | Added Terraform HTTPS infrastructure deployment, Application Load Balancer target health, HTTP-to-HTTPS redirect, secure HTTPS application access and ACM certificate attachment verification screenshots. |
+| 2.10 | Added Terraform post-HTTPS FinOps shutdown and final infrastructure consistency verification, demonstrating controlled decommissioning of temporary testing resources and restoration of the cost-optimized infrastructure state. |
