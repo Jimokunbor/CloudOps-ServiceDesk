@@ -1384,7 +1384,67 @@ Demonstrates operational verification of the CloudOps ServiceDesk AWS monthly co
 
 **---**
 
-## 6.120 Ansible
+## 6.120 Terraform HTTPS Infrastructure Deployment Verification
+
+**Purpose**
+
+Demonstrates successful Terraform deployment of the CloudOps ServiceDesk HTTPS infrastructure, including the Application Load Balancer, target group, HTTP and HTTPS listeners, Route 53 application record and Auto Scaling Group integration.
+
+**Screenshot**
+
+![Terraform HTTPS Infrastructure Deployment Verification](../../screenshots/01-backend/120-terraform-https-infrastructure-deployment-verification.png)
+
+**---**
+
+## 6.121 AWS Application Load Balancer Target Group Health Verification
+
+**Purpose**
+
+Demonstrates successful health verification of the CloudOps ServiceDesk application target registered with the Application Load Balancer, confirming that the Auto Scaling EC2 instance is healthy and responding on HTTP port 80.
+
+**Screenshot**
+
+![AWS Application Load Balancer Target Group Health Verification](../../screenshots/01-backend/121-aws-alb-target-group-health-verification.png)
+
+**---**
+
+## 6.122 AWS HTTP-to-HTTPS Redirect Verification
+
+**Purpose**
+
+Demonstrates successful enforcement of secure application access through the AWS Application Load Balancer, confirming that HTTP requests on port 80 return an HTTP 301 permanent redirect to HTTPS on port 443.
+
+**Screenshot**
+
+![AWS HTTP-to-HTTPS Redirect Verification](../../screenshots/01-backend/122-aws-http-to-https-redirect-verification.png)
+
+**---**
+
+## 6.123 AWS HTTPS Application Access Verification
+
+**Purpose**
+
+Demonstrates successful secure access to the CloudOps ServiceDesk application over HTTPS, confirming an HTTP 200 OK response from the Apache web server through the Application Load Balancer.
+
+**Screenshot**
+
+![AWS HTTPS Application Access Verification](../../screenshots/01-backend/123-aws-https-application-access-verification.png)
+
+**---**
+
+## 6.124 AWS Application Load Balancer HTTPS Certificate Verification
+
+**Purpose**
+
+Demonstrates verification that the validated AWS Certificate Manager certificate is actively attached as the default TLS certificate to the CloudOps ServiceDesk Application Load Balancer HTTPS listener.
+
+**Screenshot**
+
+![AWS Application Load Balancer HTTPS Certificate Verification](../../screenshots/01-backend/124-aws-alb-https-certificate-verification.png)
+
+**---**
+
+## 6.125 Ansible
 
 **Purpose**
 
@@ -1396,7 +1456,7 @@ Demonstrates automated infrastructure configuration, software provisioning and s
 
 **---**
 
-## 6.121 GitHub Actions
+## 6.126 GitHub Actions
 
 **Purpose**
 
@@ -1408,7 +1468,7 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 **---**
 
-## 6.122 Kubernetes
+## 6.127 Kubernetes
 
 **Purpose**
 
@@ -1420,7 +1480,7 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 **---**
 
-## 6.123 AWS Production Infrastructure
+## 6.128 AWS Production Infrastructure
 
 **Purpose**
 
@@ -1432,7 +1492,7 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 **---**
 
-## 6.124 Prometheus
+## 6.129 Prometheus
 
 **Purpose**
 
@@ -1444,7 +1504,7 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 **---**
 
-## 6.125 Grafana
+## 6.130 Grafana
 
 **Purpose**
 
@@ -1456,7 +1516,7 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 **---**
 
-## 6.126 Loki
+## 6.131 Loki
 
 **Purpose**
 
@@ -1468,7 +1528,7 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 **---**
 
-## 6.127 Production Deployment
+## 6.132 Production Deployment
 
 **Purpose**
 
@@ -1503,3 +1563,4 @@ Demonstrates the completed production deployment of the CloudOps ServiceDesk pla
 | 2.6 | Added Terraform-managed AWS monthly cost budget deployment, AWS Budget configuration verification and budget notification email verification screenshots. |
 | 2.7 | Added AWS Cost Explorer service cost analysis, encrypted RDS recovery snapshot creation and verification, Terraform-managed RDS decommissioning, post-decommission recovery verification, post-optimization AWS cost analysis and final Terraform infrastructure consistency verification screenshots. |
 | 2.8 | Added AWS Budget forecasted cost alert verification, demonstrating successful automatic notification when the configured forecasted cost threshold was exceeded. |
+| 2.9 | Added Terraform HTTPS infrastructure deployment, Application Load Balancer target health, HTTP-to-HTTPS redirect, secure HTTPS application access and ACM certificate attachment verification screenshots. |

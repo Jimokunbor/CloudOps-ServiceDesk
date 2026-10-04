@@ -41,8 +41,8 @@ resource "aws_launch_template" "web" {
 resource "aws_autoscaling_group" "web" {
   name = "${local.project_name}-asg"
 
-  min_size         = 0
-  desired_capacity = 0
+  min_size         = 1
+  desired_capacity = 1
   max_size         = 4
 
   vpc_zone_identifier = [
