@@ -1,0 +1,69 @@
+
+---
+- name: Provision CloudOps ServiceDesk Apache web server
+  hosts: local
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Install Apache web server
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+        update_cache: true
+
+    - name: Ensure Apache service is enabled and running
+      ansible.builtin.service:
+        name: apache2
+        enabled: true
+        state: started
+
+    - name: Create website asset directories
+      ansible.builtin.file:
+        path: "/var/www/html/{{ item }}"
+        state: directory
+        owner: root
+        group: root
+        mode: "0755"
+      loop:
+        - css
+        - js
+        - images
+
+    - name: Deploy CloudOps ServiceDesk homepage
+      ansible.builtin.template:
+        src: ../templates/index.html.j2
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Deploy website stylesheet
+      ansible.builtin.copy:
+        src: ../files/css/style.css
+        dest: /var/www/html/css/style.css
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Deploy CloudOps ServiceDesk images
+      ansible.builtin.copy:
+        src: ../files/images/
+        dest: /var/www/html/images/
+        owner: root
+        group: root
+        mode: "0644"
+        directory_mode: "0755"
+
+    - name: Deploy randomized image gallery JavaScript
+      ansible.builtin.copy:
+        src: ../files/js/gallery.js
+        dest: /var/www/html/js/gallery.js
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Verify Apache service is running
+      ansible.builtin.service:
+        name: apache2
+        state: started

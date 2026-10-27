@@ -1,0 +1,16 @@
+---
+- name: Verify CloudOps ServiceDesk managed environment
+  hosts: local
+  gather_facts: true
+
+  tasks:
+    - name: Display operating system information
+      ansible.builtin.debug:
+        msg: "Operating System: {{ ansible_distribution }} {{ ansible_distribution_version }}"
+
+    - name: Display Python version
+      ansible.builtin.debug:
+        msg: "Python Version: {{ ansible_python_version }}"
+
+    - name: Verify managed host connectivity
+      ansible.builtin.ping:

@@ -1464,21 +1464,80 @@ Demonstrates final Terraform infrastructure consistency verification after HTTPS
 
 ![Terraform Post-HTTPS FinOps State Verification](../../screenshots/01-backend/126-terraform-post-https-finops-state-verification.png)
 
-**---**
 
-## 6.127 Ansible
+## 6.127 Ansible Localhost Connectivity Verification
 
 **Purpose**
 
-Demonstrates automated infrastructure configuration, software provisioning and server management using Ansible to ensure consistent and repeatable deployments across the CloudOps ServiceDesk environment.
+Demonstrates successful Ansible localhost connectivity verification, confirming that the configured inventory and managed Ubuntu environment are accessible for automated infrastructure configuration and management.
 
 **Screenshot**
 
-*To be added after implementation.*
+![Ansible Localhost Connectivity Verification](../../screenshots/01-backend/127-ansible-localhost-connectivity-verification.png)
 
-**---**
+---
 
-## 6.128 GitHub Actions
+## 6.128 Ansible System Verification Playbook Execution
+
+**Purpose**
+
+Demonstrates successful execution of the Ansible system verification playbook, confirming the Ubuntu 24.04 operating system, Python 3.12.3 environment and managed host connectivity without execution failures.
+
+**Screenshot**
+
+![Ansible System Verification Playbook Execution](../../screenshots/01-backend/128-ansible-system-verification-playbook-execution.png)
+
+---
+
+## 6.129 Ansible Apache Web Server Provisioning Verification
+
+**Purpose**
+
+Demonstrates automated Apache web server installation, configuration and service management using Ansible, confirming successful execution of the Apache provisioning playbook.
+
+**Screenshot**
+
+![Ansible Apache Web Server Provisioning Verification](../../screenshots/01-backend/129-ansible-apache-web-server-provisioning-verification.png)
+
+---
+
+## 6.130 Ansible Apache HTTP Response Verification
+
+**Purpose**
+
+Demonstrates successful Apache HTTP response verification, confirming that the provisioned web server is accessible and responding to requests through the local development environment.
+
+**Screenshot**
+
+![Ansible Apache HTTP Response Verification](../../screenshots/01-backend/130-ansible-apache-http-response-verification.png)
+
+---
+
+## 6.131 Ansible Apache Provisioning Idempotency Verification
+
+**Purpose**
+
+Demonstrates Ansible Apache provisioning idempotency verification, confirming that repeated playbook execution maintains the desired configuration without introducing unnecessary infrastructure changes.
+
+**Screenshot**
+
+![Ansible Apache Provisioning Idempotency Verification](../../screenshots/01-backend/131-ansible-apache-provisioning-idempotency-verification.png)
+
+---
+
+## 6.132 Ansible CloudOps Website Deployment Verification
+
+**Purpose**
+
+Demonstrates successful deployment of the CloudOps ServiceDesk website using Ansible and Apache, confirming automated website provisioning, deployment of web assets and successful access through the local web server.
+
+**Screenshot**
+
+![Ansible CloudOps Website Deployment Verification](../../screenshots/01-backend/132-ansible-cloudops-website-deployment-verification.png)
+
+---
+
+## 6.133 GitHub Actions
 
 **Purpose**
 
@@ -1488,9 +1547,9 @@ Demonstrates Continuous Integration (CI) workflow automation using GitHub Action
 
 *To be added after implementation.*
 
-**---**
+---
 
-## 6.129 Kubernetes
+## 6.134 Kubernetes
 
 **Purpose**
 
@@ -1500,9 +1559,9 @@ Demonstrates container orchestration and application deployment using Kubernetes
 
 *To be added after implementation.*
 
-**---**
+---
 
-## 6.130 AWS Production Infrastructure
+## 6.135 AWS Production Infrastructure
 
 **Purpose**
 
@@ -1512,9 +1571,9 @@ Demonstrates the complete production deployment of the CloudOps ServiceDesk infr
 
 *To be added after implementation.*
 
-**---**
+---
 
-## 6.131 Prometheus
+## 6.136 Prometheus
 
 **Purpose**
 
@@ -1524,9 +1583,9 @@ Demonstrates infrastructure and application metrics collection using Prometheus 
 
 *To be added after implementation.*
 
-**---**
+---
 
-## 6.132 Grafana
+## 6.137 Grafana
 
 **Purpose**
 
@@ -1536,9 +1595,9 @@ Demonstrates infrastructure and application dashboard visualization using Grafan
 
 *To be added after implementation.*
 
-**---**
+---
 
-## 6.133 Loki
+## 6.138 Loki
 
 **Purpose**
 
@@ -1548,9 +1607,9 @@ Demonstrates centralized log aggregation, storage and visualization using Loki f
 
 *To be added after implementation.*
 
-**---**
+---
 
-## 6.134 Production Deployment
+## 6.139 Production Deployment
 
 **Purpose**
 
@@ -1560,7 +1619,7 @@ Demonstrates the completed production deployment of the CloudOps ServiceDesk pla
 
 *To be added after implementation.*
 
-**---**
+---
 
 # 9. Revision History
 
@@ -1587,3 +1646,4 @@ Demonstrates the completed production deployment of the CloudOps ServiceDesk pla
 | 2.8 | Added AWS Budget forecasted cost alert verification, demonstrating successful automatic notification when the configured forecasted cost threshold was exceeded. |
 | 2.9 | Added Terraform HTTPS infrastructure deployment, Application Load Balancer target health, HTTP-to-HTTPS redirect, secure HTTPS application access and ACM certificate attachment verification screenshots. |
 | 2.10 | Added Terraform post-HTTPS FinOps shutdown and final infrastructure consistency verification, demonstrating controlled decommissioning of temporary testing resources and restoration of the cost-optimized infrastructure state. |
+| 2.11 | Added Ansible localhost connectivity, system verification, Apache web server provisioning, HTTP response, provisioning idempotency and CloudOps ServiceDesk website deployment verification screenshots. |
